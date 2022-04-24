@@ -19,6 +19,22 @@ function M.zero_diag_filter(diagnostics)
   return diagnostics ~= 0
 end
 
+function M.set_stl_float(float)
+  if not float then
+    hi("StatusLineScopesReverse", { guifg = colors.shades.shade06, guibg = colors.shades.shade06 })
+    hi("StatusLineScopes", { guifg = colors.common.base12, guibg = colors.shades.shade06 })
+    hi("Statusline", { guibg = colors.shades.shade06, guifg = colors.shades.shade06 })
+    hi("StatusLineScopesON", { guibg = colors.shades.shade06, guifg = colors.common.base14, gui = "bold" })
+    hi("StatusLineScopesOFF", { guibg = colors.shades.shade06, guifg = colors.common.base11, gui = "bold" })
+    return
+  end
+  hi("Statusline", { guibg = colors.common.base00, guifg = colors.common.base00 })
+  hi("StatusLineScopesReverse", { guifg = colors.common.base00, guibg = colors.common.base00 })
+  hi("StatusLineScopes", { guifg = colors.common.base13, guibg = colors.common.base00 })
+  hi("StatusLineScopesON", { guibg = colors.common.base00, guifg = colors.common.base14, gui = "bold" })
+  hi("StatusLineScopesOFF", { guibg = colors.common.base00, guifg = colors.common.base11, gui = "bold" })
+end
+
 --- Highlights and re-highlights dynamic colors
 --- based on modes for the statusline.
 -- @param current string mode string

@@ -1,8 +1,10 @@
 --- Statusline main file
 
 local hidden = require("tables.blacklisted").hidden -- load all filetypes where stl would be hidden
-local set_colors = require("utils.statusline").set_colors -- load statusline specific utility function
+local util = require("utils.statusline") -- load statusline specific utility function
 local config = require "statusline.config" -- load the config file for the statusline
+
+util.set_stl_float(true) -- don't fill the STL with grey background
 
 local modules = {} -- enabled modules
 modules["mode"] = require("statusline.modules.mode")["mode"] -- displays vim-mode
@@ -36,7 +38,7 @@ end
 function __StatusLine(state)
   local mode = api.nvim_get_mode().mode
   local width = api.nvim_win_get_width(0)
-  set_colors(mode)
+  util.set_colors(mode)
   local combined = "%#StatusLineInactive#%=" .. truncated("mode", true) .. "%="
 
   if width < 17 then

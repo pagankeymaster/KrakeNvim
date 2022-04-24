@@ -21,21 +21,7 @@ return {
     hi("StatusLineWarn", { guibg = colors.shades.shade06, guifg = colors.common.base12 })
     hi("StatusLineHint", { guibg = colors.shades.shade06, guifg = colors.common.base09 })
     hi("StatusLineInfo", { guibg = colors.shades.shade06, guifg = colors.common.base13 })
-    hi("StatusLineScopesReverse", { guifg = colors.shades.shade06, guibg = colors.shades.shade06 })
-    hi("StatusLineScopes", { guifg = colors.common.base12, guibg = colors.shades.shade06 })
-    hi("Statusline", { guibg = colors.shades.shade06, guifg = colors.shades.shade06 })
     hi("StatuslineNC", { guibg = colors.common.base00, guifg = colors.shades.shade01 })
-
-    hi("StatusLineScopesOFF", {
-      guibg = colors.shades.shade06,
-      guifg = colors.common.base11,
-      gui = "bold",
-    })
-    hi("StatusLineScopesON", {
-      guibg = colors.shades.shade06,
-      guifg = colors.common.base14,
-      gui = "bold",
-    })
     hi("StatusLineBulbON", {
       guifg = colors.common.base13,
       guibg = colors.common.base01,
