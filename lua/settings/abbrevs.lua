@@ -11,6 +11,4 @@ abbrev("wQ", "((getcmdtype() is# ':' && getcmdline() is# 'wQ')?('wq'):('wQ'))", 
 abbrev("Q", "((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q!'):('q'))", true)
 abbrev("q", "((getcmdtype() is# ':' && getcmdline() is# 'q')?('q!'):('q'))", true)
 
-return M
-
 -- vim:ft=lua

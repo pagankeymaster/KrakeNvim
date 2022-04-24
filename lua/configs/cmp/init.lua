@@ -115,7 +115,7 @@ local cmdlines = {
   sources = cmp.config.sources(source_cmdline),
   mapping = cmp.mapping.preset.cmdline(),
   formatting = {
-    format = cmp_item_format,
+    format = cmp_fmt.icon_only,
   },
   entries = { name = "custom", selection_order = "near_cursor" },
 }

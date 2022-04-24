@@ -26,7 +26,6 @@ local config = {
     extra = true,
     extended = true,
   },
-  ---@type fun(ctx: Ctx):string
   pre_hook = function(ctx)
     -- Only calculate commentstring for tsx filetypes
     if bo.filetype == "typescriptreact" then
@@ -47,7 +46,6 @@ local config = {
       }
     end
   end,
-  ---@type fun(ctx: Ctx)
   post_hook = nil,
 }
 

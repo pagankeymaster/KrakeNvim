@@ -19,7 +19,6 @@ local config = {
     HACK = { icon = " " },
     CHORE = { icon = " " },
     CLEAN = { icon = " ", alt = { "ORGANISE", "ORGANIZE", "CLEANED" } },
-    UPDATE = { icon = "ﮮ " },
     WARN = { icon = " ", alt = { "WARNING", "XXX" } },
     PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
     NOTE = { icon = " ", alt = { "INFO" } },
