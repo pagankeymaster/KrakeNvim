@@ -60,6 +60,7 @@ M.filename = {
   absolute = false,
   format = false,
   icon = true,
+  only_icon = false,
   unnamed = "unnamed",
   modified = "  ",
   readonly = "  ",
@@ -68,6 +69,7 @@ M.filename = {
 
 -- dirname module sub-config
 M.dirname = {
+  format = ":t",
   truncate = 20,
   style = style.xsquare,
   icon = "  ",
@@ -85,6 +87,7 @@ M.treesitter = {
 M.position = {
   truncate = 32,
   style = style.xsquare,
+  buf_local_clients = true,
   icon = true,
   spinners = {
     " ",
@@ -128,6 +131,7 @@ M.lsp = {
   server_label = " ",
   truncate = 80,
   style = style.xsquare,
+  buf_local_clients = true,
   spinners = {
     success = {
       "",
@@ -150,6 +154,7 @@ M.lsp = {
 M.lightbulb = {
   truncate = 85,
   style = style.xsquare,
+  buf_local_clients = true,
   unavailable = " ",
   active = " ",
   loading = " ",
@@ -158,6 +163,7 @@ M.lightbulb = {
 -- git diff module sub-config
 M.git = {
   truncate = 70,
+  buf_local_clients = true,
   style = style.xsquare,
   short = false,
   branch = " ",
@@ -170,6 +176,7 @@ M.git = {
 -- LSP diagnostics module sub-config
 M.diagnostics = {
   truncate = 63,
+  buf_local_clients = true,
   severities = {
     ERROR = "",
     WARN = "",

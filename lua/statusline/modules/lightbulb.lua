@@ -1,12 +1,17 @@
+--- LSP code actions STL module
 local M = {}
 
-local config = require("statusline.config").lightbulb
+local config = require("statusline.config").lightbulb -- load lightbulb specific config
+-- @see configs.lsp.lightbulb for more customisation options
 
+--- Driver function for displaying code-actions indicator
+-- WANTS: depends on nvim-lightbulb
 function M.lightbulb()
-  local Lsp = lsp.util.get_progress_messages()[1]
-  local clients = lsp.get_active_clients()
-  if clients[1] then
+  -- either display clients attached to the current buffer or, all active clients
+  local clients = config.buf_local_clients and lsp.buf_get_clients(0) or lsp.get_active_clients()
+  if #clients ~= 0 then
     local present, lightbulb = pcall(require, "nvim-lightbulb")
+    -- put empty string if lightbulb hasn't loaded and if there is no code actions in the current lsp client
     local status = present and lightbulb.get_status_text() or ""
     if status == "" then
       return string.format(
@@ -16,6 +21,7 @@ function M.lightbulb()
       )
     end
 
+    -- if there is no code actions in the current line then show a different indicator
     if status == "None" then
       return string.format(
         "%%#StatusLineLSPReverse#%s%%#StatusLineBulbOFF#%s%%#StatusLineLSPExtra#",

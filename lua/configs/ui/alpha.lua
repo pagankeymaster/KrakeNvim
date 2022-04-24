@@ -4,7 +4,7 @@ local btn_gen = require("utils.plugins").btn_gen
 
 local heading = {
   type = "text",
-  val = require("tables.banners")["hydra"],
+  val = require("tables.banners")["pacman"],
   opts = {
     position = "center",
     hl = "AlphaHeading",

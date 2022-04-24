@@ -1,9 +1,13 @@
+--- STL current working directory name
 local M = {}
 
-local config = require("statusline.config").dirname
+local config = require("statusline.config").dirname -- load dirname specific config
 
+--- Driver function for displaying the current working directory in the STL
 function M.dirname()
-  local path = fn.fnamemodify(fn.getcwd(), ":t")
+  -- shortens the path based of a format string
+  -- @see :help filename-modifiers
+  local path = fn.fnamemodify(fn.getcwd(), config.format)
   return string.format("%%#StatusLineDirname#%s%s%%#StatusLineDirnameReverse#%s", config.icon, path, config.style.left)
 end
 

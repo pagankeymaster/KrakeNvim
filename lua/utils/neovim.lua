@@ -193,7 +193,6 @@ function M.shorten()
 
   M.make_input({
     position = { row = 5, col = 5 },
-    highlight = "TabLine:FloatBorder",
     size = 50,
     border = { style = "solid" },
   }, {
@@ -227,7 +226,6 @@ function M.imgur()
 
   M.make_input({
     position = { row = 5, col = 5 },
-    highlight = "TabLine:FloatBorder",
     size = 50,
     border = {
       style = "solid",

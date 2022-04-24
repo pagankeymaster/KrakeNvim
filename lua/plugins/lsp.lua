@@ -16,15 +16,7 @@ use {
   cmd = {
     "LspInstallInfo",
     "LspInstallLog",
-    "LspInstall",
-    "LspUpdateAll",
     "LspStart",
-    "LspInfo",
-    "LspPrintInstalled",
-    "LspRestart",
-    "LspStop",
-    "LspUninstall",
-    "LspUninstallall",
   },
   module = "nvim-lsp-installer",
 }
