@@ -22,15 +22,21 @@ end
 function M.set_stl_float(float)
   if not float then
     hi("StatusLineScopesReverse", { guifg = colors.shades.shade06, guibg = colors.shades.shade06 })
-    hi("StatusLineScopes", { guifg = colors.common.base12, guibg = colors.shades.shade06 })
     hi("Statusline", { guibg = colors.shades.shade06, guifg = colors.shades.shade06 })
     hi("StatusLineScopesON", { guibg = colors.shades.shade06, guifg = colors.common.base14, gui = "bold" })
     hi("StatusLineScopesOFF", { guibg = colors.shades.shade06, guifg = colors.common.base11, gui = "bold" })
+    hi("StatusLineError", { guibg = colors.shades.shade06, guifg = colors.common.base11 })
+    hi("StatusLineWarn", { guibg = colors.shades.shade06, guifg = colors.common.base12 })
+    hi("StatusLineHint", { guibg = colors.shades.shade06, guifg = colors.common.base09 })
+    hi("StatusLineInfo", { guibg = colors.shades.shade06, guifg = colors.common.base13 })
     return
   end
+  hi("StatusLineError", { guibg = colors.common.base00, guifg = colors.common.base11 })
+  hi("StatusLineWarn", { guibg = colors.common.base00, guifg = colors.common.base12 })
+  hi("StatusLineHint", { guibg = colors.common.base00, guifg = colors.common.base09 })
+  hi("StatusLineInfo", { guibg = colors.common.base00, guifg = colors.common.base13 })
   hi("Statusline", { guibg = colors.common.base00, guifg = colors.common.base00 })
   hi("StatusLineScopesReverse", { guifg = colors.common.base00, guibg = colors.common.base00 })
-  hi("StatusLineScopes", { guifg = colors.common.base13, guibg = colors.common.base00 })
   hi("StatusLineScopesON", { guibg = colors.common.base00, guifg = colors.common.base14, gui = "bold" })
   hi("StatusLineScopesOFF", { guibg = colors.common.base00, guifg = colors.common.base11, gui = "bold" })
 end

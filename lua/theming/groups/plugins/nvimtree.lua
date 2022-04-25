@@ -14,6 +14,7 @@ return {
     hi("NvimTreeNormal", { guibg = colors.shades.shade08 })
     hi("NvimTreeRenamed", { guifg = colors.common.base07, gui = "italic" })
     hi("NvimTreeSymlink", { guifg = colors.common.base13, gui = "italic" })
+    hi("NvimTreeVertSplit", { guifg = colors.common.base13, guibg = colors.common.base13 })
     hi("NvimTreeImageFile", { guifg = colors.common.base15 })
   end,
 }

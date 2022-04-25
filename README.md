@@ -9,27 +9,58 @@
 
 ```txt
 ---Startuptime---
-035.291 (avg) with [157 Plugs]
+035.291 (avg) with [160 Plugs]
 ```
 
 `vim-polyglot` will be removed once
 `filetype.lua` becomes a bit less buggy.
 </div>
 
-## Installation 
-Coming soon...
+## Installation
+Well, there isn't much of an installation proceduere for this. You would just clone this and open neovim.
+Anyways, just for the sake of it I'll provide you with some installation instructions.
+```sh
+$ git clone --depth 1 https://github.com/pagankeymaster/nvim-config.git ~/.config/nvim
+$ nvim
+```
+You can use symbolic links as well.
+```sh
+$ git clone --depth 1 https://github.com/pagankeymaster/nvim-config.git ~/Dotfiles/nvim-config
+$ ln -s ~/Dotfiles/nvim-config ~/.config/nvim
+$ nvim
+```
 
 ## Keybindings
-Coming soom...
+The following are some notable default mappings that come with my config.
+
+### Launchers and Color illustrators
+
+| **Keybind**     | **Action**                            | **Description**                                                             |
+|-----------------|---------------------------------------|-----------------------------------------------------------------------------|
+| `<Leader>l<CR>` | `LspStart`                            | Starts the LSP server.                                                      |
+| `<Leader>T`     | `TSStart`                             | Starts the TreeSitter plugin.                                               |
+| `<Leader>L`     | `TSStart LspStart require"telescope"` | Starts LSP, TS and loads Telescope all at once.                             |
+| `<F3>`          | `ColorizerToggle`                     | Enables colorizer so to get a visual representation of the hex color codes. |
+| `<Leader>k<F1>` | `ColorToggle`                         | Same as `<F3>` but this one supports HSL, ANSI, RGB, etc.                     |
+
+### Git
+
+| **Keybind**         | **Action**                                       |
+|---------------------|--------------------------------------------------|
+| `<Leader><Leader>j` | Next Git Hunk                                    |
+| `<Leader><Leader>k` | Previous Git Hunk                                |
+| `<Leader><Leader>h` | Highlights Git number column                     |
+| `<Leader><Leader>d` | Shows Git Diff                                   |
+| `<Leader><Leader>L` | Opens up `lazygit` in a floating terminal buffer |
 
 ## Statusline
 Coming soon...
 
-## Showcase
-Following are various screenshots of this configuration is action. Enjoy!
-
 ## Debuggers
 Coming soon...
+
+## Showcase
+Following are various screenshots of this configuration is action. Enjoy!
 
 ### nvim-tree.lua
 ![nvim-tree.lua](./assets/nvim-tree.png) 
@@ -37,7 +68,7 @@ Coming soon...
 ### which-key.nvim
 ![which-key.nvim](./assets/which-key.png) 
 
-### SymbolsOutline.nvim
+### SymbolsOutline.nvim 
 ![SymbolsOutline.nvim](./assets/outline.png)
 
 ### Completion by nvim-cmp

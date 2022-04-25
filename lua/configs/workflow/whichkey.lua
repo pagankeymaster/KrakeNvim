@@ -79,6 +79,7 @@ schedule(function()
     "others",
     "prompts",
     "neovim",
+    "comments",
     "modes",
     "inserts",
     "pandoc",

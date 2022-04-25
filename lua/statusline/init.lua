@@ -1,10 +1,8 @@
 --- Statusline main file
 
 local hidden = require("tables.blacklisted").hidden -- load all filetypes where stl would be hidden
-local util = require("utils.statusline") -- load statusline specific utility function
+local util = require "utils.statusline" -- load statusline specific utility function
 local config = require "statusline.config" -- load the config file for the statusline
-
-util.set_stl_float(true) -- don't fill the STL with grey background
 
 local modules = {} -- enabled modules
 modules["mode"] = require("statusline.modules.mode")["mode"] -- displays vim-mode
@@ -65,7 +63,7 @@ function __StatusLine(state)
   elseif state == "inactive" then
     combined = "%#StatuslineNC#"
   end
-  return combined
+  return config.MAIN.left .. combined .. "%#Default#" .. config.MAIN.right
 end
 
 -- statusline augroup which makes the statusline persisten throughout buffers

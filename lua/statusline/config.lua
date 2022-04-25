@@ -19,6 +19,12 @@ local style = {
   fullslant = { left = "", right = "", left_alt = "", right_alt = "" },
 }
 
+M.MAIN = {
+  left = "",
+  right = "",
+  floating = false,
+}
+
 -- STL mode symbols
 -- options: glyphs, full mode name, short mode name
 M.mode = {

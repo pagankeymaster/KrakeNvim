@@ -17,10 +17,6 @@ return {
     hi("StatusLineGit", { guibg = colors.common.base02 })
     hi("StatusLineGitExtra", { guibg = colors.common.base01, guifg = colors.common.base02 })
     hi("StatusLineGitExtraExtra", { guibg = colors.shades.shade06, guifg = colors.common.base02 })
-    hi("StatusLineError", { guibg = colors.shades.shade06, guifg = colors.common.base11 })
-    hi("StatusLineWarn", { guibg = colors.shades.shade06, guifg = colors.common.base12 })
-    hi("StatusLineHint", { guibg = colors.shades.shade06, guifg = colors.common.base09 })
-    hi("StatusLineInfo", { guibg = colors.shades.shade06, guifg = colors.common.base13 })
     hi("StatuslineNC", { guibg = colors.common.base00, guifg = colors.shades.shade01 })
     hi("StatusLineBulbON", {
       guifg = colors.common.base13,

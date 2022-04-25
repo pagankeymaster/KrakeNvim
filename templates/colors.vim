@@ -1,5 +1,5 @@
 lua << EOF
-theme.setup { scheme = "night" }
+theme.setup { scheme = "<name>" }
 require("utils.statusline").set_stl_float(require("statusline.config").MAIN.floating)
 if not require("statusline.config").MAIN.floating then
   hi("StatusLineScopes", { guifg = colors.common.base15, guibg = colors.shades.shade06 })

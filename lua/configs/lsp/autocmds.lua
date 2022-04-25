@@ -2,18 +2,20 @@ local M = {}
 
 ---@diagnostic disable-next-line: unused-local
 M.setup = function(client, buffer)
-  augroup("LspDocumentHighlight", {
-    {
-      events = { "CursorHold", "CursorHoldI" },
-      command = lsb.document_highlight,
-      options = { buffer = buffer },
-    },
-    {
-      events = { "CursorMoved", "InsertEnter", "CursorMovedI" },
-      command = lsb.clear_references,
-      options = { buffer = buffer },
-    },
-  })
+  if client.supports_method "textDocument/documentHighlight" then
+    augroup("LspDocumentHighlight", {
+      {
+        events = { "CursorHold", "CursorHoldI" },
+        command = lsb.document_highlight,
+        options = { buffer = buffer },
+      },
+      {
+        events = { "CursorMoved", "InsertEnter", "CursorMovedI" },
+        command = lsb.clear_references,
+        options = { buffer = buffer },
+      },
+    })
+  end
 
   autocmd("CursorHold", require("nvim-lightbulb").update_lightbulb, { buffer = buffer })
   autocmd("CursorHold", function()
