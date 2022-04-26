@@ -38,7 +38,6 @@ use {
   config = function()
     require "configs.cmp.autopairs"
   end,
-  module = "nvim-autopairs",
   event = "InsertEnter",
 }
 
