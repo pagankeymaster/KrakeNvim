@@ -22,7 +22,6 @@ local servers = {
   ["html"] = {},
   ["zk"] = {},
   ["groovyls"] = {},
-  ["remark_ls"] = {},
   ["reason_ls"] = {},
   ["zeta_note"] = {},
   ["vimls"] = {},
