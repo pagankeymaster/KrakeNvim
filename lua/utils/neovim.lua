@@ -58,14 +58,14 @@ end
 -- @see help nvim_add_user_command
 function M.alias(alias, command, options)
   options = options or {}
-  api.nvim_add_user_command(alias, command, options)
+  api.nvim_create_user_command(alias, command, options)
 end
 
 --- Same as M.alias but, for buffers
 -- @see M.alias
 function M.buf_alias(buffer, alias, command, options)
   options = options or {}
-  api.nvim_buf_add_user_command(buffer, alias, command, options)
+  api.nvim_buf_create_user_command(buffer, alias, command, options)
 end
 
 --- The wrapper for nvim_create_autocmd API function.
