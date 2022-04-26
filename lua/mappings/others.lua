@@ -1,9 +1,7 @@
 local M = {}
 
 M.mappings = {
-  ["<leader>lf"] = { "<CMD>luafile %<CR>", "Load current Lua file" },
   ["<C-n>"] = { "<CMD>NvimTreeToggle<CR>", "פּ Explorer" },
-  ["<C-m>"] = { "<CMD>NvimTreeFocus<CR>", "פּ Explorer focus" },
   ["<F5>"] = { "<CMD>RnvimrToggle<CR>", "פּ Ranger explorer" },
   ["<leader>u"] = {
     ["name"] = "⏼ Toggles",
@@ -13,10 +11,11 @@ M.mappings = {
     ["t"] = { "<CMD>TabLineTGL<CR>", " Tabline" },
   },
   ["<C-s>"] = { "<CMD>w<CR>", " Save file" },
-  ["<C-\\>"] = { "<CMD>terminal<CR>", " Terminal" },
+  ["|<C-\\>"] = { "<CMD>vs | terminal<CR>", " Terminal in VS" },
+  ["-<C-\\>"] = { "<CMD>sp | terminal<CR>", " Terminal in HS" },
   ["<leader>v"] = { "<CMD>vs<CR>", " Vertical split" },
   ["<leader>h"] = { "<CMD>sp<CR>", " Horizontal split" },
-  ["<leader>V"] = { "<CMD>vs | enew<CR>", " Horizontal split" },
+  ["<leader>V"] = { "<CMD>vs | enew<CR>", " Vertical split" },
   ["<leader>H"] = { "<CMD>sp | enew<CR>", " Horizontal split" },
   ["<Esc>"] = { "<CMD>noh<CR>", " Remove highlights" },
   ["<C-y>"] = { "<CMD>%y+<CR>", "﯂ Copy all" },
@@ -37,6 +36,7 @@ M.mappings = {
   },
   ["<leader><Tab>"] = { "<CMD>lua require('reach').buffers(require('tables.reach').buffers)<CR>", "ﴵ Buffers" },
   ["<F9>"] = { "<CMD>BookmarkToggle<CR>", "Add/Remove bookmark" },
+  ["<C-i><C-g>"] = { "<CMD>PP<CR>", "Save URI image to imgur.com" },
   ["<C-i><C-l>"] = { "<CMD>lua neovim.shorten()<CR>", "Shorten URL" },
   ["<C-i><C-p>"] = { "<CMD>PP<CR>", "Save buffer to dpaste.com" },
 }

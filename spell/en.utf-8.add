@@ -51,3 +51,5 @@ Keymaster
 Keymaster
 config
 CNF
+statusline
+tabline

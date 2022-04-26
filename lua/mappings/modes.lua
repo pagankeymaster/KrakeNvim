@@ -9,8 +9,8 @@ M.mappings = {
     ["m"] = { "<CMD>SearchBoxMatchAll<CR>", " Find all" },
     ["i"] = { "<CMD>SearchBoxIncSearch<CR>", " Insert search" },
     ["c"] = { "<CMD>FineCmdline<CR>", " Cmdline" },
-    ["S"] = { "<CMD>lua mappings.cmdline_override()<CR>", " Use NUI cmdline backend" },
-    ["C"] = { "<CMD>lua mappings.search_override()<CR>", " Use NUI search backend" },
+    ["C"] = { "<CMD>lua mappings.cmdline_override()<CR>", " Use NUI cmdline backend" },
+    ["S"] = { "<CMD>lua mappings.search_override()<CR>", " Use NUI search backend" },
   },
 }
 
