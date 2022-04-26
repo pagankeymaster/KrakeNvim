@@ -26,6 +26,17 @@ Anyway, for the sake of it, I will provide you with some installation instructio
 ```sh
 git clone --depth 1 https://github.com/pagankeymaster/nvim-config.git ~/.config/nvim
 nvim
+<<<<<<< HEAD
+=======
+```
+
+You can use symbolic links as well.
+
+```sh
+git clone --depth 1 https://github.com/pagankeymaster/nvim-config.git ~/Dotfiles/nvim-config
+ln -s ~/Dotfiles/nvim-config ~/.config/nvim
+nvim
+>>>>>>> 5f5b166b81ee1a3edc8fb2dd22793e423acf0dc6
 ```
 
 You can use symbolic links as well.
