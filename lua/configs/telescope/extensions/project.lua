@@ -16,12 +16,6 @@ return {
     {
       path = "~/Dotfiles/nordfiles",
     },
-    {
-      path = "~/Coding/LaTeX/discrete-maths-notes",
-    },
-    {
-      path = "~/Coding/LaTeX/cheat-discrete",
-    },
   },
   hidden_files = true,
 }

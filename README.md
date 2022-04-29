@@ -35,14 +35,6 @@ ln -s ~/Dotfiles/nvim-config ~/.config/nvim
 nvim
 ```
 
-You can use symbolic links as well.
-
-```sh
-git clone --depth 1 https://github.com/pagankeymaster/nvim-config.git ~/Dotfiles/nvim-config
-ln -s ~/Dotfiles/nvim-config ~/.config/nvim
-nvim
-```
-
 ## Requirements
 
  - Neovim version 0.7.0.r67.g5c53e29ca9-1

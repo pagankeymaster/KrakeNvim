@@ -167,5 +167,25 @@ M["py"] = {
   "Python",
   "https://raw.githubusercontent.com/smokes/vscode-discord-assets/master/python.png",
 }
+M["yuck"] = {
+  "Yuck",
+  "https://raw.githubusercontent.com/pagankeymaster/lambda-wallpapers/main/devicons/yuck.png",
+}
+M["zsh"] = {
+  "Zsh",
+  "https://raw.githubusercontent.com/smokes/vscode-discord-assets/master/shell.png",
+}
+M["Bash"] = {
+  "Bash",
+  "https://raw.githubusercontent.com/smokes/vscode-discord-assets/master/shell.png",
+}
+M["Fish"] = {
+  "Fish",
+  "https://raw.githubusercontent.com/smokes/vscode-discord-assets/master/shell.png",
+}
+M["sh"] = {
+  "Sh",
+  "https://raw.githubusercontent.com/smokes/vscode-discord-assets/master/shell.png",
+}
 
 return M

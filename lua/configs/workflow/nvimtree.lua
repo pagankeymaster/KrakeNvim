@@ -4,6 +4,7 @@ if not present then
   return
 end
 
+-- press g? to show nvimtree shortcuts
 g.nvim_tree_git_hl = 1
 g.nvim_tree_highlight_opened_files = 1
 g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
@@ -92,12 +93,9 @@ local config = {
     width = 40,
     hide_root_folder = false,
     side = "left",
-    auto_resize = true,
     number = false,
     relativenumber = false,
     signcolumn = "yes",
-    italic_comments = false,
-    transparency = true,
   },
   trash = {
     cmd = "trash",

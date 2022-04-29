@@ -4,6 +4,11 @@
 use { "sheerun/vim-polyglot", event = "VimEnter" }
 
 use {
+  "bhurlow/vim-parinfer",
+  ft = { "yuck" },
+}
+
+use {
   "lervag/vimtex",
   ft = "tex",
 }
