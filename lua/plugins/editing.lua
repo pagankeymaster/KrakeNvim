@@ -4,6 +4,22 @@
 use { "sheerun/vim-polyglot", event = "VimEnter" }
 
 use {
+  "protex/better-digraphs.nvim",
+  after = "telescope.nvim",
+  setup = function()
+    require "configs.editing.digraph"
+  end,
+}
+
+use {
+  "fedepujol/move.nvim",
+  event = "InsertEnter",
+  config = function()
+    require "configs.editing.move"
+  end,
+}
+
+use {
   "bhurlow/vim-parinfer",
   ft = { "yuck" },
 }
