@@ -30,4 +30,6 @@ require("luasnip.loaders.from_vscode").lazy_load {
   include = { "lua", "python", "java", "sh", "markdown" },
 }
 
+luasnip.add_snippets(nil, require("luasnip_snippets").load_snippets())
+
 -- vim:ft=lua

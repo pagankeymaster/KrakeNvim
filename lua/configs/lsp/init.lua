@@ -106,7 +106,6 @@ local function configure_servers()
         require("jdtls").start_or_attach(server_config)
       end
     end
-    require "configs.lsp.handlers.null"
   end)
 end
 

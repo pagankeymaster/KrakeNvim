@@ -2,12 +2,6 @@
 --- NOTE: other LSP server that aren't yet added to nvim-lspconfig and some LSP ui components
 
 use {
-  "jose-elias-alvarez/null-ls.nvim",
-  wants = "plenary.nvim",
-  module = "null-ls",
-}
-
-use {
   "williamboman/nvim-lsp-installer",
   config = function()
     require "configs.lsp"

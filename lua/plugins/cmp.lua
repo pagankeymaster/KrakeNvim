@@ -28,9 +28,15 @@ use {
 use {
   "L3MON4D3/LuaSnip",
   after = "nvim-cmp",
+  wants = "LuaSnip-snippets.nvim",
   config = function()
     require "configs.cmp.luasnip"
   end,
+}
+
+use {
+  "molleweide/LuaSnip-snippets.nvim",
+  opt = true,
 }
 
 use {

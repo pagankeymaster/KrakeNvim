@@ -1,7 +1,6 @@
 use {
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
-  commit = "d88094fbfd84b297178252230f6faf0e7d2f7650",
   wants = "plenary.nvim",
   config = function()
     require "configs.telescope"

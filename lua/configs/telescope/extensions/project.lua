@@ -11,10 +11,10 @@ return {
       path = "~/Dotfiles/nightfall",
     },
     {
-      path = "~/Dotfiles/nordfiles/config/nvim",
+      path = "~/Dotfiles/nightly-dots/config/nvim",
     },
     {
-      path = "~/Dotfiles/nordfiles",
+      path = "~/Dotfiles/nightly-dots",
     },
   },
   hidden_files = true,
