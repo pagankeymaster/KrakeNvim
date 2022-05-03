@@ -37,7 +37,7 @@ nvim
 
 ## Requirements
 
- - Neovim version v0.8.0-dev+101-ga23440bf7
+ - Neovim version v0.7.0
 
 ## Keybindings
 
