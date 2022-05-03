@@ -49,7 +49,6 @@ function M.set_colors(current)
   hi("StatusLineFilename", {
     guifg = colors.modes[current],
     guibg = colors.common.base01,
-    gui = "italic",
   })
   hi("StatusLineFilenameReverse", {
     guifg = colors.common.base01,

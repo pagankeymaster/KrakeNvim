@@ -13,7 +13,7 @@ return {
     hi("luaBrackets", { link = "Delimiter" })
     hi("luaIfThen", { link = "Conditional" })
     hi("luaElse", { link = "Conditional" })
-    hi("luaSpecialTable", { guifg = colors.syntax.color10, gui = "bold,italic" })
+    hi("luaSpecialTable", { guifg = colors.syntax.color10, gui = "bold" })
     hi("luaFuncParen", { guifg = colors.syntax.color09 })
     hi("luaFuncParens", { guifg = colors.syntax.color09 })
     hi("luaFuncArgName", { guifg = colors.syntax.color19 })

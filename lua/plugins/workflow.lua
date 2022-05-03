@@ -4,15 +4,6 @@
 use { "tweekmonster/haunted.vim", cmd = "Haunt" }
 
 use {
-  "tjdevries/train.nvim",
-  cmd = {
-    "TrainUpDown",
-    "TrainWord",
-    "TrainTextObj",
-  },
-}
-
-use {
   "MattesGroeger/vim-bookmarks",
   setup = function()
     require "configs.workflow.bookmarks"
@@ -22,6 +13,15 @@ use {
     "InsertEnter",
     "CmdlineEnter",
     "CursorMoved",
+  },
+}
+
+use {
+  "tjdevries/train.nvim",
+  cmd = {
+    "TrainUpDown",
+    "TrainWord",
+    "TrainTextObj",
   },
 }
 
@@ -89,12 +89,14 @@ use {
   cmd = { "ToggleTerm", "ToggleTermToggleAll" },
 }
 
+--[[
 use {
   "folke/which-key.nvim",
   config = function()
     require "configs.workflow.whichkey"
   end,
 }
+]]
 
 use { "ggandor/lightspeed.nvim", opt = true }
 

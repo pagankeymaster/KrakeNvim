@@ -1,7 +1,7 @@
 --- NOTE: This file contains all completion related plugins.
 
 use {
-  "pagankeymaster/nvim-cmp",
+  "hrsh7th/nvim-cmp",
   config = function()
     require "configs.cmp"
   end,

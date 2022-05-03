@@ -10,7 +10,7 @@ return {
     hi("StatusLineLSPExtraExtra", { guifg = colors.common.base03, guibg = colors.shades.shade06 })
     hi("StatusLineLSPDark", { guifg = colors.syntax.color08, guibg = colors.common.base01 })
     hi("StatusLineLSPReverse", { guibg = colors.shades.shade06, guifg = colors.common.base01 })
-    hi("StatusLineGitBranch", { guifg = colors.common.base12, guibg = colors.common.base02, gui = "italic,bold" })
+    hi("StatusLineGitBranch", { guifg = colors.common.base12, guibg = colors.common.base02, gui = "bold" })
     hi("StatusLineGitAdd", { guifg = colors.common.base14, guibg = colors.common.base02, gui = "bold" })
     hi("StatusLineGitDelete", { guifg = colors.common.base11, guibg = colors.common.base02 })
     hi("StatusLineGitChange", { guifg = colors.common.base15, guibg = colors.common.base02 })
@@ -36,7 +36,7 @@ return {
     hi("StatusLineDirname", {
       guifg = colors.common.base15,
       guibg = colors.common.base02,
-      gui = "bold,italic",
+      gui = "bold",
     })
   end,
 }

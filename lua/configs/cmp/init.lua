@@ -79,6 +79,9 @@ local config = {
     documentation = {
       border = "solid",
     },
+    completion = {
+      border = "solid",
+    },
   },
   view = {
     entries = {
