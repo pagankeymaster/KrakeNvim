@@ -35,7 +35,7 @@ M.tabpages = {
 
 M.marks = {
   filter = function(mark)
-    return mark:match "[a-zA-Z]" -- return true to disable
+    return mark:match("[a-zA-Z]") -- return true to disable
   end,
 }
 

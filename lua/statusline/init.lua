@@ -1,11 +1,11 @@
 --- Statusline main file
 
 local hidden = require("tables.blacklisted").hidden -- load all filetypes where stl would be hidden
-local util = require "utils.statusline" -- load statusline specific utility function
-local config = require "statusline.config" -- load the config file for the statusline
+local util = require("utils.statusline") -- load statusline specific utility function
+local config = require("statusline.config") -- load the config file for the statusline
 
 local api = vim.api
-local neovim = require "utils.neovim"
+local neovim = require("utils.neovim")
 
 local modules = {} -- enabled modules
 modules["mode"] = require("statusline.modules.mode")["mode"] -- displays vim-mode
@@ -48,20 +48,20 @@ function __StatusLine(state)
 
   -- NOTE: all of these modules is passed through the trancator in order to make the size dynamic
   if state == "active" then
-    local left = table.concat {
-      truncated "mode",
-      truncated "dirname",
-      truncated "filename",
-      truncated "treesitter",
+    local left = table.concat({
+      truncated("mode"),
+      truncated("dirname"),
+      truncated("filename"),
+      truncated("treesitter"),
       "%#Statusline#",
-    }
-    local right = table.concat {
+    })
+    local right = table.concat({
       "%=",
-      truncated "diagnostics",
-      truncated "lightbulb" .. truncated "lsp",
-      truncated "git",
-      truncated "position",
-    }
+      truncated("diagnostics"),
+      truncated("lightbulb") .. truncated("lsp"),
+      truncated("git"),
+      truncated("position"),
+    })
     combined = left .. right
   elseif state == "inactive" then
     combined = "%#StatuslineNC#"

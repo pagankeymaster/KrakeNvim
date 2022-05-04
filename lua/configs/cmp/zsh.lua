@@ -4,9 +4,9 @@ if not present then
   return
 end
 
-zsh.setup {
+zsh.setup({
   zshrc = true,
   filetypes = { "zsh" },
-}
+})
 
 -- vim:ft=lua

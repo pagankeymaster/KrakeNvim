@@ -4,7 +4,7 @@ local M = {}
 local lsp = vim.lsp
 
 local config = require("statusline.config").lsp -- load LSP specific config
-local util = require "utils.statusline" -- load LSP specific utilities
+local util = require("utils.statusline") -- load LSP specific utilities
 
 --- Driver function for displaying LSP info in the STL
 -- can display number of globally active lsp clients

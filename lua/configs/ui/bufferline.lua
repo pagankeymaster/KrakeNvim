@@ -59,7 +59,7 @@ local config = {
         priority = 2,
         icon = "",
         matcher = function(buf)
-          return buf.filename:match "%_test" or buf.filename:match "%_spec"
+          return buf.filename:match("%_test") or buf.filename:match("%_spec")
         end,
       },
       {
@@ -67,7 +67,7 @@ local config = {
         highlight = { gui = "undercurl", guisp = "green" },
         auto_close = false,
         matcher = function(buf)
-          return buf.filename:match "%.md" or buf.filename:match "%.txt"
+          return buf.filename:match("%.md") or buf.filename:match("%.txt")
         end,
         separator = { style = require("bufferline.groups").separator.tab },
       },

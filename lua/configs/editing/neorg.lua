@@ -4,7 +4,7 @@ if not present then
   return
 end
 
-neorg.setup {
+neorg.setup({
   load = {
     ["core.defaults"] = {},
     ["core.norg.dirman"] = {
@@ -16,7 +16,7 @@ neorg.setup {
       },
     },
   },
-}
+})
 local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
 
 parser_configs.norg_meta = {

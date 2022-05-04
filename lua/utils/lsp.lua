@@ -6,7 +6,7 @@ local lsp = vim.lsp
 local api = vim.api
 local g = vim.g
 local fn = vim.fn
-local neovim = require "utils.neovim"
+local neovim = require("utils.neovim")
 
 --- Toggles autosave mode for the current buffer.
 -- @todo it is dependent on a global variable so that makes it difficult to track
@@ -22,12 +22,12 @@ function M.autosave()
   for _, client in ipairs(active_clients) do
     if client.resolved_capabilities.document_formatting then
       if g._autosave then
-        api.nvim_del_augroup_by_name "AutoSaveOnNormalMode"
-        notify {
+        api.nvim_del_augroup_by_name("AutoSaveOnNormalMode")
+        notify({
           message = "Autosave disabled",
           icon = " ",
           title = " LSP:" .. client.name,
-        }
+        })
         -- TODO: Improve so that all buffers will be tracked
         g._autosave = false -- if there is no autosave support
       else
@@ -44,11 +44,11 @@ function M.autosave()
             options = { buffer = 0 },
           },
         })
-        vim.notify {
+        vim.notify({
           message = "Autosave enabled",
           icon = " ",
           title = " LSP:" .. client.name,
-        }
+        })
         g._autosave = true -- if autosave is available
       end
       return

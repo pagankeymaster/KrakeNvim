@@ -70,7 +70,7 @@ local config = {
 }
 
 vim.schedule(function()
-  for _, plugin in ipairs {
+  for _, plugin in ipairs({
     "colors",
     "terminal",
     "git",
@@ -83,7 +83,7 @@ vim.schedule(function()
     "modes",
     "inserts",
     "pandoc",
-  } do
+  }) do
     local loaded = require("mappings." .. plugin)
     which_key.register(loaded.mappings, loaded.options)
   end

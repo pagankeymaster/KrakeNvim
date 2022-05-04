@@ -36,7 +36,7 @@ function M.filename()
     local present, devicons = pcall(require, "nvim-web-devicons")
     local icon = ""
     if present then
-      icon = " " .. devicons.get_icon(fn.expand "%:t", fn.expand "%:e", { default = true })
+      icon = " " .. devicons.get_icon(fn.expand("%:t"), fn.expand("%:e"), { default = true })
     end
 
     -- will only display the filetype icon if this option is set

@@ -10,7 +10,7 @@ function M.treesitter()
   local fallback = "%%#StatusLineScopesOFF#%s%%#StatusLineScopes#%%#StatusLineScopesReverse#%s"
   local available = "%%#StatusLineScopesON#%s%%#StatusLineScopes#%s%%#StatusLineScopesReverse#%s"
   if packer_plugins and packer_plugins["nvim-gps"].loaded then -- if not loaded then display a fallback string
-    local scopes = require "nvim-gps"
+    local scopes = require("nvim-gps")
     return scopes.is_available() -- checks if the treesitter parser supports getting the current context
         and string.format(available, config.enabled_icon, scopes.get_location(), config.style.left)
       or string.format(fallback, config.disabled_icon, config.style.left)

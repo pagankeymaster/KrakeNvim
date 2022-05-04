@@ -4,7 +4,7 @@
     "arch": "x64",
     "license": "GPL-3.0",
     "version": "0.0.1",
-    "homepage": "https://github.com/pagankeymaster/nvim-config",
+    "homepage": "https://github.com/pagankeymaster/KrakeNvim",
     "keywords": [
         "neovim",
         "config",
@@ -255,9 +255,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/pagankeymaster/nvim-config.git"
+        "url": "git+https://github.com/pagankeymaster/KrakeNvim.git"
     },
     "bugs": {
-        "url": "https://github.com/pagankeymaster/nvim-config/issues"
+        "url": "https://github.com/pagankeymaster/KrakeNvim/issues"
     }
 }

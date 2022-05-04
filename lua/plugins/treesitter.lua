@@ -1,78 +1,78 @@
 --- NOTE: This file contains treesitter related plugins.
 --- NOTE: Their extensions and modules.
 
-use { "danymat/neogen", after = "nvim-treesitter" }
+use({ "danymat/neogen", after = "nvim-treesitter" })
 
-use {
+use({
   "nvim-treesitter/nvim-treesitter",
   config = function()
-    require "configs.treesitter"
+    require("configs.treesitter")
   end,
   cmd = "TSUpdate",
-}
+})
 
-use {
+use({
   "theHamsta/nvim-treesitter-commonlisp",
   after = "nvim-treesitter",
-}
+})
 
-use {
+use({
   "RRethy/nvim-treesitter-textsubjects",
   after = "nvim-treesitter",
-}
+})
 
-use {
+use({
   "andymass/vim-matchup",
   after = "nvim-treesitter",
-}
+})
 
-use {
+use({
   "nvim-treesitter/nvim-treesitter-refactor",
   after = "nvim-treesitter",
-}
+})
 
-use {
+use({
   "p00f/nvim-ts-rainbow",
   after = "nvim-treesitter",
-}
+})
 
-use {
+use({
   "nvim-treesitter/nvim-treesitter-textobjects",
   after = "nvim-treesitter",
-}
+})
 
-use {
+use({
   "nvim-treesitter/playground",
   after = "nvim-treesitter",
-}
+})
 
-use {
+use({
   "windwp/nvim-ts-autotag",
   after = "nvim-treesitter",
-}
+})
 
-use {
+use({
   "romgrk/nvim-treesitter-context",
   after = "nvim-treesitter",
   config = function()
-    require "configs.treesitter.plugins.context"
+    require("configs.treesitter.plugins.context")
   end,
-}
+})
 
-use {
+use({
   "SmiteshP/nvim-gps",
   after = "nvim-treesitter",
   config = function()
-    require "configs.treesitter.plugins.gps"
+    require("configs.treesitter.plugins.gps")
   end,
-}
+})
 
-use {
+use({
   "lewis6991/spellsitter.nvim",
   after = "nvim-treesitter",
   config = function()
-    require "configs.treesitter.plugins.spellsitter"
+    require("configs.treesitter.plugins.spellsitter")
   end,
-}
+})
 
 -- vim:ft=lua

@@ -77,9 +77,9 @@ opt.icon = true -- the icon text of the window will be set
 opt.omnifunc = "syntaxcomplete#Complete" -- default omnifunc (completion) settings
 opt.background = "dark" -- colorscheme style
 
-opt.whichwrap:append "<>[]hl" -- see :h 'whichwrap'
-opt.shortmess:append "sI" -- This option helps to avoid all the hit-enter prompts
-opt.diffopt:append "algorithm:patience" -- options for diff mode
+opt.whichwrap:append("<>[]hl") -- see :h 'whichwrap'
+opt.shortmess:append("sI") -- This option helps to avoid all the hit-enter prompts
+opt.diffopt:append("algorithm:patience") -- options for diff mode
 
 -- custom fzf config for neovim
 env.FZF_DEFAULT_OPTS =

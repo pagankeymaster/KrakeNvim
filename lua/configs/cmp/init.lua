@@ -4,13 +4,13 @@ if not present then
   return
 end
 
-local kinds = require "tables.kinds"
+local kinds = require("tables.kinds")
 local kind_icons = kinds.items
 local kind_sources = kinds.source.icon_only
-local sources = require "tables.sources"
+local sources = require("tables.sources")
 local source_normal = sources.normal
 local source_cmdline = sources.cmdline
-local snip = require "luasnip"
+local snip = require("luasnip")
 
 local api = vim.api
 
@@ -41,19 +41,19 @@ local config = {
       require("luasnip").lsp_expand(args.body)
     end,
   },
-  mapping = cmp.mapping.preset.insert {
+  mapping = cmp.mapping.preset.insert({
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable,
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-    ["<C-e>"] = cmp.mapping {
+    ["<C-e>"] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
-    },
-    ["<CR>"] = cmp.mapping.confirm {
+    }),
+    ["<CR>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
-    },
+    }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -78,7 +78,7 @@ local config = {
       end
       fallback()
     end, { "i", "c" }),
-  },
+  }),
   sources = cmp.config.sources(source_normal),
   window = {
     documentation = {
@@ -129,14 +129,14 @@ local cmdlines = {
   entries = { name = "custom", selection_order = "near_cursor" },
 }
 
-for _, cmdtype in ipairs { ":", "/", "?", "@", "=" } do
+for _, cmdtype in ipairs({ ":", "/", "?", "@", "=" }) do
   cmp.setup.cmdline(cmdtype, cmdlines)
 end
 
-local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
 cmp_autopairs.lisp[#cmp_autopairs.lisp + 1] = "fennel"
 
-require "configs.cmp.issues"
+require("configs.cmp.issues")
 
 -- vim:ft=lua

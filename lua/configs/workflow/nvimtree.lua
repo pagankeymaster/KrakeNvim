@@ -9,7 +9,7 @@ local g = vim.g
 -- press g? to show nvimtree shortcuts
 g.nvim_tree_git_hl = 1
 g.nvim_tree_highlight_opened_files = 1
-g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
+g.nvim_tree_root_folder_modifier = table.concat({ ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" })
 g.nvim_tree_add_trailing = 0
 g.nvim_tree_group_empty = 1
 g.nvim_tree_icon_padding = " "

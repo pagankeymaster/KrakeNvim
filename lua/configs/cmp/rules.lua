@@ -1,8 +1,8 @@
-local autopairs = require "nvim-autopairs"
-local Rule = require "nvim-autopairs.rule"
-local cond = require "nvim-autopairs.conds"
+local autopairs = require("nvim-autopairs")
+local Rule = require("nvim-autopairs.rule")
+local cond = require("nvim-autopairs.conds")
 
-autopairs.add_rules {
+autopairs.add_rules({
   Rule(" ", " ")
     :with_pair(function(opts)
       local pair = opts.line:sub(opts.col - 1, opts.col)
@@ -22,7 +22,7 @@ autopairs.add_rules {
     end)
     :with_cr(cond.none())
     :with_del(cond.none())
-    :use_key ")",
+    :use_key(")"),
   Rule("", " }")
     :with_pair(cond.none())
     :with_move(function(opts)
@@ -30,7 +30,7 @@ autopairs.add_rules {
     end)
     :with_cr(cond.none())
     :with_del(cond.none())
-    :use_key "}",
+    :use_key("}"),
   Rule("", " ]")
     :with_pair(cond.none())
     :with_move(function(opts)
@@ -38,14 +38,14 @@ autopairs.add_rules {
     end)
     :with_cr(cond.none())
     :with_del(cond.none())
-    :use_key "]",
-}
+    :use_key("]"),
+})
 
-autopairs.add_rules {
+autopairs.add_rules({
   Rule("%(.*%)%s*%=>$", " {  }", { "typescript", "typescriptreact", "javascript" })
     :use_regex(true)
     :set_end_pair_length(2),
-}
+})
 
 autopairs.add_rule(Rule("$", "$", "tex"))
 

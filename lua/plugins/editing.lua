@@ -1,38 +1,43 @@
 --- NOTE: This file contains plugins that assists general code editing.
 --- NOTE: Such as syntax highlighting, build helpers, URL highlights, previews, etc.
 
-use {
+use({
   "protex/better-digraphs.nvim",
   after = "telescope.nvim",
   setup = function()
-    require "configs.editing.digraph"
+    require("configs.editing.digraph")
   end,
-}
+})
 
-use {
+use({
+  "sheerun/vim-polyglot",
+  event = "VimEnter",
+})
+
+use({
   "fedepujol/move.nvim",
   event = "InsertEnter",
   config = function()
-    require "configs.editing.move"
+    require("configs.editing.move")
   end,
-}
+})
 
-use {
+use({
   "bhurlow/vim-parinfer",
   ft = { "yuck" },
-}
+})
 
-use {
+use({
   "lervag/vimtex",
   ft = "tex",
-}
+})
 
-use {
+use({
   "xuhdev/vim-latex-live-preview",
   ft = "tex",
-}
+})
 
-use {
+use({
   "aspeddro/pandoc.nvim",
   ft = {
     "markdown",
@@ -44,67 +49,67 @@ use {
     "txt",
   },
   config = function()
-    require "configs.editing.pandoc"
+    require("configs.editing.pandoc")
   end,
-}
+})
 
-use { "Fymyte/rasi.vim", ft = "rasi" }
-use { "elkowar/yuck.vim", ft = "yuck" }
-use { "kovetskiy/sxhkd-vim", ft = "sxhkdrc" }
-use { "MTDL9/vim-log-highlighting", ft = "log" }
-use { "vuki656/package-info.nvim", ft = "package.json" }
+use({ "Fymyte/rasi.vim", ft = "rasi" })
+use({ "elkowar/yuck.vim", ft = "yuck" })
+use({ "kovetskiy/sxhkd-vim", ft = "sxhkdrc" })
+use({ "MTDL9/vim-log-highlighting", ft = "log" })
+use({ "vuki656/package-info.nvim", ft = "package.json" })
 
-use {
+use({
   "TimUntersberger/neogit",
   wants = "plenary.nvim",
   cmd = "Neogit",
   module = "neogit",
-}
+})
 
-use {
+use({
   "lewis6991/gitsigns.nvim",
   wants = "plenary.nvim",
   cmd = "Gitsigns",
   config = function()
-    require "configs.editing.gitsigns"
+    require("configs.editing.gitsigns")
   end,
   module = "gitsigns",
-}
+})
 
-use {
+use({
   "numToStr/Comment.nvim",
   config = function()
-    require "configs.editing.comments"
+    require("configs.editing.comments")
   end,
   event = { "CursorMoved", "InsertEnter" },
-}
+})
 
-use {
+use({
   "folke/todo-comments.nvim",
   event = { "CmdlineEnter", "InsertEnter", "CursorMoved", "CursorHold" },
   config = function()
-    require "configs.editing.todo"
+    require("configs.editing.todo")
   end,
-}
+})
 
-use {
+use({
   "ellisonleao/glow.nvim",
   cmd = "Glow",
   setup = function()
-    require "configs.editing.glow"
+    require("configs.editing.glow")
   end,
-}
+})
 
-use {
+use({
   "iamcco/markdown-preview.nvim",
   setup = function()
-    require "configs.editing.mdpreview"
+    require("configs.editing.mdpreview")
   end,
   run = "cd app && yarn install",
   ft = "markdown",
-}
+})
 
-use {
+use({
   "norcalli/nvim-colorizer.lua",
   cmd = {
     "ColorizerToggle",
@@ -112,9 +117,9 @@ use {
     "ColorizerAttachToBuffers",
     "ColorizerDetachFromBuffers",
   },
-}
+})
 
-use {
+use({
   "chrisbra/Colorizer",
   cmd = {
     "ColorToggle",
@@ -123,58 +128,58 @@ use {
     "ColorHighlight",
     "ColorSwapFgBg",
   },
-}
+})
 
-use {
+use({
   "folke/trouble.nvim",
   cmd = { "Trouble", "TroubleClose", "TroubleRefresh", "TroubleToggle" },
   config = function()
-    require "configs.editing.trouble"
+    require("configs.editing.trouble")
   end,
-}
+})
 
-use {
+use({
   "NFrid/due.nvim",
   cmd = { "DueDraw", "DueRedraw", "DueClean", "DueAsyncUpdate" },
-}
+})
 
-use {
+use({
   "stevearc/gkeep.nvim",
   run = ":UpdateRemotePlugins",
   after = "telescope.nvim",
-}
+})
 
-use { "jbyuki/venn.nvim", cmd = "ToggleVenn" }
+use({ "jbyuki/venn.nvim", cmd = "ToggleVenn" })
 
-use {
+use({
   "oberblastmeister/neuron.nvim",
   wants = { "popup.nvim", "plenary.nvim" },
   after = "telescope.nvim",
-}
+})
 
-use {
+use({
   "nvim-neorg/neorg",
   ft = "norg",
   wants = "nvim-treesitter",
   config = function()
-    require "configs.editing.neorg"
+    require("configs.editing.neorg")
   end,
-}
+})
 
-use {
+use({
   "nvim-orgmode/orgmode",
   ft = "org",
   config = function()
-    require "configs.editing.orgmode"
+    require("configs.editing.orgmode")
   end,
-}
+})
 
-use {
+use({
   "axieax/urlview.nvim",
   wants = "telescope-ui-select.nvim",
   cmd = "UrlView",
-}
+})
 
-use { "jbyuki/nabla.nvim", after = "orgmode" }
+use({ "jbyuki/nabla.nvim", after = "orgmode" })
 
 -- vim:ft=lua

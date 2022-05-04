@@ -5,6 +5,7 @@ return {
     hi("TelescopePreviewBorder", { guifg = colors.shades.shade08, guibg = colors.shades.shade08, blend = 2 })
     hi("TelescopePreviewTitle", { guifg = colors.common.base01, guibg = colors.common.base14, blend = 2 })
     hi("TelescopePreviewNormal", { guibg = colors.shades.shade08, blend = 2 })
+    hi("TelescopePreviewLine", { guibg = colors.common.base03 })
     hi("TelescopeSelectionCaret", { guifg = colors.common.base14, guibg = colors.shades.shade09, blend = 2 })
     hi("TelescopeSelection", {
       guibg = colors.shades.shade09,

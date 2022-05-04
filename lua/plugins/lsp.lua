@@ -1,10 +1,10 @@
 --- NOTE: LSP related plugins. Contains subcategories such as lsp server managers,
 --- NOTE: other LSP server that aren't yet added to nvim-lspconfig and some LSP ui components
 
-use {
+use({
   "williamboman/nvim-lsp-installer",
   config = function()
-    require "configs.lsp"
+    require("configs.lsp")
   end,
   wants = "nvim-lspconfig",
   cmd = {
@@ -13,30 +13,30 @@ use {
     "LspStart",
   },
   module = "nvim-lsp-installer",
-}
+})
 
-use { "mfussenegger/nvim-jdtls", after = "nvim-lspconfig" }
+use({ "mfussenegger/nvim-jdtls", after = "nvim-lspconfig" })
 
-use { "b0o/schemastore.nvim", module = "schemastore" }
+use({ "b0o/schemastore.nvim", module = "schemastore" })
 
-use {
+use({
   "kosayoda/nvim-lightbulb",
   module = "nvim-lightbulb",
   config = function()
-    require "configs.lsp.handlers.lightbulb"
+    require("configs.lsp.handlers.lightbulb")
   end,
-}
+})
 
-use { "neovim/nvim-lspconfig", opt = true }
+use({ "neovim/nvim-lspconfig", opt = true })
 
-use {
+use({
   "simrat39/symbols-outline.nvim",
   setup = function()
-    require "configs.lsp.outline"
+    require("configs.lsp.outline")
   end,
   after = "nvim-lspconfig",
-}
+})
 
-use { "tamago324/nlsp-settings.nvim", module = "nlspsettings" }
+use({ "tamago324/nlsp-settings.nvim", module = "nlspsettings" })
 
 -- vim:ft=lua

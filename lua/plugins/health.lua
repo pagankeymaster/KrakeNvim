@@ -1,37 +1,37 @@
 --- NOTE: Focuses on functions such as brightness, productivity boosts. etc
 
-use {
+use({
   "sunjon/shade.nvim",
   config = function()
-    require "configs.health.shade"
+    require("configs.health.shade")
   end,
   keys = "<leader>s",
   cmd = "Shade",
-}
+})
 
-use {
+use({
   "folke/twilight.nvim",
   cmd = { "Twilight", "TwilightEnable", "TwilightDisable" },
   config = function()
-    require "configs.health.twilight"
+    require("configs.health.twilight")
   end,
-}
+})
 
-use {
+use({
   "folke/zen-mode.nvim",
   cmd = "ZenMode",
   config = function()
-    require "configs.health.zenmode"
+    require("configs.health.zenmode")
   end,
-}
+})
 
-use {
+use({
   "Pocco81/TrueZen.nvim",
   cmd = {
     "TZAtaraxis",
     "TZMinimalist",
     "TZFocus",
   },
-}
+})
 
 -- vim:ft=lua

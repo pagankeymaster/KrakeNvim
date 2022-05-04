@@ -19,7 +19,7 @@ local config = {
   reading_text = "Mastering %s",
   workspace_text = "Conjuring %s",
   line_number_text = "Verse %s out of %s",
-  file_assets = require "tables.presence",
+  file_assets = require("tables.presence"),
 }
 
 presence:setup(config)

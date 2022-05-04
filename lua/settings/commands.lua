@@ -1,6 +1,6 @@
 --- Global scoped user command list.
 
-local neovim = require "utils.neovim"
+local neovim = require("utils.neovim")
 local alias = neovim.alias
 local lsp = vim.lsp
 local fn = vim.fn
@@ -8,7 +8,7 @@ local cmd = vim.cmd
 
 alias("ScratchTele", function()
   if not packer_plugins["scratch.nvim"].loaded then
-    require("packer").loader "scratch.nvim"
+    require("packer").loader("scratch.nvim")
   end
   require("telescope").extensions.scratch.scratch()
 end, { desc = "Load and create a new scratch file, with telescope." })
@@ -18,7 +18,7 @@ alias("CommitList", function()
 end, { desc = "View git commits in a telescope window." })
 
 alias("Shade", function()
-  require("packer").loader "shade.nvim"
+  require("packer").loader("shade.nvim")
 end, { desc = "Load shade.nvim heath plugin." })
 
 alias("PersistClip", function()
@@ -42,19 +42,19 @@ end, {
 })
 
 alias("FormatConfigAll", function()
-  local config = fn.stdpath "config"
+  local config = fn.stdpath("config")
   cmd("silent !stylua --config-path " .. config .. "/.stylua.toml " .. config)
 end, { desc = "Format neovim config with stylua." })
 
 alias("LspLog", "edit " .. lsp.get_log_path(), { desc = "View/Edit LSP log file." })
 
-alias("NvimLog", "edit " .. fn.stdpath "cache" .. "/log", { desc = "View/Edit neovim log file." })
+alias("NvimLog", "edit " .. fn.stdpath("cache") .. "/log", { desc = "View/Edit neovim log file." })
 
-alias("PackerLog", "edit " .. fn.stdpath "cache" .. "/packer.nvim.log", { desc = "View/Edit packer.nvim log file." })
+alias("PackerLog", "edit " .. fn.stdpath("cache") .. "/packer.nvim.log", { desc = "View/Edit packer.nvim log file." })
 
 alias(
   "TelescopeLog",
-  "edit " .. fn.stdpath "cache" .. "/telescope.log",
+  "edit " .. fn.stdpath("cache") .. "/telescope.log",
   { desc = "View/Edit telescope.nvim log file." }
 )
 

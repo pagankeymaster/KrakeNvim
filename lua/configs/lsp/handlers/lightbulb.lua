@@ -50,7 +50,7 @@ local config = {
   },
 }
 
-local lsp_utils = require "utils.lsp"
+local lsp_utils = require("utils.lsp")
 lsp_utils.lsp_signdef("LightBulbSign", " ", "LightBulbSign")
 
 lightbulb.setup(config)

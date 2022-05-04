@@ -18,9 +18,9 @@ function M.format(err, result, ctx, _)
     lsp.util.apply_text_edits(result, bufnr)
     fn.winrestview(view)
     if bufnr == api.nvim_get_current_buf() then
-      cmd "noautocmd :update"
+      cmd("noautocmd :update")
       -- Trigger post-formatting autocommand which can be used to refresh gitsigns
-      cmd "silent doautocmd <nomodeline> User FormatterPost"
+      cmd("silent doautocmd <nomodeline> User FormatterPost")
     end
   end
 end

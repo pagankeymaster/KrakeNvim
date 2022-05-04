@@ -4,6 +4,6 @@ if not present then
   return
 end
 
-spellsitter.setup { enable = true }
+spellsitter.setup({ enable = true })
 
 -- vim:ft=lua

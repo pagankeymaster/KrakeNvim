@@ -1,39 +1,39 @@
 --- NOTE: Adds and polishes neovim UI components. Such as tabline, indent lines, etc.
 
-use {
+use({
   "edluffy/specs.nvim",
   config = function()
-    require "configs.ui.specs"
+    require("configs.ui.specs")
   end,
   event = { "CursorMoved", "CursorMovedI" },
-}
+})
 
-use {
+use({
   "toppair/reach.nvim",
   config = function()
-    require "configs.ui.reach"
+    require("configs.ui.reach")
   end,
   module = "reach",
-}
+})
 
-use {
+use({
   "akinsho/bufferline.nvim",
   commit = "0a83c615a8ab49718d9b4cdc60127003307829b2",
   config = function()
-    require "configs.ui.bufferline"
+    require("configs.ui.bufferline")
   end,
   wants = "nvim-web-devicons",
-}
+})
 
-use {
+use({
   "kyazdani42/nvim-web-devicons",
   config = function()
-    require "configs.ui.devicons"
+    require("configs.ui.devicons")
   end,
   module = "nvim-web-devicons",
-}
+})
 
-use {
+use({
   "lukas-reineke/indent-blankline.nvim",
   cmd = {
     "IndentBlanklineEnable",
@@ -43,19 +43,19 @@ use {
     "IndentBlanklineRefreshScroll",
   },
   config = function()
-    require "configs.ui.blankline"
+    require("configs.ui.blankline")
   end,
-}
+})
 
-use {
+use({
   "VonHeikemen/fine-cmdline.nvim",
   cmd = "FineCmdline",
   config = function()
-    require "configs.ui.finecmdline"
+    require("configs.ui.finecmdline")
   end,
-}
+})
 
-use {
+use({
   "VonHeikemen/searchbox.nvim",
   cmd = {
     "SearchBoxIncSearch",
@@ -65,20 +65,20 @@ use {
     "SearchBoxMatchAll",
   },
   config = function()
-    require "configs.ui.searchbox"
+    require("configs.ui.searchbox")
   end,
-}
+})
 
-use {
+use({
   "goolord/alpha-nvim",
   wants = "nvim-web-devicons",
   config = function()
-    require "configs.ui.alpha"
+    require("configs.ui.alpha")
   end,
   cmd = {
     "Alpha",
     "AlphaRedraw",
   },
-}
+})
 
 -- vim:ft=lua

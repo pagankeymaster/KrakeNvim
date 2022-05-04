@@ -11,7 +11,7 @@ local cmd = api.nvim_command
 -- @see help empty()
 -- @see help expand()
 function M.is_buffer_empty()
-  return fn.empty(fn.expand "%:t") == 1
+  return fn.empty(fn.expand("%:t")) == 1
 end
 
 --- Check if the windows width is greater than a given number of columns.
@@ -127,7 +127,7 @@ end
 --- If not then prompts to install the parser(s).
 -- @see Adapted from https://is.gd/rETGe2
 function M.ensure_treesitter_language_installed()
-  local parsers = require "nvim-treesitter.parsers"
+  local parsers = require("nvim-treesitter.parsers")
   local lang = parsers.get_buf_lang()
   if parsers.get_parser_configs()[lang] and not parsers.has_parser(lang) then
     schedule(function()
@@ -156,8 +156,8 @@ end
 -- @tparam options.size width and height of the buffer
 -- @tparam options.highlight highlight groups for borders and the buffer itself
 function M.make_input(options, actions)
-  local Input = require "nui.input"
-  local autocmd = require "nui.utils.autocmd"
+  local Input = require("nui.input")
+  local autocmd = require("nui.utils.autocmd")
   local event = autocmd.event
 
   options = options or {}
@@ -182,7 +182,7 @@ function M.make_input(options, actions)
   local kw = vim.opt.iskeyword - "_" - "-"
   vim.bo.iskeyword = table.concat(kw:get(), ",")
   vim.schedule(function()
-    vim.api.nvim_command "stopinsert"
+    vim.api.nvim_command("stopinsert")
   end)
 
   -- TODO: Return the input object so that mappings can be defined separately.
@@ -205,19 +205,19 @@ function M.shorten()
     on_submit = function(value)
       local raw = vim.split(api.nvim_exec(string.format(format, value), true), "\n")
       if value == "Your URL..." then
-        M.notify {
+        M.notify({
           message = "ERROR: Couldn't fetch the shortened URL!",
           icon = " ",
           title = "URL Shortner",
           level = vim.log.levels.ERROR,
-        }
+        })
       else
         fn.setreg(vim.v.register, raw[#raw])
-        M.notify {
+        M.notify({
           message = "Saved link to system clipboard!",
           icon = " ",
           title = "URL Shortner",
-        }
+        })
       end
     end,
   })
@@ -240,18 +240,18 @@ function M.imgur()
     on_submit = function(value)
       local raw = api.nvim_exec(string.format(format, fn.expand(value)), true)
       if value == "Your URL..." then
-        M.notify {
+        M.notify({
           message = "ERROR: Unable to upload image!",
           icon = " ",
           title = "Imgur",
           level = vim.log.levels.ERROR,
-        }
+        })
       else
-        M.notify {
+        M.notify({
           message = "Saved link to system clipboard!",
           icon = " ",
           title = "Imgur",
-        }
+        })
       end
     end,
   })

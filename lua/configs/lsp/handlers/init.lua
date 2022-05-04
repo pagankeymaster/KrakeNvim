@@ -14,7 +14,7 @@ M["textDocument/publishDiagnostics"] = lsp.with(lsp.diagnostic.on_publish_diagno
   severity_sort = true,
 })
 
-M["textDocument/definition"] = require("configs.lsp.handlers.definition").goto_definition "vs"
+M["textDocument/definition"] = require("configs.lsp.handlers.definition").goto_definition("vs")
 
 M["textDocument/references"] = lsp.with(lsp.handlers["textDocument/references"], { loclist = true })
 

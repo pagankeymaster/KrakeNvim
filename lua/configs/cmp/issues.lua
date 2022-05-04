@@ -1,4 +1,4 @@
-local Job = require "plenary.job"
+local Job = require("plenary.job")
 
 local api = vim.api
 
@@ -32,7 +32,7 @@ source.complete = function(self, _, callback)
           local result = job:result()
           local ok, parsed = pcall(vim.json.decode, table.concat(result, ""))
           if not ok then
-            notify "Failed to parse gh result"
+            notify("Failed to parse gh result")
             return
           end
 
@@ -49,13 +49,13 @@ source.complete = function(self, _, callback)
             })
           end
 
-          callback { items = items, isIncomplete = false }
+          callback({ items = items, isIncomplete = false })
           self.cache[bufnr] = items
         end,
       })
       :start()
   else
-    callback { items = self.cache[bufnr], isIncomplete = false }
+    callback({ items = self.cache[bufnr], isIncomplete = false })
   end
 end
 

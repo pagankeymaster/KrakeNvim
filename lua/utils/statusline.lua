@@ -3,9 +3,8 @@
 local M = {}
 
 local b = vim.b
-local theming = require "utils.theming"
+local theming = require("utils.theming")
 local hi = theming.highlight
-local colors = theming.get_active_scheme()
 
 --- Shortens path by turning apple/orange -> a/orange
 -- @param path string
@@ -25,6 +24,7 @@ function M.zero_diag_filter(diagnostics)
 end
 
 function M.set_stl_float(float)
+  local colors = require("utils.theming").get_active_scheme()
   if not float then
     hi("StatusLineScopesReverse", { guifg = colors.shades.shade06, guibg = colors.shades.shade06 })
     hi("Statusline", { guibg = colors.shades.shade06, guifg = colors.shades.shade06 })
@@ -51,6 +51,7 @@ end
 -- @param current string mode string
 -- @see help modes
 function M.set_colors(current)
+  local colors = theming.get_active_scheme()
   hi("StatusLineFilename", {
     guifg = colors.modes[current],
     guibg = colors.common.base01,
@@ -133,19 +134,19 @@ end
 --- Counts the chars/lines added to the file.
 -- @return string number of chars/lines added
 function M.git_diff_added()
-  return M.git_diff "added"
+  return M.git_diff("added")
 end
 
 --- Counts the chars/lines removed from the file.
 -- @return string number of chars/lines removed
 function M.git_diff_removed()
-  return M.git_diff "removed"
+  return M.git_diff("removed")
 end
 
 --- Counts the chars/lines changed from the file.
 -- @return string number of chars/lines changed
 function M.git_diff_changed()
-  return M.git_diff "changed"
+  return M.git_diff("changed")
 end
 
 --- Utility function to check if git provider information is available

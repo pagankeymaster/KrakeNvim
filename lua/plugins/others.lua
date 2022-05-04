@@ -1,42 +1,42 @@
 --- NOTE: Bling plugins. These are mostly useless. Adds components like
 --- NOTE: urlshortner, minimaps, discord-rpc, scrollbar, etc.
 
-use {
+use({
   "rktjmp/paperplanes.nvim",
   config = function()
-    require "configs.others.paperplanes"
+    require("configs.others.paperplanes")
   end,
   cmd = "PP",
-}
+})
 
-use {
+use({
   "rinx/nvim-minimap",
   cmd = { "MinimapOpen", "MinimapClose", "MinimapRefresh", "MinimapToggle" },
-}
+})
 
-use { "tpope/vim-dispatch", cmd = { "Dispatch", "Make", "Focus", "Start" } }
+use({ "tpope/vim-dispatch", cmd = { "Dispatch", "Make", "Focus", "Start" } })
 
-use {
+use({
   "andweeb/presence.nvim",
   event = "InsertEnter",
   config = function()
-    require "configs.others.presence"
+    require("configs.others.presence")
   end,
-}
+})
 
-use "wakatime/vim-wakatime"
+use("wakatime/vim-wakatime")
 
-use {
+use({
   "KadoBOT/nvim-spotify",
   wants = "telescope.nvim",
   config = function()
-    require "configs.others.spotify"
+    require("configs.others.spotify")
   end,
   run = "make",
   cmd = { "SpotifyDevices", "Spotify" },
-}
+})
 
-use {
+use({
   "karb94/neoscroll.nvim",
   cmd = {
     "NeoscrollEnablePM",
@@ -47,17 +47,17 @@ use {
     "NeoscrollDisableBufferPM",
   },
   config = function()
-    require "configs.others.neoscroll"
+    require("configs.others.neoscroll")
   end,
-}
+})
 
-use {
+use({
   "Xuyuanp/scrollbar.nvim",
   event = { "WinScrolled", "VimResized", "QuitPre" },
   setup = function()
-    require "configs.others.scrollbar"
+    require("configs.others.scrollbar")
   end,
   module = "scrollbar",
-}
+})
 
 -- vim:ft=lua

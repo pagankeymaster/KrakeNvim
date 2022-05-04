@@ -132,7 +132,7 @@ local config = {
       },
     },
   },
-  extensions = require "configs.telescope.extensions",
+  extensions = require("configs.telescope.extensions"),
   defaults = {
     file_ignore_patterns = {
       "steam",

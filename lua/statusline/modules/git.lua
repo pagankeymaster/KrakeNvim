@@ -6,7 +6,7 @@ local lsp = vim.lsp
 local config = require("statusline.config").git -- load git specific STL config
 -- @see configs.editing.gitsigns for more git related configs
 -- NOTE: the module-specific utilities may migrated to their respective modules in the near future
-local util = require "utils.statusline" -- load statusline specific utilities
+local util = require("utils.statusline") -- load statusline specific utilities
 
 --- Driver function for fetching the GIT info for the current buffer (if it's a git repo)
 -- WANTS: depends on the plugin gitsigns.nvim

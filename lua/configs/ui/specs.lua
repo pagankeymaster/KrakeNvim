@@ -1,6 +1,6 @@
 local present, specs = pcall(require, "specs")
 
-specs.setup {
+specs.setup({
   show_jumps = true,
   min_jump = 17,
   popup = {
@@ -16,4 +16,4 @@ specs.setup {
   ignore_buftypes = {
     nofile = true,
   },
-}
+})

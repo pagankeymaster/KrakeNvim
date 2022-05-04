@@ -1,74 +1,74 @@
 --- NOTE: This file contains all completion related plugins.
 
-use {
+use({
   "hrsh7th/nvim-cmp",
   config = function()
-    require "configs.cmp"
+    require("configs.cmp")
   end,
   event = { "InsertEnter", "CmdlineEnter" },
-}
+})
 
-use {
+use({
   "tamago324/cmp-zsh",
   after = "nvim-cmp",
   config = function()
-    require "configs.cmp.zsh"
+    require("configs.cmp.zsh")
   end,
-}
+})
 
-use {
+use({
   "uga-rosa/cmp-dictionary",
   wants = "nvim-cmp",
   ft = { "text", "txt", "plaintex", "plaintext", "tex", "markdown" },
   config = function()
-    require "configs.cmp.dictionary"
+    require("configs.cmp.dictionary")
   end,
-}
+})
 
-use {
+use({
   "L3MON4D3/LuaSnip",
   after = "nvim-cmp",
   wants = "LuaSnip-snippets.nvim",
   config = function()
-    require "configs.cmp.luasnip"
+    require("configs.cmp.luasnip")
   end,
-}
+})
 
-use {
+use({
   "molleweide/LuaSnip-snippets.nvim",
   opt = true,
-}
+})
 
-use {
+use({
   "windwp/nvim-autopairs",
   config = function()
-    require "configs.cmp.autopairs"
+    require("configs.cmp.autopairs")
   end,
   event = "InsertEnter",
-}
+})
 
-use {
+use({
   "petertriho/cmp-git",
   wants = { "nvim-cmp", "plenary.nvim" },
   config = function()
-    require "configs.cmp.git"
+    require("configs.cmp.git")
   end,
   opt = true,
-}
+})
 
-use {
+use({
   "hrsh7th/cmp-nvim-lsp-document-symbol",
   after = { "nvim-cmp", "nvim-lspconfig" },
-}
+})
 
-use {
+use({
   "hrsh7th/cmp-nvim-lsp-signature-help",
   after = { "nvim-cmp", "nvim-lspconfig" },
-}
+})
 
-use { "dmitmel/cmp-cmdline-history", after = "nvim-cmp", event = "CmdlineEnter" }
+use({ "dmitmel/cmp-cmdline-history", after = "nvim-cmp", event = "CmdlineEnter" })
 
-use {
+use({
   "quangnguyen30192/cmp-nvim-tags",
   wants = "nvim-cmp",
   ft = {
@@ -82,60 +82,60 @@ use {
     "typescript",
     "tsx",
   },
-}
+})
 
-use {
+use({
   "David-Kunz/cmp-npm",
   wants = { "nvim-cmp", "plenary.nvim" },
   ft = "package.json",
-}
+})
 
-use { "andersevenrud/cmp-tmux", wants = "nvim-cmp", ft = "tmux" }
+use({ "andersevenrud/cmp-tmux", wants = "nvim-cmp", ft = "tmux" })
 
-use {
+use({
   "hrsh7th/cmp-emoji",
   wants = "nvim-cmp",
   ft = { "tex", "markdown", "txt", "plaintext", "plaintex" },
-}
+})
 
-use {
+use({
   "hrsh7th/cmp-nvim-lsp",
   after = { "nvim-lspconfig", "nvim-cmp" },
   config = function()
-    require "configs.cmp.lsp"
+    require("configs.cmp.lsp")
   end,
-}
+})
 
-use { "hrsh7th/cmp-calc", after = "nvim-cmp" }
+use({ "hrsh7th/cmp-calc", after = "nvim-cmp" })
 
-use { "octaltree/cmp-look", after = "nvim-cmp" }
+use({ "octaltree/cmp-look", after = "nvim-cmp" })
 
-use { "f3fora/cmp-spell", after = "nvim-cmp" }
+use({ "f3fora/cmp-spell", after = "nvim-cmp" })
 
-use { "hrsh7th/cmp-omni", after = "nvim-cmp" }
+use({ "hrsh7th/cmp-omni", after = "nvim-cmp" })
 
-use { "lukas-reineke/cmp-rg", after = "nvim-cmp" }
+use({ "lukas-reineke/cmp-rg", after = "nvim-cmp" })
 
-use { "ray-x/cmp-treesitter", after = { "nvim-treesitter", "nvim-cmp" } }
+use({ "ray-x/cmp-treesitter", after = { "nvim-treesitter", "nvim-cmp" } })
 
-use { "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" }
+use({ "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" })
 
-use { "kdheepak/cmp-latex-symbols", wants = "nvim-cmp", ft = "tex" }
+use({ "kdheepak/cmp-latex-symbols", wants = "nvim-cmp", ft = "tex" })
 
-use { "saadparwaiz1/cmp_luasnip", after = { "LuaSnip", "nvim-cmp" } }
+use({ "saadparwaiz1/cmp_luasnip", after = { "LuaSnip", "nvim-cmp" } })
 
-use { "hrsh7th/cmp-cmdline", wants = "nvim-cmp", event = "CmdlineEnter" }
+use({ "hrsh7th/cmp-cmdline", wants = "nvim-cmp", event = "CmdlineEnter" })
 
-use { "hrsh7th/cmp-buffer", wants = "nvim-cmp", event = "InsertEnter" }
+use({ "hrsh7th/cmp-buffer", wants = "nvim-cmp", event = "InsertEnter" })
 
-use { "hrsh7th/cmp-path", wants = "cmp-buffer", keys = { { "i", "/" } } }
+use({ "hrsh7th/cmp-path", wants = "cmp-buffer", keys = { { "i", "/" } } })
 
-use { "dmitmel/cmp-digraphs", after = "nvim-cmp" }
+use({ "dmitmel/cmp-digraphs", after = "nvim-cmp" })
 
-use { "davidsierradz/cmp-conventionalcommits", after = "cmp-buffer" }
+use({ "davidsierradz/cmp-conventionalcommits", after = "cmp-buffer" })
 
-use { "max397574/cmp-greek", after = "nvim-cmp" }
+use({ "max397574/cmp-greek", after = "nvim-cmp" })
 
-use { "jc-doyle/cmp-pandoc-references", ft = "markdown", wants = "nvim-cmp" }
+use({ "jc-doyle/cmp-pandoc-references", ft = "markdown", wants = "nvim-cmp" })
 
 -- vim:ft=lua

@@ -4,7 +4,7 @@ if not present then
   return
 end
 
-shade.setup {
+shade.setup({
   overlay_opacity = 50,
   opacity_step = 1,
   keys = {
@@ -12,6 +12,6 @@ shade.setup {
     brightness_down = "<C-Down>",
     toggle = "<leader>s",
   },
-}
+})
 
 -- vim:ft=lua

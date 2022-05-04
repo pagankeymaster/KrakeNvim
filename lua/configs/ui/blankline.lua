@@ -6,7 +6,7 @@ if not present then
   return
 end
 
-local theming = require "theming"
+local theming = require("theming")
 local hi = theming.highlight
 local colors = theming.get_active_scheme()
 

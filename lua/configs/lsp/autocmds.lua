@@ -1,6 +1,6 @@
 local M = {}
 
-local neovim = require "utils.neovim"
+local neovim = require("utils.neovim")
 local augroup = neovim.augroup
 local autocmd = neovim.autocmd
 local lsp = vim.lsp
@@ -8,7 +8,7 @@ local diag = vim.diagnostic
 
 ---@diagnostic disable-next-line: unused-local
 M.setup = function(client, buffer)
-  if client.supports_method "textDocument/documentHighlight" then
+  if client.supports_method("textDocument/documentHighlight") then
     augroup("LspDocumentHighlight", {
       {
         events = { "CursorHold", "CursorHoldI" },

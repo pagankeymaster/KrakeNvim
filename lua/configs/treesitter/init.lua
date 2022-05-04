@@ -4,7 +4,7 @@ if not present then
   return
 end
 
-local neovim = require "utils.neovim"
+local neovim = require("utils.neovim")
 local notify = neovim.notify
 
 require("nvim-treesitter.install").prefer_git = true
@@ -49,24 +49,24 @@ local config = {
       node_decremental = "grm",
     },
   },
-  rainbow = require "configs.treesitter.modules.rainbow",
-  textobjects = require "configs.treesitter.modules.textobjects",
-  playground = require "configs.treesitter.modules.playground",
-  query_linter = require "configs.treesitter.modules.querylinter",
-  refactor = require "configs.treesitter.modules.refactor",
-  matchup = require "configs.treesitter.modules.matchup",
-  textsubjects = require "configs.treesitter.modules.textsubjects",
+  rainbow = require("configs.treesitter.modules.rainbow"),
+  textobjects = require("configs.treesitter.modules.textobjects"),
+  playground = require("configs.treesitter.modules.playground"),
+  query_linter = require("configs.treesitter.modules.querylinter"),
+  refactor = require("configs.treesitter.modules.refactor"),
+  matchup = require("configs.treesitter.modules.matchup"),
+  textsubjects = require("configs.treesitter.modules.textsubjects"),
 }
 
 ts.setup(config)
 
-require "configs.treesitter.modules.autotag"
+require("configs.treesitter.modules.autotag")
 
-notify {
+notify({
   message = "Treesitter is now enabled!",
   title = "nvim-treesitter",
   icon = "",
-}
+})
 
 neovim.ensure_treesitter_language_installed()
 

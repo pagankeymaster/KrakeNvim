@@ -1,8 +1,8 @@
-local packer_util = require "packer.util"
+local packer_util = require("packer.util")
 
 local config = {
   ensure_dependencies = true,
-  compile_path = vim.fn.stdpath "config" .. "/lua/_compiled.lua",
+  compile_path = vim.fn.stdpath("config") .. "/lua/_compiled.lua",
   auto_clean = true,
   compile_on_sync = true,
   max_jobs = 30,
@@ -34,9 +34,9 @@ config.display = {
   prompt_border = "solid",
   keybindings = { quit = "q", toggle_info = "<CR>", diff = "d", prompt_revert = "r" },
   open_fn = function()
-    return packer_util.float {
+    return packer_util.float({
       border = "solid",
-    }
+    })
   end,
 }
 

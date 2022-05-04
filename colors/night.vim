@@ -1,5 +1,4 @@
 lua << EOF
-package.loaded["theming.groups.statusline"] = nil
 require("theming").setup { scheme = "night" }
 require("utils.statusline").set_stl_float(require("statusline.config").MAIN.floating)
 

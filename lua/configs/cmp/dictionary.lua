@@ -4,20 +4,22 @@ if not present then
   return
 end
 
+local stdpath_config = vim.fn.stdpath("config")
+
 local function prepare(lang)
-  return stdpath "config" .. "/spell/" .. lang .. ".dict"
+  return stdpath_config .. "/spell/" .. lang .. ".dict"
 end
 
 local config = {
   dic = {
     ["*"] = {
-      prepare "en",
-      stdpath "config" .. "/spell/en.utf-8.add",
+      prepare("en"),
+      stdpath_config .. "/spell/en.utf-8.add",
     },
     filepath = {
       ["*.txt"] = {
-        prepare "bn",
-        prepare "hi",
+        prepare("bn"),
+        prepare("hi"),
       },
     },
   },

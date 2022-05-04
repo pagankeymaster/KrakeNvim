@@ -76,9 +76,9 @@ local schema = {
             url = "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
           },
         },
-        require("schemastore").json.schemas {
+        require("schemastore").json.schemas({
           select = { ".eslintrc", "package.json" },
-        }
+        })
       ),
     },
   },

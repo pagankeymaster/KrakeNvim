@@ -1,7 +1,7 @@
 local M = {}
 ---@diagnostic disable: unused-local
 
-local neovim = require "utils.neovim"
+local neovim = require("utils.neovim")
 local alias = neovim.alias
 local buf_alias = neovim.buf_alias
 local lsp = vim.lsp

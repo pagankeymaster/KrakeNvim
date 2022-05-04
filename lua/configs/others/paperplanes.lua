@@ -4,7 +4,7 @@ if not present then
   return
 end
 
-pp.setup {
+pp.setup({
   register = "+",
   provider = "dpaste.org",
-}
+})

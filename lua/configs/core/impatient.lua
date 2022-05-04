@@ -5,6 +5,6 @@ if not present then
 end
 
 impatient.enable_profile()
-require "_compiled"
+require("_compiled")
 
 -- vim:ft=lua

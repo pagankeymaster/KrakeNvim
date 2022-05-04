@@ -3,7 +3,7 @@
 local g = vim.g
 
 -- disabled native vim plugins in order to make startup time faster.
-for builtin, status in pairs {
+for builtin, status in pairs({
   ["2html_plugin"] = 1,
   ["getscript"] = 1,
   ["getscriptPlugin"] = 1,
@@ -24,7 +24,7 @@ for builtin, status in pairs {
   ["fzf"] = 1,
   ["spellfile_plugin"] = 1,
   ["sleuth"] = 1,
-} do
+}) do
   g["loaded_" .. builtin] = status
 end
 

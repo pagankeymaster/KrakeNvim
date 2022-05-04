@@ -1,14 +1,14 @@
 --- NOTE: Contains plugins that may assist neovim plugin development.
 
-use {
+use({
   "euclidianAce/BetterLua.vim",
   event = "CmdlineEnter",
   setup = function()
-    require "configs.dev.betterlua"
+    require("configs.dev.betterlua")
   end,
-}
+})
 
-use {
+use({
   "bfredl/nvim-luadev",
   cmd = {
     "Luadev",
@@ -17,23 +17,23 @@ use {
     "LuadevRunWord",
     "LuadevComplete",
   },
-}
+})
 
-use { "rafcamlet/nvim-luapad", cmd = { "Luapad", "LuaRun" } }
-use { "milisims/nvim-luaref", event = "CmdlineEnter" }
-use { "nanotee/luv-vimdocs", event = "CmdlineEnter" }
-use { "nanotee/nvim-lua-guide", event = "CmdlineEnter" }
+use({ "rafcamlet/nvim-luapad", cmd = { "Luapad", "LuaRun" } })
+use({ "milisims/nvim-luaref", event = "CmdlineEnter" })
+use({ "nanotee/luv-vimdocs", event = "CmdlineEnter" })
+use({ "nanotee/nvim-lua-guide", event = "CmdlineEnter" })
 
-use {
+use({
   "shift-d/scratch.nvim",
   wants = "telescope.nvim",
   config = function()
-    require("telescope").load_extension "scratch"
+    require("telescope").load_extension("scratch")
   end,
   cmd = {
     "ScratchNew",
     "ScratchEval",
   },
-}
+})
 
 -- vim:ft=lua

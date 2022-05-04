@@ -1,5 +1,5 @@
 local schema = {
-  root_dir = require("jdtls.setup").find_root { ".git", "mvnw", "gradlew", ".idea", "*.iml" } or vim.loop.cwd(),
+  root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew", ".idea", "*.iml" }) or vim.loop.cwd(),
   settings = {
     java = {
       signatureHelp = {

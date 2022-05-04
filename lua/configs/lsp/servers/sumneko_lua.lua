@@ -2,14 +2,14 @@ local schema = {
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
   log_level = 2,
-  root_dir = require("lspconfig.util").root_pattern {
+  root_dir = require("lspconfig.util").root_pattern({
     ".git",
     "stylua.toml",
     ".stylua.toml",
     ".luarc.json",
     ".luacheckrc",
     "selene.toml",
-  } or vim.loop.cwd(),
+  }) or vim.loop.cwd(),
   single_file_support = true,
   -- settings = {
   --   Lua = {

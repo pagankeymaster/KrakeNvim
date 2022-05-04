@@ -1,4 +1,4 @@
-local Input = require "nui.input"
+local Input = require("nui.input")
 local event = require("nui.utils.autocmd").event
 
 local lsp = vim.lsp
@@ -6,24 +6,24 @@ local opt = vim.opt
 local notify = require("utils.neovim").notify
 
 local function nui_lsp_rename()
-  local curr_name = vim.fn.expand "<cword>"
+  local curr_name = vim.fn.expand("<cword>")
 
   local params = lsp.util.make_position_params()
 
   local function on_submit(new_name)
     if not new_name or #new_name == 0 then
-      notify {
+      notify({
         message = "Cancelled: New name is empty!",
         icon = "ﰸ",
         title = " LSP",
-      }
+      })
       return
     elseif curr_name == new_name then
-      notify {
+      notify({
         message = "Cancelled: New and current names are the same!",
         icon = "",
         title = " LSP",
-      }
+      })
       return
     end
 
@@ -45,11 +45,11 @@ local function nui_lsp_rename()
       -- let's remind ourselves to save those...
       local total_files = vim.tbl_count(result.changes)
       print(string.format("Changed %s file%s. To save them run ':wa'", total_files, total_files > 1 and "s" or ""))
-      notify {
+      notify({
         message = "Renamed " .. new_name .. " to " .. curr_name .. ".",
         icon = "",
         title = " LSP",
-      }
+      })
     end)
   end
 
@@ -101,7 +101,7 @@ local function nui_lsp_rename()
 
   -- go into normal mode
   vim.schedule(function()
-    vim.cmd "stopinsert"
+    vim.cmd("stopinsert")
   end)
 
   -- close on <esc> in normal mode

@@ -15,8 +15,8 @@ local fn = vim.fn
 -- @return boolean true if entry1 is greater than entry2, false otherwise.
 -- @see Adapted from https://is.gd/FbwlTM
 function M.cmp_under(entry1, entry2)
-  local _, entry1_under = entry1.completion_item.label:find "^_+"
-  local _, entry2_under = entry2.completion_item.label:find "^_+"
+  local _, entry1_under = entry1.completion_item.label:find("^_+")
+  local _, entry2_under = entry2.completion_item.label:find("^_+")
   entry1_under = entry1_under or 0
   entry2_under = entry2_under or 0
   if entry1_under > entry2_under then
@@ -57,10 +57,10 @@ end
 
 -- Builds pandoc document.
 function M.pandoc_build()
-  local pandoc = require "pandoc"
+  local pandoc = require("pandoc")
   -- Make your pandoc command
   local input = api.nvim_get_buf_name(0)
-  pandoc.render.build {
+  pandoc.render.build({
     input = input,
     args = {
       { "--standalone" },
@@ -69,7 +69,7 @@ function M.pandoc_build()
       { "--pdf-engine", "xelatex" },
     },
     output = "pandoc.pdf",
-  }
+  })
 end
 
 --- Copies an image from given path.
@@ -86,11 +86,11 @@ function M.copy_image(filepath)
     local command = "convert '" .. filepath .. "' png:- | xclip -selection clipboard -t image/png"
     fn.system("bash -c '" .. command .. "'")
   end
-  notify {
+  notify({
     message = "Copied " .. basename[#basename] .. " to the  clipboard.",
     icon = "",
     title = "telescope-media-files.nvim",
-  }
+  })
 end
 
 return M

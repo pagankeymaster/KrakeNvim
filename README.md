@@ -23,21 +23,21 @@ clone this and open neovim.
 Anyway, for the sake of it, I will provide you with some installation instructions.
 
 ```sh
-git clone --depth 1 https://github.com/pagankeymaster/nvim-config.git ~/.config/nvim
+git clone --depth 1 https://github.com/pagankeymaster/KrakeNvim.git ~/.config/nvim
 nvim
 ```
 
 You can use symbolic links as well.
 
 ```sh
-git clone --depth 1 https://github.com/pagankeymaster/nvim-config.git ~/Dotfiles/nvim-config
-ln -s ~/Dotfiles/nvim-config ~/.config/nvim
+git clone --depth 1 https://github.com/pagankeymaster/nvim-config.git ~/Dotfiles/KrakeNvim
+ln -s ~/Dotfiles/KrakeNvim ~/.config/nvim
 nvim
 ```
 
 ## Requirements
 
- - Neovim version v0.7.0
+ - Neovim version v0.8.0
 
 ## Keybindings
 
@@ -92,6 +92,8 @@ These will only take effect if the plugin `nvim-jdtls` is loaded.
 | `<Leader>lM` | Extract method.         |
 
 ### Telescope
+
+Coming soon... (there's a lot)
 
 ### Pandoc
 
@@ -236,7 +238,7 @@ These will only take effect if the plugin `nvim-jdtls` is loaded.
 
 ## Statusline
 
-Coming soon...
+Coming soon... (there's a lot)
 
 ## Debuggers
 
@@ -319,21 +321,24 @@ Following are various screenshots of this configuration is action. Enjoy!
 Following are the current goals of this repository.
 
 - [ ] Add `telescope.nvim` keybinding readme section.
-- [ ] Add comments and documentations.
-- [ ] Remove code-duplication and other refactoring.
-- [ ] Fix LSP module for statusline.
+- [x] Add comments and documentations.
+- [x] Remove code-duplication and other refactoring.
+- [x] Fix LSP module for statusline.
 - [ ] Add more colorschemes
 - [ ] Revise keybindings
 - [ ] Add `legend.nvim`
 - [ ] Configure `hop.nvim`, `leap.nvim` and `lightspeed.nvim`
-- [ ] Migrate to Telescope config the newest version.
+- [x] Migrate to Telescope config the newest version.
 - [ ] Configure debuggers `nvim-dap`
 - [ ] Add some custom `treesitter` queries.
 - [ ] Add keybindings for interfacing with MPD.
 - [ ] Add better blacklisting for statusline.
 - [ ] Rewrite statusline.
-- [ ] Do not use global aliases. Eliminate the need of `aliases.lua`.
+- [x] Do not use global aliases. Eliminate the need of `aliases.lua`.
 - [ ] Revise documentations, code, readme, colorschemes and keybindings.
+- [x] STL background doesn't change when colorscheme is changed.
+- [ ] Write benchmarks.
+- [ ] Write tests.
 - [ ] Rewrite and re-plan if shit goes out of hand.
 
 ## Goals

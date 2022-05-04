@@ -1,6 +1,6 @@
 local M = {}
 
-local luasnip = require "luasnip"
+local luasnip = require("luasnip")
 local text = luasnip.text_node
 local fnode = luasnip.function_node
 local insert = luasnip.insert_node
@@ -18,11 +18,11 @@ M[1] = {
     },
   },
   {
-    text "use { '",
+    text("use { '"),
     -- Get the author and URL in the clipboard and auto populate the author and project
     fnode(function(_)
       local default = ""
-      local clip = fn.getreg "*"
+      local clip = fn.getreg("*")
       if not vim.startswith(clip, "https://github.com/") then
         return default
       end
@@ -33,9 +33,9 @@ M[1] = {
       local author, project = parts[#parts - 1], parts[#parts]
       return author .. "/" .. project
     end, {}),
-    text "' ",
+    text("' "),
     insert(2, { ",  config = function()", "", "end" }),
-    text "}",
+    text("}"),
   },
 }
 
@@ -46,11 +46,11 @@ M[2] = {
     dscr = { "packer use plugin block", "e.g.", "use { 'author/plugin' }" },
   },
   {
-    text "use { '",
+    text("use { '"),
     -- Get the author and URL in the clipboard and auto populate the author and project
     fnode(function(_)
       local default = ""
-      local clip = fn.getreg "*"
+      local clip = fn.getreg("*")
       if not vim.startswith(clip, "https://github.com/") then
         return default
       end
@@ -61,7 +61,7 @@ M[2] = {
       local author, project = parts[#parts - 1], parts[#parts]
       return author .. "/" .. project
     end, {}),
-    text "' }",
+    text("' }"),
   },
 }
 
@@ -72,7 +72,7 @@ M[3] = {
     dscr = { "safe require module", "e.g.", 'pcall(require, "module")' },
   },
   {
-    text 'pcall(require, "")',
+    text('pcall(require, "")'),
   },
 }
 
@@ -83,7 +83,7 @@ M[4] = {
     dscr = { "safe require module with variables", "e.g.", 'local prsent, module = pcall(require, "module")' },
   },
   {
-    text 'local present, module = pcall(require, "module")',
+    text('local present, module = pcall(require, "module")'),
   },
 }
 

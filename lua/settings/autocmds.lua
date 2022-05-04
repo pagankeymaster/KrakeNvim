@@ -1,7 +1,7 @@
 --- Autocommand configuration list.
 -- @module settings.autocmds
 
-local neovim = require "utils.neovim"
+local neovim = require("utils.neovim")
 local autocmd = neovim.autocmd
 local augroup = neovim.augroup
 local notify = neovim.notify
@@ -21,12 +21,12 @@ end, {
 })
 
 autocmd("TextYankPost", function()
-  vim.highlight.on_yank {
+  vim.highlight.on_yank({
     higroup = "YankFeed",
     on_macro = true,
     on_visual = true,
     timeout = 150,
-  }
+  })
 end, { desc = "Provide a visual color feedback on yanking." })
 
 augroup("ReplaceModes", {
@@ -68,7 +68,7 @@ augroup("NativeAdjustments", {
   {
     events = "FileType",
     command = function()
-      opt_local.formatoptions:remove { "c", "r", "o" }
+      opt_local.formatoptions:remove({ "c", "r", "o" })
     end,
     options = { desc = "Removes comment continuations from every file." },
   },
@@ -78,11 +78,11 @@ augroup("NotifyOnPackerOperation", {
   {
     events = "User",
     command = function()
-      notify {
+      notify({
         message = "Operation complete!",
         title = "packer.nvim",
         icon = "",
-      }
+      })
     end,
     options = {
       patterns = "PackerComplete",
@@ -92,11 +92,11 @@ augroup("NotifyOnPackerOperation", {
   {
     events = "User",
     command = function()
-      notify {
+      notify({
         message = "Finished compiling!",
         title = "packer.nvim",
         icon = "",
-      }
+      })
     end,
     options = {
       patterns = "PackerCompileDone",

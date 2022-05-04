@@ -1,6 +1,6 @@
 local M = {}
 
-M.lua = require "configs.cmp.luasnip.snippets.lua"
+M.lua = require("configs.cmp.luasnip.snippets.lua")
 
 return M
 

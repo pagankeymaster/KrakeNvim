@@ -1,6 +1,6 @@
 local extensions = {}
 
-for _, extension in ipairs {
+for _, extension in ipairs({
   "command_palette",
   "bookmarks",
   "frecency",
@@ -13,7 +13,7 @@ for _, extension in ipairs {
   "ui-select",
   "history",
   "bibtex",
-} do
+}) do
   extensions[extension] = require("configs.telescope.extensions." .. extension)
 end
 

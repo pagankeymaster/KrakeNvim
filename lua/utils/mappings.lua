@@ -105,7 +105,7 @@ function M.cmdline_override(temp)
   if temp then
     vim.keymap.set("i", "<M-s>", function()
       if vim.fn.pumvisible() == 0 then
-        cfn.nvim_feedkeys "%s///gc<Left><Left><Left><Left>"
+        cfn.nvim_feedkeys("%s///gc<Left><Left><Left><Left>")
       end
     end, { buffer = 0 })
     vim.keymap.set("n", "<CR>", "<CMD>FineCmdline<CR>", { noremap = true, buffer = 0 })

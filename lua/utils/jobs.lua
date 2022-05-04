@@ -9,9 +9,9 @@ local notify = require("utils.neovim").notify
 -- @param cwd the current working directory
 -- @param cm the command
 function M.get_os_command_output(cm, cwd)
-  local Job = require "plenary.job"
+  local Job = require("plenary.job")
   if type(cm) ~= "table" then
-    notify "Utils: [get_os_command_output]: cmd has to be a table"
+    notify("Utils: [get_os_command_output]: cmd has to be a table")
     return {}
   end
   local command = table.remove(cm, 1)

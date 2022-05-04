@@ -3,19 +3,18 @@ local M = {}
 
 local fn = vim.fn
 local lsp = vim.lsp
-local theming = require "utils.theming"
-local colors = theming.get_active_scheme()
+local theming = require("utils.theming")
 
 local config = require("statusline.config").position -- load position specific config
-local util = require "utils.statusline" -- load STL specific utilities
+local util = require("utils.statusline") -- load STL specific utilities
 
 --- Driver function for displaying the current line position in the STL
 -- views current line / total lines as percentage
 -- also displays an optional spinner
 function M.position()
   local clients = config.buf_local_clients and lsp.buf_get_clients(0) or lsp.get_active_clients()
-  local current_line = fn.line "." -- @see help line
-  local total_lines = fn.line "$"
+  local current_line = fn.line(".") -- @see help line
+  local total_lines = fn.line("$")
   local chars = config.spinners
   local line_ratio = current_line / total_lines
   local index = math.ceil(line_ratio * #chars)
@@ -28,6 +27,7 @@ function M.position()
     position = chars[index] .. position .. "%%"
   end
   local loaded = packer_plugins and packer_plugins["gitsigns.nvim"].loaded
+  local colors = theming.get_active_scheme()
   local transition = {
     guifg = colors.common.base03,
     gui = "bold",
