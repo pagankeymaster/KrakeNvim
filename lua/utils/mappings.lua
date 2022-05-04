@@ -90,30 +90,30 @@ end
 -- @see plugin https://is.gd/SBY1TY
 -- @see help modes
 function M.search_override()
-  set_map("n", "/", "<CMD>SearchBoxIncSearch<CR>", { noremap = true })
-  set_map("x", "/", "<CMD>SearchBoxIncSearch visual_mode=true<CR>", { noremap = true })
+  vim.keymap.set("n", "/", "<CMD>SearchBoxIncSearch<CR>", { noremap = true })
+  vim.keymap.set("x", "/", "<CMD>SearchBoxIncSearch visual_mode=true<CR>", { noremap = true })
 end
 
 -- Adds keybindings for fine-cmdline prompt.
 -- @see plugin https://is.gd/m0cmNB
 function M.cmdline_override(temp)
   local cfn = require("fine-cmdline").fn
-  set_map("n", ":", "<CMD>FineCmdline<CR>", { noremap = true, buffer = 0 })
+  vim.keymap.set("n", ":", "<CMD>FineCmdline<CR>", { noremap = true, buffer = 0 })
 
   -- NOTE: Apparently, using this globally causes problems. So we set it to the current buffer.
   -- NOTE: Might define an auto-command later.
   if temp then
-    set_map("i", "<M-s>", function()
-      if fn.pumvisible() == 0 then
+    vim.keymap.set("i", "<M-s>", function()
+      if vim.fn.pumvisible() == 0 then
         cfn.nvim_feedkeys "%s///gc<Left><Left><Left><Left>"
       end
     end, { buffer = 0 })
-    set_map("n", "<CR>", "<CMD>FineCmdline<CR>", { noremap = true, buffer = 0 })
-    set_map("i", "<M-k>", cfn.up_search_history, { buffer = 0 })
-    set_map("i", "<M-j>", cfn.down_search_history, { buffer = 0 })
-    set_map("i", "<Up>", cfn.up_history, { buffer = 0 })
-    set_map("i", "<Down>", cfn.down_history, { buffer = 0 })
-    set_map("i", "<Esc>", cfn.close, { buffer = 0 })
+    vim.keymap.set("n", "<CR>", "<CMD>FineCmdline<CR>", { noremap = true, buffer = 0 })
+    vim.keymap.set("i", "<M-k>", cfn.up_search_history, { buffer = 0 })
+    vim.keymap.set("i", "<M-j>", cfn.down_search_history, { buffer = 0 })
+    vim.keymap.set("i", "<Up>", cfn.up_history, { buffer = 0 })
+    vim.keymap.set("i", "<Down>", cfn.down_history, { buffer = 0 })
+    vim.keymap.set("i", "<Esc>", cfn.close, { buffer = 0 })
   end
 end
 

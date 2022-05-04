@@ -2,6 +2,8 @@
 
 local M = {}
 
+local notify = require("utils.neovim").notify
+
 --- Execute commands using the plenary async API
 -- @see Adapted from https://git.io/JK3ht
 -- @param cwd the current working directory
@@ -9,7 +11,7 @@ local M = {}
 function M.get_os_command_output(cm, cwd)
   local Job = require "plenary.job"
   if type(cm) ~= "table" then
-    vim.notify "Utils: [get_os_command_output]: cmd has to be a table"
+    notify "Utils: [get_os_command_output]: cmd has to be a table"
     return {}
   end
   local command = table.remove(cm, 1)

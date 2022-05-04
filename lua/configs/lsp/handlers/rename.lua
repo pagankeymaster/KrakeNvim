@@ -1,8 +1,12 @@
 local Input = require "nui.input"
 local event = require("nui.utils.autocmd").event
 
+local lsp = vim.lsp
+local opt = vim.opt
+local notify = require("utils.neovim").notify
+
 local function nui_lsp_rename()
-  local curr_name = fn.expand "<cword>"
+  local curr_name = vim.fn.expand "<cword>"
 
   local params = lsp.util.make_position_params()
 
@@ -93,11 +97,11 @@ local function nui_lsp_rename()
 
   -- make it easier to move around long words
   local kw = opt.iskeyword - "_" - "-"
-  bo.iskeyword = table.concat(kw:get(), ",")
+  vim.bo.iskeyword = table.concat(kw:get(), ",")
 
   -- go into normal mode
   vim.schedule(function()
-    cmd "stopinsert"
+    vim.cmd "stopinsert"
   end)
 
   -- close on <esc> in normal mode

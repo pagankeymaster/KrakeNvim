@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("TelescopePreviewBorder", { guifg = colors.shades.shade08, guibg = colors.shades.shade08, blend = 2 })

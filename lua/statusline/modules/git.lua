@@ -1,6 +1,8 @@
 --- GIT related STL module
 local M = {}
 
+local lsp = vim.lsp
+
 local config = require("statusline.config").git -- load git specific STL config
 -- @see configs.editing.gitsigns for more git related configs
 -- NOTE: the module-specific utilities may migrated to their respective modules in the near future

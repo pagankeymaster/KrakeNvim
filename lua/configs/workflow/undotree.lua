@@ -1,3 +1,5 @@
+local g = vim.g
+
 g.undotree_WindowLayout = 4
 g.undotree_ShortIndicators = 0
 g.undotree_DiffpanelHeight = 10

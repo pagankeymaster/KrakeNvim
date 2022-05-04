@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("WhichKeyGroup", { guifg = colors.common.base11, gui = "bold" })

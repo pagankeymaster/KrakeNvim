@@ -2,7 +2,7 @@ local packer_util = require "packer.util"
 
 local config = {
   ensure_dependencies = true,
-  compile_path = PACKER_COMPILE_PATH,
+  compile_path = vim.fn.stdpath "config" .. "/lua/_compiled.lua",
   auto_clean = true,
   compile_on_sync = true,
   max_jobs = 30,

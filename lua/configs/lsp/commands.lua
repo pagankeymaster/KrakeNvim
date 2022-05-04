@@ -1,11 +1,16 @@
 local M = {}
 ---@diagnostic disable: unused-local
 
-function M.setup(client, buffer)
-  buf_alias(buffer, "Format", schedule_wrap(lsb.formatting_sync))
-  buf_alias(buffer, "FormatSeq", schedule_wrap(lsb.formatting_seq_sync))
+local neovim = require "utils.neovim"
+local alias = neovim.alias
+local buf_alias = neovim.buf_alias
+local lsp = vim.lsp
 
-  if bo.filetype == "java" then
+function M.setup(client, buffer)
+  buf_alias(buffer, "Format", vim.schedule_wrap(lsp.buf.formatting_sync))
+  buf_alias(buffer, "FormatSeq", vim.schedule_wrap(lsp.buf.formatting_seq_sync))
+
+  if vim.bo.filetype == "java" then
     buf_alias(buffer, "JDTCompile", function(args)
       require("jdtls").compile(args.fargs)
     end, { nargs = "?", complete = require("jdtls")._complete_compile, force = true })

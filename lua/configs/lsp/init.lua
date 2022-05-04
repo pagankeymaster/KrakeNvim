@@ -4,6 +4,9 @@ if not present then
   return
 end
 
+local notify = require("utils.neovim").notify
+local fn = vim.fn
+
 local servers = {
   ["bashls"] = {},
   ["jdtls"] = require "configs.lsp.servers.jdtls",
@@ -58,7 +61,7 @@ local function configure_installer()
         uninstall_server = "X",
       },
     },
-    install_root_dir = stdpath "data" .. "/servers",
+    install_root_dir = fn.stdpath "data" .. "/servers",
     log_level = vim.log.levels.INFO,
     max_concurrent_installers = 5,
   }
@@ -97,7 +100,7 @@ local function configure_servers()
       ---@diagnostic disable-next-line: undefined-field
       server:setup(server_config)
     else
-      if bo.filetype == "java" then
+      if vim.bo.filetype == "java" then
         local _, jdtls = require("nvim-lsp-installer.servers").get_server "jdtls"
         ---@diagnostic disable-next-line: undefined-field
         server_config.cmd = jdtls:get_default_options().cmd
@@ -110,7 +113,7 @@ local function configure_servers()
 end
 
 local function configure_diagnostics()
-  diag.config {
+  vim.diagnostic.config {
     virtual_text = { prefix = " ", source = "always" },
     signs = true,
     underline = true,

@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("BookmarkSign", { guifg = colors.common.base13, gui = "bold" })

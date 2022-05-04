@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("htmlLink", { guifg = colors.syntax.color15, gui = "underline" })

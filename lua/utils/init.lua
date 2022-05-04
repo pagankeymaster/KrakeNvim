@@ -2,6 +2,8 @@
 
 local M = {}
 
+local fn = vim.fn
+
 --- Shortening the Lua require function
 -- @param module path of the module
 -- @return the item that the file returns after loading
@@ -13,6 +15,10 @@ end
 -- @param item the value whose type needs to be printed
 function M.tp(item)
   print(type(item))
+end
+
+function M.rgb_to_hex(r, g, b)
+  return ("#%02X%02X%02X"):format(r, g, b)
 end
 
 --- Checks if a path actually exists.
@@ -34,16 +40,16 @@ function M.delete_buffer()
   local buflisted = fn.getbufinfo { buflisted = 1 }
   local cur_winnr, cur_bufnr = fn.winnr(), fn.bufnr()
   if #buflisted < 2 then
-    cmd "confirm qall"
+    vim.cmd "confirm qall"
     return
   end
   for _, winid in ipairs(fn.getbufinfo(cur_bufnr)[1].windows) do
-    cmd(string.format("%d wincmd w", fn.win_id2win(winid)))
-    cmd(cur_bufnr == buflisted[#buflisted].bufnr and "bp" or "bn")
+    vim.cmd(string.format("%d wincmd w", fn.win_id2win(winid)))
+    vim.cmd(cur_bufnr == buflisted[#buflisted].bufnr and "bp" or "bn")
   end
-  cmd(string.format("%d wincmd w", cur_winnr))
+  vim.cmd(string.format("%d wincmd w", cur_winnr))
   local is_terminal = fn.getbufvar(cur_bufnr, "&buftype") == "terminal"
-  cmd(is_terminal and "bd! #" or "silent! confirm bd #")
+  vim.cmd(is_terminal and "bd! #" or "silent! confirm bd #")
 end
 
 return M

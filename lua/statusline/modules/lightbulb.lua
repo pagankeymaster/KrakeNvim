@@ -1,6 +1,8 @@
 --- LSP code actions STL module
 local M = {}
 
+local lsp = vim.lsp
+
 local config = require("statusline.config").lightbulb -- load lightbulb specific config
 -- @see configs.lsp.lightbulb for more customisation options
 

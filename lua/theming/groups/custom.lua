@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("YankFeed", { guifg = colors.rainbow.cobalt, gui = "bold" })

@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("AlphaKeyPrefix", { guifg = colors.common.base01, guibg = colors.common.base09, gui = "bold" })

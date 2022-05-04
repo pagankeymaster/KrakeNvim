@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("StatusLineDirnameReverse", { guifg = colors.common.base02, guibg = colors.common.base01 })

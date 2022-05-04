@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("markdownH1", { guifg = colors.syntax.color00, gui = "bold" })

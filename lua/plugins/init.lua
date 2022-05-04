@@ -1,7 +1,14 @@
+local exists = require("utils").exists
+local notify = require("utils.neovim").notify
+local fn = vim.fn
+
 local PACKER_BOOTSTRAP = false
+local PACKER_INSTALL_PATH = fn.stdpath "data" .. "/site/pack/packer/opt/packer.nvim"
+local PACKER_COMPILE_PATH = fn.stdpath "config" .. "/lua/_compiled.lua"
+
 if not exists(PACKER_INSTALL_PATH) then
-  notify { message = "packer.nvim doesn't exist. Cloning..." }
-  PACKER_BOOTSTRAP = system {
+  notify "packer.nvim doesn't exist. Cloning..."
+  PACKER_BOOTSTRAP = fn.system {
     "git",
     "clone",
     "--depth",
@@ -10,7 +17,7 @@ if not exists(PACKER_INSTALL_PATH) then
     PACKER_INSTALL_PATH,
   }
 
-  if not pcall(cmd, "packadd packer.nvim") then
+  if not pcall(vim.cmd, "packadd packer.nvim") then
     notify "Check your internet connection."
   end
 end
@@ -18,7 +25,7 @@ end
 if not exists(PACKER_COMPILE_PATH) then
   notify "Couldn't find plugin specifications. Syncing now..."
   PACKER_BOOTSTRAP = true
-  pcall(cmd, "packadd packer.nvim")
+  pcall(vim.cmd, "packadd packer.nvim")
 end
 
 local packer = require "packer"
@@ -45,7 +52,7 @@ if PACKER_BOOTSTRAP then
     notify {
       message = "Run :LspInstall and :TSStart",
       icon = " ",
-      title = "KrakenVim",
+      title = "KrakeNvim",
     }
   end
   packer.sync()

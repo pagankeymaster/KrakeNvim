@@ -1,3 +1,5 @@
+local g = vim.g
+
 g.scrollbar_max_size = 10
 g.scrollbar_min_size = 3
 g.scrollbar_right_offset = 1

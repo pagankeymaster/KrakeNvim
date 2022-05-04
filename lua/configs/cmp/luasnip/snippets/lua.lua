@@ -4,6 +4,7 @@ local luasnip = require "luasnip"
 local text = luasnip.text_node
 local fnode = luasnip.function_node
 local insert = luasnip.insert_node
+local fn = vim.fn
 
 -- credit: akinsho, nuxshed
 M[1] = {

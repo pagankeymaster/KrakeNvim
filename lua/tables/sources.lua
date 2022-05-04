@@ -76,7 +76,7 @@ local M = {
       convert_case = true,
       loud = true,
     },
-    dict = stdpath "config" .. "/lua/spell/en.dict",
+    dict = vim.fn.stdpath "config" .. "/lua/spell/en.dict",
   },
   { name = "latex_symbols" },
   { name = "npm", keyword_length = 4 },

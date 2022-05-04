@@ -1,6 +1,8 @@
 --- STL current working directory name
 local M = {}
 
+local fn = vim.fn
+
 local config = require("statusline.config").dirname -- load dirname specific config
 
 --- Driver function for displaying the current working directory in the STL

@@ -1,5 +1,8 @@
 --- Set up vim opts.
 
+local opt = vim.opt
+local env = vim.env
+
 opt.termguicolors = true -- Enables 24-bit RGB color in the TUI.  Uses "gui" :highlight
 opt.laststatus = 3 -- enables the global statusline
 opt.backspace = { "indent", "eol", "start" } -- show backspace characters

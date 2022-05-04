@@ -1,5 +1,7 @@
 --- Command mode command abbreviations.
 
+local abbrev = require("utils.neovim").abbrev
+
 -- converts :Wq, :WQ, :wQ, etc to :wq
 abbrev("W", "((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))", true)
 abbrev("Q", "((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))", true)

@@ -5,12 +5,14 @@ if not present then
 end
 
 local kinds = require "tables.kinds"
-local kind_icons = kinds.item
-local kind_sources = kinds.source
+local kind_icons = kinds.items
+local kind_sources = kinds.source.icon_only
 local sources = require "tables.sources"
 local source_normal = sources.normal
 local source_cmdline = sources.cmdline
 local snip = require "luasnip"
+
+local api = vim.api
 
 local cmp_fmt = {
   icon_only = function(entry, vim_item)
@@ -27,6 +29,9 @@ local cmp_fmt = {
 
 local fmt_order = {
   { "kind", "abbr", "menu" },
+  { "menu", "abbr", "kind" },
+  { "abbr", "kind" },
+  { "abbr", "menu" },
   { "kind", "abbr" },
 }
 
@@ -89,8 +94,8 @@ local config = {
     },
   },
   formatting = {
-    fields = fmt_order[1],
-    format = cmp_fmt.icon_only,
+    fields = fmt_order[2],
+    format = cmp_fmt.full_info,
   },
   experimental = {
     ghost_text = true,
@@ -118,6 +123,7 @@ local cmdlines = {
   sources = cmp.config.sources(source_cmdline),
   mapping = cmp.mapping.preset.cmdline(),
   formatting = {
+    fields = fmt_order[2],
     format = cmp_fmt.icon_only,
   },
   entries = { name = "custom", selection_order = "near_cursor" },

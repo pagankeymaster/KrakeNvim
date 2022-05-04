@@ -1,7 +1,7 @@
 local M = {}
 
 function M.goto_definition(split_cmd)
-  local util = lsp.util
+  local util = vim.lsp.util
   local log = require("vim.lsp.log").info
 
   return function(_, result, context)

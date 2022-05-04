@@ -1,4 +1,4 @@
-g.BetterDigraphsAdditions = {
+vim.g.BetterDigraphsAdditions = {
   {
     digraph = "OK",
     symbol = "*",

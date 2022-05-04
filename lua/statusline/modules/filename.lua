@@ -1,6 +1,9 @@
 --- STL current filename module
 local M = {}
 
+local bo = vim.bo
+local fn = vim.fn
+
 local config = require("statusline.config").filename -- load filename specific config
 
 --- Driver function for fetching the file name module

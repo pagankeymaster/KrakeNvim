@@ -3,6 +3,10 @@
 
 local M = {}
 
+local fn = vim.fn
+local api = vim.api
+local cmd = api.nvim_command
+
 --- Check whether the current buffer is empty.
 -- @see help empty()
 -- @see help expand()
@@ -24,7 +28,7 @@ end
 function M.notify(options)
   -- if only a string is passed then show a generic notification.
   if type(options) == "string" then
-    api.nvim_notify(options, vim.log.levels.INFO, { icon = "", title = "Notification" })
+    -- api.nvim_notify(options, vim.log.levels.INFO, { icon = "", title = "Notification" })
     return
   end
 
@@ -208,7 +212,7 @@ function M.shorten()
           level = vim.log.levels.ERROR,
         }
       else
-        fn.setreg(v.register, raw[#raw])
+        fn.setreg(vim.v.register, raw[#raw])
         M.notify {
           message = "Saved link to system clipboard!",
           icon = " ",

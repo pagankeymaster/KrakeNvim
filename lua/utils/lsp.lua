@@ -2,6 +2,12 @@
 
 local M = {}
 
+local lsp = vim.lsp
+local api = vim.api
+local g = vim.g
+local fn = vim.fn
+local neovim = require "utils.neovim"
+
 --- Toggles autosave mode for the current buffer.
 -- @todo it is dependent on a global variable so that makes it difficult to track
 -- when multiple buffer want auto-format.
@@ -25,7 +31,7 @@ function M.autosave()
         -- TODO: Improve so that all buffers will be tracked
         g._autosave = false -- if there is no autosave support
       else
-        augroup("AutoSaveOnNormalMode", {
+        neovim.augroup("AutoSaveOnNormalMode", {
           {
             events = {
               "BufWritePre",
@@ -34,11 +40,11 @@ function M.autosave()
               "InsertLeave",
               "WinEnter",
             },
-            command = lsb.formatting_sync, -- @see help formatting_sync
+            command = lsp.buf.formatting_sync, -- @see help formatting_sync
             options = { buffer = 0 },
           },
         })
-        notify {
+        vim.notify {
           message = "Autosave enabled",
           icon = " ",
           title = " LSP:" .. client.name,

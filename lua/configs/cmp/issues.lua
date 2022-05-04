@@ -1,5 +1,7 @@
 local Job = require "plenary.job"
 
+local api = vim.api
+
 local source = {}
 
 source.new = function()
@@ -62,7 +64,7 @@ source.get_trigger_characters = function()
 end
 
 source.is_available = function()
-  return bo.filetype == "gitcommit"
+  return vim.bo.filetype == "gitcommit"
 end
 
 require("cmp").register_source("gh_issues", source.new())

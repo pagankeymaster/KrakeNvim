@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("NotifyINFOBody", { guibg = colors.shades.shade08, guifg = colors.common.base09 })

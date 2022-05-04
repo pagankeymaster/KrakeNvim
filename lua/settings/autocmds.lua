@@ -1,6 +1,12 @@
 --- Autocommand configuration list.
 -- @module settings.autocmds
 
+local neovim = require "utils.neovim"
+local autocmd = neovim.autocmd
+local augroup = neovim.augroup
+local notify = neovim.notify
+local opt_local = vim.opt_local
+
 autocmd("BufEnter", "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif", {
   nested = true,
   desc = "Auto-close NvimTree on opening a file",

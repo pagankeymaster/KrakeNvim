@@ -1,5 +1,9 @@
 local M = {}
 
+local api = vim.api
+local fn = vim.fn
+local lsp = vim.lsp
+
 function M.format(err, result, ctx, _)
   notify(type(ctx))
   if err ~= nil or result == nil then

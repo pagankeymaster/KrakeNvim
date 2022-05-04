@@ -26,7 +26,7 @@ end
 luasnip.add_snippets(nil, snippets_primed)
 
 require("luasnip.loaders.from_vscode").lazy_load {
-  paths = stdpath "config",
+  paths = vim.fn.stdpath "config",
   include = { "lua", "python", "java", "sh", "markdown" },
 }
 

@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("rainbowcol1", { guifg = colors.rainbow.cobalt })

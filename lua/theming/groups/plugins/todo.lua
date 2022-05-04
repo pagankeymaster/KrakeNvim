@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("TodoBgFIX", { guibg = colors.common.base13, guifg = colors.common.base01, gui = "bold" })

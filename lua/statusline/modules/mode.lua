@@ -1,6 +1,8 @@
 --- Mode indicator STL module
 local M = {}
 
+local api = vim.api
+
 local config = require("statusline.config").mode -- load all mode specific config
 
 --- Driver function for displaying the current mode.

@@ -2,6 +2,11 @@
 
 local M = {}
 
+local b = vim.b
+local theming = require "utils.theming"
+local hi = theming.highlight
+local colors = theming.get_active_scheme()
+
 --- Shortens path by turning apple/orange -> a/orange
 -- @param path string
 -- @param sep string path separator

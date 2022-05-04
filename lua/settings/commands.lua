@@ -1,5 +1,11 @@
 --- Global scoped user command list.
 
+local neovim = require "utils.neovim"
+local alias = neovim.alias
+local lsp = vim.lsp
+local fn = vim.fn
+local cmd = vim.cmd
+
 alias("ScratchTele", function()
   if not packer_plugins["scratch.nvim"].loaded then
     require("packer").loader "scratch.nvim"
@@ -36,17 +42,21 @@ end, {
 })
 
 alias("FormatConfigAll", function()
-  local config = stdpath "config"
+  local config = fn.stdpath "config"
   cmd("silent !stylua --config-path " .. config .. "/.stylua.toml " .. config)
 end, { desc = "Format neovim config with stylua." })
 
 alias("LspLog", "edit " .. lsp.get_log_path(), { desc = "View/Edit LSP log file." })
 
-alias("NvimLog", "edit " .. stdpath "cache" .. "/log", { desc = "View/Edit neovim log file." })
+alias("NvimLog", "edit " .. fn.stdpath "cache" .. "/log", { desc = "View/Edit neovim log file." })
 
-alias("PackerLog", "edit " .. stdpath "cache" .. "/packer.nvim.log", { desc = "View/Edit packer.nvim log file." })
+alias("PackerLog", "edit " .. fn.stdpath "cache" .. "/packer.nvim.log", { desc = "View/Edit packer.nvim log file." })
 
-alias("TelescopeLog", "edit " .. stdpath "cache" .. "/telescope.log", { desc = "View/Edit telescope.nvim log file." })
+alias(
+  "TelescopeLog",
+  "edit " .. fn.stdpath "cache" .. "/telescope.log",
+  { desc = "View/Edit telescope.nvim log file." }
+)
 
 alias("TSStart", "TSUpdate", { desc = "Load treesitter plugin." })
 

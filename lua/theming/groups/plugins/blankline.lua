@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("IndentBlanklineChar", { guifg = colors.shades.shade02 })

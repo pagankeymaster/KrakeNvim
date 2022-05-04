@@ -47,7 +47,7 @@ local config = {
   },
   popup_mappings = { popup_mappings = { scroll_down = "<c-d>", scroll_up = "<c-u>" } },
   window = {
-    border = "none", -- none, single, double, shadow
+    border = "solid", -- none, single, double, shadow
     position = "bottom", -- bottom, top
     margin = { 0, 0, 0, 0 }, -- extra window margin [top, right, bottom, left]
     padding = { 3, 3, 3, 3 }, -- extra window padding [top, right, bottom, left]
@@ -69,7 +69,7 @@ local config = {
   },
 }
 
-schedule(function()
+vim.schedule(function()
   for _, plugin in ipairs {
     "colors",
     "terminal",

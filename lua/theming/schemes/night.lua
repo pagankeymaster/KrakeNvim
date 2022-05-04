@@ -2,11 +2,11 @@ local N = {}
 
 N.common = {
   ["base00"] = "#101317",
-  ["base01"] = "#23242A",
-  ["base02"] = "#27282d",
-  ["base03"] = "#38393f",
+  ["base01"] = "#171C21",
+  ["base02"] = "#1c2026",
+  ["base03"] = "#20252b",
 
-  ["base04"] = "#dddddd",
+  ["base04"] = "#949494",
   ["base05"] = "#d4d4d5",
   ["base06"] = "#ffffff",
 
@@ -23,16 +23,16 @@ N.common = {
 }
 
 N.shades = {
-  ["shade00"] = "#353538",
-  ["shade01"] = "#2d2d30",
+  ["shade00"] = "#333c44",
+  ["shade01"] = "#262d33",
   ["shade02"] = "#252528",
-  ["shade03"] = "#1f1f23",
+  ["shade03"] = "#1b2026",
   ["shade04"] = "#1e1e21",
-  ["shade05"] = "#212123",
-  ["shade06"] = "#17171b",
-  ["shade07"] = "#19191c",
-  ["shade08"] = "#1a1a1F",
-  ["shade09"] = "#151519",
+  ["shade05"] = "#171b20",
+  ["shade06"] = "#14171c",
+  ["shade07"] = "#151a1e",
+  ["shade08"] = "#14181c",
+  ["shade09"] = "#121519",
   ["shade10"] = "#141416",
   ["shade11"] = "#121214",
 }
@@ -103,34 +103,6 @@ N.syntax = {
   ["color18"] = "#949494",
   ["color14"] = "#828282",
   ["color07"] = "#d4d4d5",
-}
-
-N.kinds = {
-  ["Text"] = "#273a4e",
-  ["Method"] = "#471d1d",
-  ["Snippet"] = "#321b42",
-  ["Function"] = "#3a1818",
-  ["Constructor"] = "#3f1628",
-  ["Field"] = "#193d2b",
-  ["Variable"] = "#0c2d21",
-  ["Class"] = "#331212",
-  ["Interface"] = "#2b1e13",
-  ["Module"] = "#2b1e13",
-  ["Property"] = "#13172b",
-  ["Unit"] = "#13252b",
-  ["Value"] = "#302511",
-  ["Enum"] = "#2b1319",
-  ["Keyword"] = "#23132b",
-  ["Color"] = "#0d2614",
-  ["File"] = "#261f0b",
-  ["Reference"] = "#261f0b",
-  ["Folder"] = "#261f0b",
-  ["EnumMember"] = "#13172b",
-  ["Constant"] = "#103330",
-  ["Struct"] = "#280f0f",
-  ["Event"] = "#280f0f",
-  ["Operator"] = "#231517",
-  ["TypeParameter"] = "#2c1033",
 }
 
 return N

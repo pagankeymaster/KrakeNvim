@@ -1,8 +1,14 @@
 local present, blankline = pcall(require, "indent_blankline")
 
+local hi = require("utils.theming").hi
+
 if not present then
   return
 end
+
+local theming = require "theming"
+local hi = theming.highlight
+local colors = theming.get_active_scheme()
 
 local config = {
   char = "│",

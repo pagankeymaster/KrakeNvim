@@ -5,7 +5,7 @@ if not present then
 end
 
 local config = {
-  config_home = stdpath "config" .. "/lua/configs/lsp/schemas",
+  config_home = vim.fn.stdpath "config" .. "/lua/configs/lsp/schemas",
   local_settings_dir = ".nlsp-settings",
   local_settings_root_markers = { ".git" },
   append_default_schemas = true,

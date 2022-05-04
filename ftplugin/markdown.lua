@@ -1,2 +1,4 @@
-wo.spell = true
-bo.spelllang = "en"
+vim.wo.spell = true
+vim.bo.spelllang = "en"
+
+-- vim:ft=lua

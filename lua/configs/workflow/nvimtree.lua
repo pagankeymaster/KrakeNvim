@@ -4,6 +4,8 @@ if not present then
   return
 end
 
+local g = vim.g
+
 -- press g? to show nvimtree shortcuts
 g.nvim_tree_git_hl = 1
 g.nvim_tree_highlight_opened_files = 1

@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("Function", { guifg = colors.syntax.color09, gui = "bold" })

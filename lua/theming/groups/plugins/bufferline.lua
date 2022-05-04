@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("BufferLineTabClose", { guifg = colors.shades.shade06, guibg = colors.shades.shade06 })

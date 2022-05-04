@@ -4,6 +4,9 @@ local hidden = require("tables.blacklisted").hidden -- load all filetypes where 
 local util = require "utils.statusline" -- load statusline specific utility function
 local config = require "statusline.config" -- load the config file for the statusline
 
+local api = vim.api
+local neovim = require "utils.neovim"
+
 local modules = {} -- enabled modules
 modules["mode"] = require("statusline.modules.mode")["mode"] -- displays vim-mode
 modules["dirname"] = require("statusline.modules.dirname")["dirname"] -- displays cwd name
@@ -67,7 +70,7 @@ function __StatusLine(state)
 end
 
 -- statusline augroup which makes the statusline persisten throughout buffers
-augroup("StatusLine", {
+neovim.augroup("StatusLine", {
   {
     events = { "WinEnter", "BufEnter", "FileType" },
     command = "setlocal statusline=%!v:lua.__StatusLine()",

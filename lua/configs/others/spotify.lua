@@ -4,6 +4,8 @@ if not present then
   return
 end
 
+local api = vim.api
+
 local config = {
   status = {
     update_interval = 10000, -- the interval (ms) to check for what's currently playing

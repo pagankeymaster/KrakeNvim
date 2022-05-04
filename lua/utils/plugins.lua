@@ -2,6 +2,10 @@
 
 local M = {}
 
+local api = vim.api
+local notify = require("utils.neovim").notify
+local fn = vim.fn
+
 --- A tiny function for nvim-cmp to better sort completion items
 --- that start with one or more underlines. In most languages, especially
 --- Python, items that start with one or more underlines should be at the
@@ -55,7 +59,7 @@ end
 function M.pandoc_build()
   local pandoc = require "pandoc"
   -- Make your pandoc command
-  local input = vim.api.nvim_get_buf_name(0)
+  local input = api.nvim_get_buf_name(0)
   pandoc.render.build {
     input = input,
     args = {
@@ -77,10 +81,10 @@ function M.copy_image(filepath)
   local basename = vim.split(filepath, "/")
   if string.find(filepath, ".png$") then
     local command = "xclip -selection clipboard -target image/png '" .. filepath .. "'"
-    system("bash -c '" .. command .. "'")
+    fn.system("bash -c '" .. command .. "'")
   else
     local command = "convert '" .. filepath .. "' png:- | xclip -selection clipboard -t image/png"
-    system("bash -c '" .. command .. "'")
+    fn.system("bash -c '" .. command .. "'")
   end
   notify {
     message = "Copied " .. basename[#basename] .. " to the  clipboard.",

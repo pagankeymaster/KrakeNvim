@@ -1,6 +1,11 @@
 --- Current line position STL module
 local M = {}
 
+local fn = vim.fn
+local lsp = vim.lsp
+local theming = require "utils.theming"
+local colors = theming.get_active_scheme()
+
 local config = require("statusline.config").position -- load position specific config
 local util = require "utils.statusline" -- load STL specific utilities
 
@@ -36,7 +41,7 @@ function M.position()
   else
     transition.guibg = colors.shades.shade06
   end
-  hi("StatusLinePositionFirst", transition)
+  theming.highlight("StatusLinePositionFirst", transition)
 
   local loaded_and_is_git = loaded and (util.git_branch() ~= "")
   return string.format(

@@ -90,7 +90,7 @@ use {
 }
 
 use {
-  "zeertzjq/which-key.nvim",
+  "max397574/which-key.nvim",
   config = function()
     require "configs.workflow.whichkey"
   end,

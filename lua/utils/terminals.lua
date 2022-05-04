@@ -2,6 +2,8 @@
 
 local T = {}
 
+local api = vim.api
+
 --- Adds sets some ease-of-use keymaps when entering terminals.
 --- For instance it usually takes the mouse to return to normal mode
 --- when using a terminal as, the keypresses get passed onto the shell.
@@ -14,6 +16,7 @@ function T._TERM_KEYMAPS()
     nowait = true,
   }
 
+  -- NOTE: Migrate to vim.keymap.set
   api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], options)
   api.nvim_buf_set_keymap(0, "t", "jk", [[<C-\><C-n>]], options)
   api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], options)

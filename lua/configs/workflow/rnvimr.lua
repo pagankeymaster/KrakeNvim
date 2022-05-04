@@ -1,3 +1,7 @@
+local g = vim.g
+local fn = vim.fn
+local api = vim.api
+
 g.rnvimr_enable_ex = 1
 g.rnvimr_enable_picker = 1
 g.rnvimr_edit_cmd = "drop"
@@ -64,7 +68,7 @@ g.rnvimr_layout = {
   ["style"] = "minimal",
 }
 
-cmd [[
+vim.cmd [[
 nnoremap <silent> <M-o> :RnvimrToggle<CR>
 tnoremap <silent> <M-o> <C-\><C-n>:RnvimrToggle<CR>
 tnoremap <silent> <M-i> <C-\><C-n>:RnvimrResize<CR>

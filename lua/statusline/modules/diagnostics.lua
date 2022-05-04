@@ -1,6 +1,9 @@
 --- STL LSP diagnostics module.
 local M = {}
 
+local lsp = vim.lsp
+local diag = vim.diagnostic
+
 local config = require("statusline.config").diagnostics -- load diag related config
 
 --- Driver function for fetching the diagnostics module string

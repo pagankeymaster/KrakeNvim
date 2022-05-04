@@ -1,3 +1,5 @@
+local g = vim.g
+
 return {
   setup = function(colors)
     g.terminal_color_0 = colors.common.base01

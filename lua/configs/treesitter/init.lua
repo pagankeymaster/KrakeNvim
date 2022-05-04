@@ -4,6 +4,9 @@ if not present then
   return
 end
 
+local neovim = require "utils.neovim"
+local notify = neovim.notify
+
 require("nvim-treesitter.install").prefer_git = true
 
 local config = {

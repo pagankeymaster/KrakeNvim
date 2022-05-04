@@ -1,3 +1,5 @@
+local hi = require("utils.theming").highlight
+
 return {
   setup = function(colors)
     hi("MatchParen", { guifg = colors.common.base08, gui = "bold" })

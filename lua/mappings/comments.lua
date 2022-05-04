@@ -2,7 +2,7 @@ local M = {}
 
 M.mappings = {
   ["ghh"] = {
-    "<CMD>lua require('Comment.api').toggle_current_linewise(); notify 'Toggled current_linewise'<CR>",
+    "<CMD>lua require('Comment.api').toggle_current_linewise(); vim.notify 'Toggled current_linewise'<CR>",
     "Comment line",
   },
 }

@@ -9,7 +9,7 @@ local schema = {
     ".luarc.json",
     ".luacheckrc",
     "selene.toml",
-  } or vim.loop.cwd,
+  } or vim.loop.cwd(),
   single_file_support = true,
   -- settings = {
   --   Lua = {

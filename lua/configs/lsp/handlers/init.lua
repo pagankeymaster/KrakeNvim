@@ -1,5 +1,7 @@
 local M = {}
 
+local lsp = vim.lsp
+
 M["textDocument/hover"] = lsp.with(lsp.handlers.hover, { border = "solid", focusable = false })
 
 M["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, { border = "solid", focusable = false })
