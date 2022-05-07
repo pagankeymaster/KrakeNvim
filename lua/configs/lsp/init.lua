@@ -36,8 +36,8 @@ local function on_attach(client, buffer)
   require("configs.lsp.commands").setup(client, buffer)
   require("configs.lsp.icons").setup(client, buffer)
 
-  client.resolved_capabilities.document_formatting = false
-  client.resolved_capabilities.document_range_formatting = false
+  client.server_capabilities.document_formatting = false
+  client.server_capabilities.document_range_formatting = false
   notify({
     message = "LSP has been initialised.",
     title = "LSP: " .. client.name,
@@ -123,6 +123,7 @@ local function configure_diagnostics()
   })
 end
 
+require("configs.lsp.servers.null-ls")
 require("configs.lsp.schema")
 configure_diagnostics()
 configure_installer()

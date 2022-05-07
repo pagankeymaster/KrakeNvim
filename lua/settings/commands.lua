@@ -41,7 +41,7 @@ end, {
   desc = "Toggle delete/changed/add git number column signs provided by, gitsigns.nvim",
 })
 
-alias("FormatConfigAll", function()
+alias("FormatNvCFG", function()
   local config = fn.stdpath("config")
   cmd("silent !stylua --config-path " .. config .. "/.stylua.toml " .. config)
 end, { desc = "Format neovim config with stylua." })

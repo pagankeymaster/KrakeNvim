@@ -94,10 +94,39 @@ local N = {
   TypeParameter = "",
 }
 
+local O = {
+  Text = "",
+  Method = "",
+  Function = "",
+  Constructor = "⌘",
+  Field = "ﰠ",
+  Variable = "",
+  Class = "ﴯ",
+  Interface = "",
+  Module = "",
+  Property = "ﰠ",
+  Unit = "塞",
+  Value = "",
+  Enum = "",
+  Keyword = "廓",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "פּ",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+}
+
 return {
   source = {
     full_info = M,
     icon_only = S,
+    material = O,
   },
   items = N,
 }

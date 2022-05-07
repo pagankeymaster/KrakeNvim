@@ -52,6 +52,17 @@ function M.delete_buffer()
   vim.cmd(is_terminal and "bd! #" or "silent! confirm bd #")
 end
 
+M.table = {
+  some = function(tbl, cb)
+    for k, v in pairs(tbl) do
+      if cb(k, v) then
+        return true
+      end
+    end
+    return false
+  end,
+}
+
 return M
 
 -- vim:ft=lua

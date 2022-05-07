@@ -30,6 +30,11 @@ use({
 use({ "neovim/nvim-lspconfig", opt = true })
 
 use({
+  "jose-elias-alvarez/null-ls.nvim",
+  module = "null-ls.nvim",
+})
+
+use({
   "simrat39/symbols-outline.nvim",
   setup = function()
     require("configs.lsp.outline")

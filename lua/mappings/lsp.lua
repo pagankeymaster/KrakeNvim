@@ -8,11 +8,8 @@ M.setup = function(client, buffer)
       ["name"] = " Actions",
       ["K"] = { "<CMD>lua vim.lsp.buf.hover()<CR>", " Hover" },
       ["c"] = { "<CMD>lua vim.lsp.buf.code_action()<CR>", " Code action" },
-      ["f"] = { "<CMD>lua vim.lsp.buf.formatting_sync()<CR>", "ﯕ Format" },
-      ["ff"] = { "<CMD>lua vim.lsp.buf.formatting()<CR>", "ﯕ Format" },
+      ["ff"] = { "<CMD>Format<CR>", "ﯕ Format" },
       ["r"] = { "<CMD>lua require('configs.lsp.handlers.rename').lsp_rename()<CR>", "ﯕ Rename" },
-      ["F"] = { "<CMD>lua vim.lsp.buf.formatting_seq_sync()<CR>", "ﯕ Format Seq" },
-      ["T"] = { "<CMD>ToggleAutoFormat<CR>", "ﯕ  Auto formatting" },
     },
     ["d"] = {
       ["name"] = " Diagnostics",

@@ -17,12 +17,12 @@ local api = vim.api
 local cmp_fmt = {
   icon_only = function(entry, vim_item)
     vim_item.menu = kind_sources[entry.source.name]
-    vim_item.kind = " " .. kind_icons[vim_item.kind] .. " "
+    vim_item.kind = kind_icons[vim_item.kind]
     return vim_item
   end,
   full_info = function(entry, vim_item)
     vim_item.menu = kind_sources[entry.source.name]
-    vim_item.kind = " " .. kind_icons[vim_item.kind] .. " " .. vim_item.kind .. " "
+    vim_item.kind = kind_icons[vim_item.kind] .. " " .. vim_item.kind
     return vim_item
   end,
 }
@@ -34,6 +34,11 @@ local fmt_order = {
   { "abbr", "menu" },
   { "kind", "abbr" },
 }
+
+local function has_words_before()
+  local line, col = unpack(api.nvim_win_get_cursor(0))
+  return col ~= 0 and api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
 
 local config = {
   snippet = {
@@ -68,6 +73,8 @@ local config = {
         cmp.select_next_item()
       elseif snip.expand_or_jumpable() then
         api.nvim_feedkeys(api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "i", "")
+      elseif has_words_before() then
+        cmp.complete()
       else
         fallback()
       end
@@ -80,12 +87,16 @@ local config = {
     end, { "i", "c" }),
   }),
   sources = cmp.config.sources(source_normal),
+  preselect = cmp.PreselectMode.None,
   window = {
     documentation = {
       border = "solid",
     },
     completion = {
       border = "solid",
+      completeopt = "menu,menuone,noinsert",
+      keyword_pattern = [[\%(-\?\d\+\%(\.\d\+\)\?\|\h\w*\%(-\w*\)*\)]],
+      keyword_length = 1,
     },
   },
   view = {
@@ -127,6 +138,7 @@ local cmdlines = {
     format = cmp_fmt.icon_only,
   },
   entries = { name = "custom", selection_order = "near_cursor" },
+  preselect = cmp.PreselectMode.None,
 }
 
 for _, cmdtype in ipairs({ ":", "/", "?", "@", "=" }) do

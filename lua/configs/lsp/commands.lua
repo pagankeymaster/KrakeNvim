@@ -7,9 +7,7 @@ local buf_alias = neovim.buf_alias
 local lsp = vim.lsp
 
 function M.setup(client, buffer)
-  buf_alias(buffer, "Format", vim.schedule_wrap(lsp.buf.formatting_sync))
-  buf_alias(buffer, "FormatSeq", vim.schedule_wrap(lsp.buf.formatting_seq_sync))
-
+  buf_alias(buffer, "Format", "lua vim.lsp.buf.format({ timeout = 2000 })")
   if vim.bo.filetype == "java" then
     buf_alias(buffer, "JDTCompile", function(args)
       require("jdtls").compile(args.fargs)

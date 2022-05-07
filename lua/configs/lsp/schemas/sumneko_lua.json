@@ -11,7 +11,14 @@
   ],
   "Lua.runtime.fileEncoding": "utf8",
   "Lua.diagnostics.enable": true,
-  "Lua.diagnostics.disable": [ "lowercase-global" ],
+  "Lua.diagnostics.disable": [ 
+    "lowercase-global", 
+    "undefined-global",
+    "unused-local",
+    "unused-function",
+    "unused-vararg",
+    "trailing-space"
+  ],
   "Lua.diagnostics.globals": [ "vim" ],
   "Lua.diagnostics.ignoredFiles": "Opened",
   "Lua.diagnostics.libraryFiles": "Opened",
