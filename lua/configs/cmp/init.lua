@@ -5,7 +5,7 @@ if not present then
 end
 
 local kinds = require("tables.kinds")
-local kind_icons = kinds.items
+local kind_icons = kinds.material
 local kind_sources = kinds.source.icon_only
 local sources = require("tables.sources")
 local source_normal = sources.normal
@@ -17,12 +17,17 @@ local api = vim.api
 local cmp_fmt = {
   icon_only = function(entry, vim_item)
     vim_item.menu = kind_sources[entry.source.name]
-    vim_item.kind = kind_icons[vim_item.kind]
+    vim_item.kind = kind_icons[vim_item.kind] .. " "
     return vim_item
   end,
   full_info = function(entry, vim_item)
     vim_item.menu = kind_sources[entry.source.name]
-    vim_item.kind = kind_icons[vim_item.kind] .. " " .. vim_item.kind
+    vim_item.kind = kind_icons[vim_item.kind] .. " " .. vim_item.kind .. " "
+    return vim_item
+  end,
+  material = function(_, vim_item)
+    vim_item.menu = vim_item.kind
+    vim_item.kind = kind_icons[vim_item.kind] .. " "
     return vim_item
   end,
 }
@@ -105,8 +110,8 @@ local config = {
     },
   },
   formatting = {
-    fields = fmt_order[2],
-    format = cmp_fmt.full_info,
+    fields = fmt_order[1],
+    format = cmp_fmt.material,
   },
   experimental = {
     ghost_text = true,

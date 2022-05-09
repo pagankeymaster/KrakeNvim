@@ -117,17 +117,17 @@ local O = {
   EnumMember = "",
   Constant = "",
   Struct = "פּ",
-  Event = "",
+  Event = "",
   Operator = "",
-  TypeParameter = "",
+  TypeParameter = "",
 }
 
 return {
   source = {
     full_info = M,
     icon_only = S,
-    material = O,
   },
+  material = O,
   items = N,
 }
 

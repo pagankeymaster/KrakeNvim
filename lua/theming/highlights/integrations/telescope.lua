@@ -15,9 +15,9 @@ return {
   ["TelescopeResultsTitle"] = { guibg = colors.common.base15, guifg = colors.common.base01, blend = 2 },
   ["TelescopeResultsNormal"] = { guibg = colors.shades.shade10, guifg = colors.common.base04, blend = 2 },
   ["TelescopeMatching"] = { guifg = colors.common.base11, blend = 2 },
-  ["TelescopePromptPrefix"] = { guifg = colors.common.base08, blend = 2, guibg = colors.shades.shade03 },
-  ["TelescopePromptBorder"] = { guibg = colors.shades.shade03, guifg = colors.shades.shade03, blend = 2 },
-  ["TelescopePromptNormal"] = { guibg = colors.shades.shade03, guifg = colors.common.base09, blend = 2 },
+  ["TelescopePromptPrefix"] = { guifg = colors.common.base08, blend = 2, guibg = colors.shades.shade08 },
+  ["TelescopePromptBorder"] = { guibg = colors.shades.shade08, guifg = colors.shades.shade08, blend = 2 },
+  ["TelescopePromptNormal"] = { guibg = colors.shades.shade08, guifg = colors.common.base09, blend = 2 },
   ["TelescopePromptTitle"] = {
     guifg = colors.common.base01,
     guibg = colors.common.base08,

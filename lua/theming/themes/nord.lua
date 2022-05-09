@@ -58,8 +58,8 @@ N.modes = setmetatable({
   ["V"] = "#E0AF8B",
   [""] = "#DBA08B",
   ["s"] = "#CE878F",
-  ["S"] = "#CE878F",
-  [""] = "#CE878F",
+  ["S"] = "#de878f",
+  [""] = "#de878f",
   ["i"] = "#C09AC0",
   ["ic"] = "#C09AC0",
   ["R"] = "#D08770",
@@ -91,8 +91,8 @@ N.syntax = {
   ["color20"] = "#D08770",
 
   ["color13"] = "#C08770",
-  ["color01"] = "#D0A78F",
-  ["color05"] = "#CBA08B",
+  ["color01"] = "#de878f",
+  ["color05"] = "#de878f",
 
   ["color12"] = "#AFBE8C",
   ["color15"] = "#A3BE8C",

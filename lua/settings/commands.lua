@@ -67,10 +67,10 @@ alias(
 )
 
 alias("StatusLineTGL", function()
-  if o.laststatus == 0 then
-    o.laststatus = 3
+  if vim.o.laststatus == 0 then
+    vim.o.laststatus = 3
   else
-    o.laststatus = 0
+    vim.o.laststatus = 0
   end
 end, { desc = "Hide/Unhide statusline." })
 
