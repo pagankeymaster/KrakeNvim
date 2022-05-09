@@ -86,13 +86,13 @@ N.syntax = {
   ["color17"] = "#70c0ba",
   ["color20"] = "#5fb0fc",
 
-  ["color13"] = "#d66f6f",
+  ["color13"] = "#e87979",
   ["color01"] = "#e25656",
   ["color05"] = "#63b3ad",
 
   ["color12"] = "#79dcaa",
   ["color15"] = "#79dcaa",
-  ["color04"] = "#7dcea6",
+  ["color04"] = "#37d99e",
 
   ["color06"] = "#F186b5",
   ["color08"] = "#e5d487",

@@ -53,7 +53,7 @@ function _G.stl(state)
       truncated("dirname"),
       truncated("filename"),
       truncated("treesitter"),
-      "%#Statusline#",
+      "%#StatusLineBG#",
     })
     local right = table.concat({
       "%=",
@@ -64,7 +64,7 @@ function _G.stl(state)
     })
     combined = left .. right
   elseif state == "inactive" then
-    combined = "%#StatuslineNC#"
+    combined = "%#StatusLineNC#"
   end
   return config.MAIN.left .. combined .. "%#Default#" .. config.MAIN.right
 end

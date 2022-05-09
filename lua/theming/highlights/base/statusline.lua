@@ -1,6 +1,7 @@
 local colors = require("utils.theming").get_active_theme()
 
 return {
+  ["StatusLine"] = { guibg = colors.common.base00, guifg = colors.common.base00 },
   ["StatusLineDirnameReverse"] = { guifg = colors.common.base02, guibg = colors.common.base01 },
   ["StatusLineFilenameExtra"] = { guifg = colors.common.base15, guibg = colors.common.base02 },
   ["StatusLineFilenameExtraRight"] = { guifg = colors.common.base15, guibg = colors.common.base01 },
@@ -18,7 +19,7 @@ return {
   ["StatusLineGit"] = { guibg = colors.common.base02 },
   ["StatusLineGitExtra"] = { guibg = colors.common.base01, guifg = colors.common.base02 },
   ["StatusLineGitExtraExtra"] = { guibg = colors.shades.shade06, guifg = colors.common.base02 },
-  ["StatuslineNC"] = { guibg = colors.common.base00, guifg = colors.shades.shade01 },
+  ["StatusLineNC"] = { guibg = colors.common.base00, guifg = colors.shades.shade01 },
   ["StatusLineBulbON"] = {
     guifg = colors.common.base13,
     guibg = colors.common.base01,

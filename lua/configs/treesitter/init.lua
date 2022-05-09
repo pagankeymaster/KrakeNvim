@@ -22,6 +22,7 @@ local config = {
     "markdown",
     "rasi",
     "regex",
+    "scheme",
     "scss",
     "vim",
     "css",

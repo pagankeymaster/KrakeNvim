@@ -8,14 +8,14 @@ return {
   ["Float"] = { guifg = colors.syntax.color01 },
   ["Number"] = { guifg = colors.syntax.color06 },
   ["Boolean"] = { guifg = colors.syntax.color03, gui = "bold" },
-  ["String"] = { guifg = colors.syntax.color04 },
+  ["String"] = { guifg = colors.syntax.color15 },
   ["Character"] = { guifg = colors.syntax.color05 },
   ["Constant"] = { guifg = colors.syntax.color00, gui = "bold" },
   ["Keyword"] = { guifg = colors.syntax.color16, gui = "bold" },
   ["Structure"] = { link = "Keyword" },
   ["Label"] = { guifg = colors.syntax.color00 },
   ["Operator"] = { guifg = colors.syntax.color02 },
-  ["Exception"] = { guifg = colors.syntax.color08 },
+  ["Exception"] = { guifg = colors.syntax.color02 },
   ["PreProc"] = { guifg = colors.syntax.color00 },
   ["Include"] = { guifg = colors.syntax.color02 },
   ["Macro"] = { guifg = colors.syntax.color09 },
@@ -37,7 +37,7 @@ return {
   ["Repeat"] = { guifg = colors.syntax.color03 },
   ["Conceal"] = { guifg = "NONE" },
   ["Statement"] = { guifg = colors.syntax.color00 },
-  ["Identifier"] = { guifg = colors.syntax.color03 },
+  ["Identifier"] = { guifg = colors.syntax.color04 },
 }
 
 -- vim:ft=lua
