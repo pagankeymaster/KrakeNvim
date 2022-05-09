@@ -1,5 +1,6 @@
 --- NOTE: This group assists workflow such as efficient motion control, jumps, searches,
 --- NOTE: bookmarks, auto-save, file explorer, etc.
+local use = require("packer").use
 
 use({ "tweekmonster/haunted.vim", cmd = "Haunt" })
 
@@ -90,7 +91,7 @@ use({
 })
 
 use({
-  "max397574/which-key.nvim",
+  "folke/which-key.nvim",
   config = function()
     require("configs.workflow.whichkey")
   end,
@@ -106,7 +107,7 @@ use({
     require("configs.workflow.regexplainer")
   end,
   wants = "nui.nvim",
-  after = { "nvim-treesitter", "plenary.nvim" },
+  after = "nvim-treesitter",
 })
 
 use({ "winston0410/cmd-parser.nvim", event = "CmdlineEnter" })

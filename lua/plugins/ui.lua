@@ -1,4 +1,5 @@
 --- NOTE: Adds and polishes neovim UI components. Such as tabline, indent lines, etc.
+local use = require("packer").use
 
 use({
   "edluffy/specs.nvim",

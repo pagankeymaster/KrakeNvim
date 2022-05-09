@@ -1,12 +1,13 @@
 --- NOTE: LSP related plugins. Contains subcategories such as lsp server managers,
 --- NOTE: other LSP server that aren't yet added to nvim-lspconfig and some LSP ui components
+local use = require("packer").use
 
 use({
   "williamboman/nvim-lsp-installer",
   config = function()
     require("configs.lsp")
   end,
-  wants = "nvim-lspconfig",
+  wants = { "nvim-lspconfig", "null-ls.nvim" },
   cmd = {
     "LspInstallInfo",
     "LspInstallLog",
@@ -31,7 +32,7 @@ use({ "neovim/nvim-lspconfig", opt = true })
 
 use({
   "jose-elias-alvarez/null-ls.nvim",
-  module = "null-ls.nvim",
+  module = "null-ls",
 })
 
 use({

@@ -1,4 +1,5 @@
 --- NOTE: This file contains all completion related plugins.
+local use = require("packer").use
 
 use({
   "hrsh7th/nvim-cmp",
@@ -28,15 +29,9 @@ use({
 use({
   "L3MON4D3/LuaSnip",
   after = "nvim-cmp",
-  wants = "LuaSnip-snippets.nvim",
   config = function()
     require("configs.cmp.luasnip")
   end,
-})
-
-use({
-  "molleweide/LuaSnip-snippets.nvim",
-  opt = true,
 })
 
 use({
@@ -49,7 +44,7 @@ use({
 
 use({
   "petertriho/cmp-git",
-  wants = { "nvim-cmp", "plenary.nvim" },
+  wants = "nvim-cmp",
   config = function()
     require("configs.cmp.git")
   end,
@@ -86,7 +81,7 @@ use({
 
 use({
   "David-Kunz/cmp-npm",
-  wants = { "nvim-cmp", "plenary.nvim" },
+  wants = "nvim-cmp",
   ft = "package.json",
 })
 

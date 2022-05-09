@@ -4,7 +4,7 @@ if not present then
   return
 end
 
-local colors = require("utils.theming").get_active_scheme()
+local colors = require("utils.theming").get_active_theme()
 
 local config = {
   override = {

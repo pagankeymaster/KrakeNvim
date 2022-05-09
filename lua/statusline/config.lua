@@ -2,23 +2,6 @@
 
 local M = {}
 
--- STL seperator style
-local style = {
-  angled = { left = "", right = "", left_alt = "", right_alt = "" },
-  flame = { left = "", right = "", left_alt = "", right_alt = "" },
-  rounded = { left = "", right = "", left_alt = "", right_alt = "" },
-  slant = { left = "", right = "", left_alt = "", right_alt = "" },
-  square = { left = "█", right = "█", left_alt = "", right_alt = "" },
-  xsquare = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
-  pacman = { left = "", right = "", left_alt = "", right_alt = "" },
-  graphy = { left = "", right = "", left_alt = "", right_alt = "" },
-  slantv1 = { left = "", right = "", left_alt = "", right_alt = "" },
-  slantv2 = { left = "", right = "", left_alt = "", right_alt = "" },
-  slantv3 = { left = "", right = "", left_alt = "", right_alt = "" },
-  pixel = { left = "", right = "", left_alt = "", right_alt = "" },
-  fullslant = { left = "", right = "", left_alt = "", right_alt = "" },
-}
-
 M.MAIN = {
   left = "",
   right = "",
@@ -29,7 +12,7 @@ M.MAIN = {
 -- options: glyphs, full mode name, short mode name
 M.mode = {
   truncate = 20,
-  style = style.xsquare,
+  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
   label = 2,
   modes = setmetatable({
     ["n"] = { "NORMAL", "", "NRM" },
@@ -62,7 +45,7 @@ M.mode = {
 -- filename module sub-config
 M.filename = {
   truncate = 45,
-  style = style.xsquare,
+  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
   absolute = false,
   format = false,
   icon = true,
@@ -77,14 +60,14 @@ M.filename = {
 M.dirname = {
   format = ":t",
   truncate = 20,
-  style = style.xsquare,
+  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
   icon = "  ",
 }
 
 -- treesitter module sub-config
 M.treesitter = {
   truncate = 130,
-  style = style.xsquare,
+  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
   disabled_icon = " 﫣 ",
   enabled_icon = " TS   ",
 }
@@ -92,7 +75,7 @@ M.treesitter = {
 -- line and character location info module sub-config
 M.position = {
   truncate = 32,
-  style = style.xsquare,
+  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
   buf_local_clients = true,
   icon = true,
   spinners = {
@@ -136,7 +119,7 @@ M.position = {
 M.lsp = {
   server_label = " ",
   truncate = 80,
-  style = style.xsquare,
+  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
   buf_local_clients = true,
   spinners = {
     success = {
@@ -159,7 +142,7 @@ M.lsp = {
 -- LSP server code-actions module sub-config
 M.lightbulb = {
   truncate = 85,
-  style = style.xsquare,
+  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
   buf_local_clients = true,
   unavailable = " ",
   active = " ",
@@ -170,7 +153,7 @@ M.lightbulb = {
 M.git = {
   truncate = 70,
   buf_local_clients = true,
-  style = style.xsquare,
+  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
   short = false,
   branch = " ",
   main = " ",
@@ -189,7 +172,7 @@ M.diagnostics = {
     INFO = "",
     HINT = "",
   },
-  style = style.xsquare,
+  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
 }
 
 return M

@@ -1,5 +1,6 @@
 --- NOTE: This file contains treesitter related plugins.
 --- NOTE: Their extensions and modules.
+local use = require("packer").use
 
 use({ "danymat/neogen", after = "nvim-treesitter" })
 

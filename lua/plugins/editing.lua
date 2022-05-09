@@ -1,5 +1,6 @@
 --- NOTE: This file contains plugins that assists general code editing.
 --- NOTE: Such as syntax highlighting, build helpers, URL highlights, previews, etc.
+local use = require("packer").use
 
 use({
   "protex/better-digraphs.nvim",
@@ -61,14 +62,12 @@ use({ "vuki656/package-info.nvim", ft = "package.json" })
 
 use({
   "TimUntersberger/neogit",
-  wants = "plenary.nvim",
   cmd = "Neogit",
   module = "neogit",
 })
 
 use({
   "lewis6991/gitsigns.nvim",
-  wants = "plenary.nvim",
   cmd = "Gitsigns",
   config = function()
     require("configs.editing.gitsigns")
@@ -153,7 +152,7 @@ use({ "jbyuki/venn.nvim", cmd = "ToggleVenn" })
 
 use({
   "oberblastmeister/neuron.nvim",
-  wants = { "popup.nvim", "plenary.nvim" },
+  wants = "popup.nvim",
   after = "telescope.nvim",
 })
 

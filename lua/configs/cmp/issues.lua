@@ -1,4 +1,8 @@
-local Job = require("plenary.job")
+local present, Job = pcall(require, "plenary.job")
+
+if not present then
+  return
+end
 
 local api = vim.api
 

@@ -8,7 +8,6 @@ M.setup = function(client, buffer)
       ["name"] = " Actions",
       ["K"] = { "<CMD>lua vim.lsp.buf.hover()<CR>", " Hover" },
       ["c"] = { "<CMD>lua vim.lsp.buf.code_action()<CR>", " Code action" },
-      ["ff"] = { "<CMD>Format<CR>", "ﯕ Format" },
       ["r"] = { "<CMD>lua require('configs.lsp.handlers.rename').lsp_rename()<CR>", "ﯕ Rename" },
     },
     ["d"] = {

@@ -1,4 +1,5 @@
 --- NOTE: Contains plugins that may assist neovim plugin development.
+local use = require("packer").use
 
 use({
   "euclidianAce/BetterLua.vim",

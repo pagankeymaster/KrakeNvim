@@ -1,4 +1,4 @@
-vim.cmd("colo night") -- set initial colorscheme
+vim.cmd("colo radium")
 
 require("settings.builtins") -- disable redundant vim-plugs
 require("settings.abbrevs") -- abbreviations

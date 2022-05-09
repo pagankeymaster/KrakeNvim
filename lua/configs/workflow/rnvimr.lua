@@ -10,7 +10,7 @@ g.rnvimr_hide_gitignore = 1
 g.rnvimr_border_attr = { ["fg"] = 14, ["bg"] = -1 }
 g.rnvimr_enable_bw = 1
 g.rnvimr_shadow_winblend = 70
-g.rnvimr_ranger_cmd = 'ranger --cmd="set draw_borders both"'
+g.rnvimr_ranger_cmd = 'ranger --cmd="set draw_borders none"'
 
 g.rnvimr_action = {
   ["<C-t>"] = "NvimEdit tabedit",

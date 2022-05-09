@@ -33,6 +33,10 @@ M.mappings = {
     ["s"] = {
       ["name"] = "ﲃ Glyphs and symbols",
       ["s"] = { "<CMD>Telescope symbols<CR>", " Symbols" },
+      ["g"] = { "<CMD>lua require'telescope.builtin'.symbols{ sources = {'gitmoji'} }<CR>", " Gitmoji" },
+      ["m"] = { "<CMD>lua require'telescope.builtin'.symbols{ sources = {'math'} }<CR>", " Math" },
+      ["l"] = { "<CMD>lua require'telescope.builtin'.symbols{ sources = {'latex'} }<CR>", " LaTeX" },
+      ["k"] = { "<CMD>lua require'telescope.builtin'.symbols{ sources = {'kaomoji'} }<CR>", " Kaomoji" },
       ["e"] = { "<CMD>Telescope emoji<CR>", "  Emojis" },
     },
     ["p"] = {
@@ -51,6 +55,10 @@ M.mappings = {
       ["b"] = { "<CMD>Telescope git_branches<CR>", " Branches" },
       ["m"] = { "<CMD>Telescope git_bcommits<CR>", " BCommits" },
       ["r"] = { "<CMD>Telescope repo<CR>", " Repositories" },
+      ["i"] = { "<CMD>Telescope gh issues<CR>", "Issues" },
+      ["p"] = { "<CMD>Telescope gh pull_request<CR>", "Pull Request" },
+      ["g"] = { "<CMD>Telescope gh gist<CR>", "Gist" },
+      ["e"] = { "<CMD>Telescope gh run<CR>", "Run" },
     },
     ["h"] = {
       ["name"] = " Help",

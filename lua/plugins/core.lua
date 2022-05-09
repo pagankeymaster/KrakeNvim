@@ -1,8 +1,8 @@
 --- NOTE: Contains plugins that this config is fully dependent on.
+local use = require("packer").use
 
 use({
   "wbthomason/packer.nvim",
-  wants = "plenary.nvim",
   module = "packer",
   config = function()
     require("plugins")

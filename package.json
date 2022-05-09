@@ -1,6 +1,8 @@
 {
     "name": "nvim-config-plus-snippets",
-    "os": "linux",
+    "os": [
+        "linux"
+    ],
     "arch": "x64",
     "license": "GPL-3.0",
     "version": "0.0.1",

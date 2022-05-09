@@ -130,7 +130,7 @@ function M.ensure_treesitter_language_installed()
   local parsers = require("nvim-treesitter.parsers")
   local lang = parsers.get_buf_lang()
   if parsers.get_parser_configs()[lang] and not parsers.has_parser(lang) then
-    schedule(function()
+    vim.schedule(function()
       vim.ui.select({ "Sure, I don't mind.", "Nope, fuck yourself!" }, {
         prompt = "Install tree-sitter parsers for " .. lang .. "?",
       }, function(item)
@@ -255,6 +255,48 @@ function M.imgur()
       end
     end,
   })
+end
+
+function M.scan_dir(module_path)
+  local command = io.popen(string.format("find %s -type f", fn.stdpath("config") .. module_path))
+  command.close()
+
+  local hl_path = vim.split(command:read("*a"), "\n")
+  table.remove(hl_path, #hl_path)
+  return hl_path
+end
+
+function M.reload_module(module_name, starts_with_only)
+  -- Default to starts with only
+  if starts_with_only == nil then
+    starts_with_only = true
+  end
+
+  -- TODO: Might need to handle cpath / compiled lua packages? Not sure.
+  local matcher
+  if not starts_with_only then
+    matcher = function(pack)
+      return string.find(pack, module_name, 1, true)
+    end
+  else
+    local module_name_pattern = vim.pesc(module_name)
+    matcher = function(pack)
+      return string.find(pack, "^" .. module_name_pattern)
+    end
+  end
+
+  -- Handle impatient.nvim automatically.
+  local luacache = (_G.__luacache or {}).cache
+
+  for pack, _ in pairs(package.loaded) do
+    if matcher(pack) then
+      package.loaded[pack] = nil
+
+      if luacache then
+        luacache[pack] = nil
+      end
+    end
+  end
 end
 
 return M

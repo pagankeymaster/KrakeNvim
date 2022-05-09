@@ -27,7 +27,7 @@ function M.position()
     position = chars[index] .. position .. "%%"
   end
   local loaded = packer_plugins and packer_plugins["gitsigns.nvim"].loaded
-  local colors = theming.get_active_scheme()
+  local colors = theming.get_active_theme()
   local transition = {
     guifg = colors.common.base03,
     gui = "bold",

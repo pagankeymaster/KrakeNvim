@@ -24,7 +24,7 @@ function M.zero_diag_filter(diagnostics)
 end
 
 function M.set_stl_float(float)
-  local colors = require("utils.theming").get_active_scheme()
+  local colors = require("utils.theming").get_active_theme()
   if not float then
     hi("StatusLineScopesReverse", { guifg = colors.shades.shade06, guibg = colors.shades.shade06 })
     hi("Statusline", { guibg = colors.shades.shade06, guifg = colors.shades.shade06 })
@@ -51,7 +51,7 @@ end
 -- @param current string mode string
 -- @see help modes
 function M.set_colors(current)
-  local colors = theming.get_active_scheme()
+  local colors = theming.get_active_theme()
   hi("StatusLineFilename", {
     guifg = colors.modes[current],
     guibg = colors.common.base01,

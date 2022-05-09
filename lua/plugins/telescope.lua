@@ -1,7 +1,8 @@
+local use = require("packer").use
+
 use({
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
-  wants = "plenary.nvim",
   config = function()
     require("configs.telescope")
     require("telescope").load_extension("notify")
@@ -52,6 +53,14 @@ use({
 })
 
 use({
+  "nvim-telescope/telescope-github.nvim",
+  config = function()
+    require("telescope").load_extension("gh")
+  end,
+  after = "telescope.nvim",
+})
+
+use({
   "AckslD/nvim-neoclip.lua",
   after = "telescope.nvim",
   config = function()
@@ -95,7 +104,7 @@ use({
 
 use({
   "sudormrfbin/cheatsheet.nvim",
-  wants = { "popup.nvim", "plenary.nvim" },
+  wants = "popup.nvim",
   config = function()
     require("configs.telescope.extensions.cheatsheet")
     require("telescope").load_extension("cheatsheet")

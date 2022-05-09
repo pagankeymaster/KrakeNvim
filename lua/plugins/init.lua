@@ -3,6 +3,7 @@ local notify = require("utils.neovim").notify
 local fn = vim.fn
 
 local PACKER_BOOTSTRAP = false
+
 local PACKER_INSTALL_PATH = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
 local PACKER_COMPILE_PATH = fn.stdpath("config") .. "/lua/_compiled.lua"
 
@@ -31,7 +32,6 @@ end
 local packer = require("packer")
 packer.init(require("configs.core.packer"))
 packer.reset()
-use = packer.use
 
 require("plugins.dev")
 require("plugins.editing")
@@ -44,11 +44,10 @@ require("plugins.core")
 require("plugins.ui")
 require("plugins.others")
 require("plugins.cmp")
-require("plugins.health")
+require("plugins.wellbeing")
 
 if PACKER_BOOTSTRAP then
   packer.on_compile_done = function()
-    pcall(require, "configs.core.impatient")
     notify({
       message = "Run :LspInstall and :TSStart",
       icon = " ",

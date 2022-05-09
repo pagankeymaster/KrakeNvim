@@ -1,5 +1,6 @@
 --- NOTE: Bling plugins. These are mostly useless. Adds components like
 --- NOTE: urlshortner, minimaps, discord-rpc, scrollbar, etc.
+local use = require("packer").use
 
 use({
   "rktjmp/paperplanes.nvim",

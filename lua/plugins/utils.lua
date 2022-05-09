@@ -1,9 +1,8 @@
 --- NOTE: Utility plugins. Used by most of other plugins and by this configs utilities as well.
 --- NOTE: Probably the most important plugin group right after plugins.core
+local use = require("packer").use
 
-use({
-  "nvim-lua/plenary.nvim",
-})
+use({ "nvim-lua/plenary.nvim" })
 
 use({
   "nvim-lua/popup.nvim",
