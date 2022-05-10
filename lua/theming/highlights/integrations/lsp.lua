@@ -6,6 +6,7 @@ return {
   ["LspDiagnosticsVirtualTextError"] = { guifg = colors.syntax.color17 },
   ["LspDiagnosticsUnderlineError"] = { gui = "undercurl,bold", guisp = colors.syntax.color17 },
   ["LspDiagnosticsDefaultWarning"] = { guifg = colors.syntax.color08 },
+  ["LspDiagnosticsDefaultError"] = { guifg = colors.syntax.color01 },
   ["LspDiagnosticsSignWarning"] = { guifg = colors.syntax.color08 },
   ["LspDiagnosticsFloatingWarning"] = { guifg = colors.syntax.color08, gui = "bold" },
   ["LspDiagnosticsVirtualTextWarning"] = { guifg = colors.syntax.color08, gui = "bold" },

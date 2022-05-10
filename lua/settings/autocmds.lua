@@ -29,6 +29,57 @@ autocmd("TextYankPost", function()
   })
 end, { desc = "Provide a visual color feedback on yanking." })
 
+augroup("PaddingOnNvim", {
+  {
+    events = "UIEnter",
+    command = function()
+      local is_running_st = io.popen("pidof st")
+      if is_running_st then
+        local format = "xrdb -merge %s/Xresources/nvim.x && kill -USR1 %s"
+        local pids = is_running_st:read()
+        local xdg_config = os.getenv("XDG_CONFIG_HOME")
+
+        is_running_st:close()
+        io.popen(string.format(format, xdg_config, pids)):close()
+      end
+
+      -- @see https://is.gd/QSh8RE
+      -- @see https://is.gd/XXso9o
+      local socket = vim.env.KITTY_LISTEN_ON
+      if socket then
+        io.popen(string.format("kitty @ --to %s set-spacing padding=0", socket)):close()
+      end
+    end,
+    options = {
+      desc = [[Adds padding to kitty and st when Nvim connects to the UI. 
+      Using UIEnter and not VimEnter as we don't want this to happen 
+      when we start an headless Nvim instance.]],
+    },
+  },
+  {
+    events = "UILeave",
+    command = function()
+      local is_running_st = io.popen("pidof st")
+      if is_running_st then
+        local format = "xrdb -I%s/Xresources %s/Xresources/config.x && kill -USR1 %s"
+        local pids = is_running_st:read()
+        local xdg_config = os.getenv("XDG_CONFIG_HOME")
+
+        is_running_st:close()
+        io.popen(string.format(format, xdg_config, xdg_config, pids)):close()
+      end
+
+      local socket = vim.env.KITTY_LISTEN_ON
+      if socket then
+        io.popen(string.format("kitty @ --to %s set-spacing padding=default", socket)):close()
+      end
+    end,
+    options = {
+      desc = "Removes padding from kitty and st when Nvim disconnects from the UI.",
+    },
+  },
+})
+
 augroup("ReplaceModes", {
   {
     events = { "BufEnter", "FileType" },

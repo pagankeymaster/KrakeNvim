@@ -20,8 +20,6 @@ local config = {
     end_key = "$",
     keys = "qwertyuiopzxcvbnmasdfghjkl",
     check_comma = true,
-    highlight = "PmenuSel",
-    highlight_grey = "Comment",
   },
   disable_filetype = require("tables.blacklisted").hidden,
   enable_check_bracket_line = true,

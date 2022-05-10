@@ -14,7 +14,7 @@ return {
   ["Keyword"] = { guifg = colors.syntax.color16, gui = "bold" },
   ["Structure"] = { link = "Keyword" },
   ["Label"] = { guifg = colors.syntax.color00 },
-  ["Operator"] = { guifg = colors.syntax.color02 },
+  ["Operator"] = { guifg = colors.syntax.color19 },
   ["Exception"] = { guifg = colors.syntax.color02 },
   ["PreProc"] = { guifg = colors.syntax.color00 },
   ["Include"] = { guifg = colors.syntax.color02 },

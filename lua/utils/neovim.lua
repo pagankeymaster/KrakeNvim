@@ -259,10 +259,9 @@ end
 
 function M.scan_dir(module_path)
   local command = io.popen(string.format("find %s -type f", fn.stdpath("config") .. module_path))
-  command.close()
-
   local hl_path = vim.split(command:read("*a"), "\n")
   table.remove(hl_path, #hl_path)
+  command:close()
   return hl_path
 end
 

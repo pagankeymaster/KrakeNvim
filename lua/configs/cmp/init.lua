@@ -32,7 +32,7 @@ local cmp_fmt = {
   end,
 }
 
-local fmt_order = {
+local fmt_orders = {
   { "kind", "abbr", "menu" },
   { "menu", "abbr", "kind" },
   { "abbr", "kind" },
@@ -110,7 +110,7 @@ local config = {
     },
   },
   formatting = {
-    fields = fmt_order[1],
+    fields = fmt_orders[1],
     format = cmp_fmt.material,
   },
   experimental = {
@@ -139,7 +139,7 @@ local cmdlines = {
   sources = cmp.config.sources(source_cmdline),
   mapping = cmp.mapping.preset.cmdline(),
   formatting = {
-    fields = fmt_order[2],
+    fields = fmt_orders[2],
     format = cmp_fmt.icon_only,
   },
   entries = { name = "custom", selection_order = "near_cursor" },

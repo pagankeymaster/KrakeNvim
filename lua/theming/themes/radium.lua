@@ -34,7 +34,8 @@ N.shades = {
   ["shade08"] = "#13181d",
   ["shade09"] = "#11161b",
   ["shade10"] = "#0e1115",
-  ["shade11"] = "#0a0d11",
+  ["shade11"] = "#0c0f13",
+  ["shade12"] = "#0a0d11",
 }
 
 N.rainbow = {

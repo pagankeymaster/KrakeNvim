@@ -6,6 +6,7 @@ return {
   ["WhichKeySeparator"] = { guifg = colors.common.base09 },
   ["WhichKeyValue"] = { guifg = colors.common.base14 },
   ["WhichKey"] = { guifg = colors.common.base14 },
+  ["WhichKeyFloat"] = { link = "FloatBorder" },
 }
 
 -- vim:ft=lua

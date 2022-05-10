@@ -39,6 +39,7 @@ N.shades = {
   ["shade09"] = "#252A33",
   ["shade10"] = "#252B37",
   ["shade11"] = "#262c38",
+  ["shade12"] = "#242a36",
 }
 
 N.rainbow = {

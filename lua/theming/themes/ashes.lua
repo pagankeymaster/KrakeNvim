@@ -34,7 +34,8 @@ N.shades = {
   ["shade08"] = "#212528",
   ["shade09"] = "#1d2124",
   ["shade10"] = "#181c1f",
-  ["shade11"] = "#14181b",
+  ["shade11"] = "#161a1d",
+  ["shade12"] = "#14181b",
 }
 
 N.rainbow = {
@@ -87,14 +88,14 @@ N.syntax = {
   ["color20"] = "#7d9fc1",
 
   ["color13"] = "#e0987f",
-  ["color01"] = "#c795ae",
+  ["color01"] = "#cc707d",
   ["color05"] = "#ae9FcF",
 
   ["color12"] = "#b8d19f",
   ["color15"] = "#b1ca98",
   ["color04"] = "#aec795",
 
-  ["color06"] = "#cc707d",
+  ["color06"] = "#c795ae",
   ["color08"] = "#c9a27a",
 
   ["color10"] = "#c7ae95",

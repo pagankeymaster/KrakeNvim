@@ -11,9 +11,6 @@ if not require("statusline.config").MAIN.floating then
 else
   hi("StatusLineScopes", { guifg = colors.common.base15, guibg = colors.common.base00 })
 end
-
-hi("Pmenu", { guibg = colors.shades.shade05, guifg = colors.common.base04, blend = 2 })
-hi("WhichKeyFloat", { link = "FloatBorder" })
 EOF
 
 " vim:ft=vim
