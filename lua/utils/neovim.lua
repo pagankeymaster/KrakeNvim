@@ -28,7 +28,7 @@ end
 function M.notify(options)
   -- if only a string is passed then show a generic notification.
   if type(options) == "string" then
-    -- api.nvim_notify(options, vim.log.levels.INFO, { icon = "", title = "Notification" })
+    api.nvim_notify(options, vim.log.levels.INFO, { icon = "", title = "Notification" })
     return
   end
 
@@ -63,6 +63,10 @@ end
 function M.alias(alias, command, options)
   options = options or {}
   api.nvim_create_user_command(alias, command, options)
+end
+
+function M.unalias(command)
+  api.nvim_del_user_command(command)
 end
 
 --- Same as M.alias but, for buffers

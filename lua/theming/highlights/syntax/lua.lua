@@ -4,7 +4,6 @@ return {
   ["luaBuiltIn"] = { link = "Keyword" },
   ["luaDocTag"] = { guifg = colors.syntax.color15, gui = "bold" },
   ["luaFuncTable"] = { guifg = colors.syntax.color06, gui = "bold" },
-  ["luaCond"] = { link = "Conditional" },
   ["luaIn"] = { link = "Keyword" },
   ["luaCond"] = { link = "Conditional" },
   ["luaParen"] = { link = "Delimiter" },

@@ -43,6 +43,7 @@ luac.out
 plugin/
 **/packer_compiled.lua
 **/*compiled.lua
+**/*compiledSpec.lua
 .startup-time.log.txt
 .startup.log
 .startup-time.log
