@@ -27,11 +27,16 @@ autocmd("TextYankPost", function()
     on_visual = true,
     timeout = 150,
   })
-end, { desc = "Provide a visual color feedback on yanking." })
+end, {
+  desc = "Provide a visual color feedback on yanking.",
+})
 
 augroup("ReplaceModes", {
   {
-    events = { "BufEnter", "FileType" },
+    events = {
+      "BufEnter",
+      "FileType",
+    },
     command = function()
       require("utils.mapping").cmdline_override(true)
     end,
@@ -41,7 +46,10 @@ augroup("ReplaceModes", {
     },
   },
   {
-    events = { "BufEnter", "FileType" },
+    events = {
+      "BufEnter",
+      "FileType",
+    },
     command = function()
       require("utils.mapping").search_override()
     end,
@@ -54,23 +62,39 @@ augroup("ReplaceModes", {
 
 augroup("NativeAdjustments", {
   {
-    events = { "TermOpen", "BufReadCmd" },
+    events = {
+      "TermOpen",
+      "BufReadCmd",
+    },
     command = function()
       opt_local.number = false
       opt_local.relativenumber = false
       require("utils.term")._TERM_KEYMAPS()
     end,
     options = {
-      patterns = { "term://*", "zsh", "*/zsh", "sh", "bash", "toggleterm" },
+      patterns = {
+        "term://*",
+        "zsh",
+        "*/zsh",
+        "sh",
+        "bash",
+        "toggleterm",
+      },
       desc = "Add convenience terminal keymaps for getting out of a terminal easily, for instance.",
     },
   },
   {
     events = "FileType",
     command = function()
-      opt_local.formatoptions:remove({ "c", "r", "o" })
+      opt_local.formatoptions:remove({
+        "c",
+        "r",
+        "o",
+      })
     end,
-    options = { desc = "Removes comment continuations from every file." },
+    options = {
+      desc = "Removes comment continuations from every file.",
+    },
   },
 })
 

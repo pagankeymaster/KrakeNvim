@@ -2,6 +2,8 @@
 --- NOTE: other LSP server that aren't yet added to nvim-lspconfig and some LSP ui components
 local use = require("packer").use
 
+local disabled = require("control.disabled")
+
 use({
   "williamboman/nvim-lsp-installer",
   config = function()
@@ -13,14 +15,16 @@ use({
     "LspStart",
   },
   module = "nvim-lsp-installer",
+  disable = disabled["nvim-lsp-installer"],
 })
 
-use({ 
-  "mfussenegger/nvim-jdtls", 
+use({
+  "mfussenegger/nvim-jdtls",
   module = "jdtls",
+  disable = disabled["nvim-jdtls"],
 })
 
-use({ "b0o/schemastore.nvim", module = "schemastore" })
+use({ "b0o/schemastore.nvim", module = "schemastore", disable = disabled["schemastore.nvim"] })
 
 use({
   "kosayoda/nvim-lightbulb",
@@ -28,15 +32,17 @@ use({
   config = function()
     require("plugin.config.lsp.handlers.lightbulb")
   end,
+  disable = disabled["nvim-lightbulb"],
 })
 
-use({ 
+use({
   "neovim/nvim-lspconfig",
   config = function()
     require("plugin.config.lsp.lspconfig")
   end,
   wants = { "nlsp-settings.nvim", "null-ls.nvim", "cmp-nvim-lsp" },
-  after = "nvim-lsp-installer"
+  after = "nvim-lsp-installer",
+  disable = disabled["nvim-lspconfig"],
 })
 
 use({
@@ -45,6 +51,7 @@ use({
     require("plugin.config.lsp.null_ls")
   end,
   module = "null-ls",
+  disable = disabled["null-ls.nvim"],
 })
 
 use({
@@ -53,14 +60,16 @@ use({
     require("plugin.config.lsp.outline")
   end,
   after = "nvim-lspconfig",
+  disable = disabled["symbols-outline.nvim"],
 })
 
-use({ 
+use({
   "tamago324/nlsp-settings.nvim",
   config = function()
     require("plugin.config.lsp.nlsp")
   end,
-  opt = true
+  opt = true,
+  disable = disabled["nlsp-settings.nvim"],
 })
 
 -- vim:ft=lua

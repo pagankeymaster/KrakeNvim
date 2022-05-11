@@ -2,11 +2,14 @@
 --- NOTE: Probably the most important plugin group right after plugins.core
 local use = require("packer").use
 
-use({ "nvim-lua/plenary.nvim" })
+local disabled = require("control.disabled")
+
+use({ "nvim-lua/plenary.nvim", disable = disabled["plenary.nvim"] })
 
 use({
   "nvim-lua/popup.nvim",
   opt = true,
+  disable = disabled["popup.nvim"],
 })
 
 use({
@@ -15,6 +18,7 @@ use({
     "CmdlineEnter",
     "InsertEnter",
   },
+  disable = disabled["stabilize.nvim"],
 })
 
 use({
@@ -22,10 +26,11 @@ use({
   config = function()
     require("plugin.config.utils.notify")
   end,
+  disable = disabled["nvim-notify"],
 })
 
-use({ "MunifTanjim/nui.nvim", module = "nui" })
+use({ "MunifTanjim/nui.nvim", module = "nui", disable = disabled["nui.nvim"] })
 
-use({ "tami5/sqlite.lua", module = "sqlite" })
+use({ "tami5/sqlite.lua", module = "sqlite", disable = disabled["sqlite.lua"] })
 
 -- vim:ft=lua

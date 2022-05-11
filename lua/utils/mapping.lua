@@ -29,7 +29,12 @@ function M.map(description, trigger, target, options)
     buffer = nil,
     nowait = false,
   }
-  local mapping = { [trigger] = { "<CMD>" .. target .. "<CR>", description } }
+  local mapping = {
+    [trigger] = {
+      "<CMD>" .. target .. "<CR>",
+      description,
+    },
+  }
   -- remove defaults and override with the option value
   require("which-key").register(mapping, vim.tbl_extend("force", defaults, options))
 end
@@ -98,7 +103,10 @@ end
 -- @see plugin https://is.gd/m0cmNB
 function M.cmdline_override(temp)
   local cfn = require("fine-cmdline").fn
-  vim.keymap.set("n", ":", "<CMD>FineCmdline<CR>", { noremap = true, buffer = 0 })
+  vim.keymap.set("n", ":", "<CMD>FineCmdline<CR>", {
+    noremap = true,
+    buffer = 0,
+  })
 
   -- NOTE: Apparently, using this globally causes problems. So we set it to the current buffer.
   -- NOTE: Might define an auto-command later.
@@ -108,7 +116,10 @@ function M.cmdline_override(temp)
         cfn.nvim_feedkeys("%s///gc<Left><Left><Left><Left>")
       end
     end, { buffer = 0 })
-    vim.keymap.set("n", "<CR>", "<CMD>FineCmdline<CR>", { noremap = true, buffer = 0 })
+    vim.keymap.set("n", "<CR>", "<CMD>FineCmdline<CR>", {
+      noremap = true,
+      buffer = 0,
+    })
     vim.keymap.set("i", "<M-k>", cfn.up_search_history, { buffer = 0 })
     vim.keymap.set("i", "<M-j>", cfn.down_search_history, { buffer = 0 })
     vim.keymap.set("i", "<Up>", cfn.up_history, { buffer = 0 })

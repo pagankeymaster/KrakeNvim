@@ -1,6 +1,8 @@
 --- NOTE: Focuses on functions such as brightness, productivity boosts. etc
 local use = require("packer").use
 
+local disabled = require("control.disabled")
+
 use({
   "sunjon/shade.nvim",
   config = function()
@@ -8,6 +10,7 @@ use({
   end,
   keys = "<leader>s",
   cmd = "Shade",
+  disable = disabled["shade.nvim"],
 })
 
 use({
@@ -16,6 +19,7 @@ use({
   config = function()
     require("plugin.config.wellbeing.twilight")
   end,
+  disable = disabled["twilight.nvim"],
 })
 
 use({
@@ -24,6 +28,7 @@ use({
   config = function()
     require("plugin.config.wellbeing.zenmode")
   end,
+  disable = disabled["zen-mode.nvim"],
 })
 
 use({
@@ -33,6 +38,7 @@ use({
     "TZMinimalist",
     "TZFocus",
   },
+  disable = disabled["TrueZen.nvim"],
 })
 
 -- vim:ft=lua

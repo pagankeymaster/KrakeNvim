@@ -9,22 +9,30 @@ local cmd = vim.cmd
 
 alias("LoadNullLsp", function()
   require("null-ls")
-end, { desc = "Load null-ls.nvim." })
+end, {
+  desc = "Load null-ls.nvim.",
+})
 
 alias("ScratchTele", function()
   if not packer_plugins["scratch.nvim"].loaded then
     require("packer").loader("scratch.nvim")
   end
   require("telescope").extensions.scratch.scratch()
-end, { desc = "Load and create a new scratch file, with telescope." })
+end, {
+  desc = "Load and create a new scratch file, with telescope.",
+})
 
 alias("CommitList", function()
   require("telescope.builtin").git_commits()
-end, { desc = "View git commits in a telescope window." })
+end, {
+  desc = "View git commits in a telescope window.",
+})
 
 alias("Shade", function()
   require("packer").loader("shade.nvim")
-end, { desc = "Load shade.nvim heath plugin." })
+end, {
+  desc = "Load shade.nvim heath plugin.",
+})
 
 alias("PersistClip", function()
   require("telescope").extensions.neoclip.neoclip()
@@ -34,11 +42,15 @@ end, {
 
 alias("EnvList", function()
   require("telescope").extensions.env.env()
-end, { desc = "View env variables within a telescope window." })
+end, {
+  desc = "View env variables within a telescope window.",
+})
 
 alias("Keymaps", function()
   require("telescope.builtin").keymaps()
-end, { desc = "View all mapped keys within a telescope window." })
+end, {
+  desc = "View all mapped keys within a telescope window.",
+})
 
 alias("GitHL", function()
   require("gitsigns").toggle_signs()
@@ -46,25 +58,29 @@ end, {
   desc = "Toggle delete/changed/add git number column signs provided by, gitsigns.nvim",
 })
 
-alias("LspLog", "edit " .. lsp.get_log_path(), { desc = "View/Edit LSP log file." })
+alias("LspLog", "edit " .. lsp.get_log_path(), {
+  desc = "View/Edit LSP log file.",
+})
 
-alias("NvimLog", "edit " .. fn.stdpath("cache") .. "/log", { desc = "View/Edit neovim log file." })
+alias("NvimLog", "edit " .. fn.stdpath("cache") .. "/log", {
+  desc = "View/Edit neovim log file.",
+})
 
-alias("PackerLog", "edit " .. fn.stdpath("cache") .. "/packer.nvim.log", { desc = "View/Edit packer.nvim log file." })
+alias("PackerLog", "edit " .. fn.stdpath("cache") .. "/packer.nvim.log", {
+  desc = "View/Edit packer.nvim log file.",
+})
 
-alias(
-  "TelescopeLog",
-  "edit " .. fn.stdpath("cache") .. "/telescope.log",
-  { desc = "View/Edit telescope.nvim log file." }
-)
+alias("TelescopeLog", "edit " .. fn.stdpath("cache") .. "/telescope.log", {
+  desc = "View/Edit telescope.nvim log file.",
+})
 
-alias("TSStart", "TSUpdate", { desc = "Load treesitter plugin." })
+alias("TSStart", "TSUpdate", {
+  desc = "Load treesitter plugin.",
+})
 
-alias(
-  "TabLineTGL",
-  "if &stal == 2 | setlocal stal=0 | else | setlocal stal=2 | endif",
-  { desc = "Hide/Unhide tabline." }
-)
+alias("TabLineTGL", "if &stal == 2 | setlocal stal=0 | else | setlocal stal=2 | endif", {
+  desc = "Hide/Unhide tabline.",
+})
 
 alias("StatusLineTGL", function()
   if vim.o.laststatus == 0 then
@@ -72,13 +88,21 @@ alias("StatusLineTGL", function()
   else
     vim.o.laststatus = 0
   end
-end, { desc = "Hide/Unhide statusline." })
+end, {
+  desc = "Hide/Unhide statusline.",
+})
 
-alias("NumberColumnTGL", "setlocal nu!", { desc = "Hide/Unhide number column." })
+alias("NumberColumnTGL", "setlocal nu!", {
+  desc = "Hide/Unhide number column.",
+})
 
-alias("RelativeNumberColumnTGL", "setlocal rnu!", { desc = "Turn on/off relative number column." })
+alias("RelativeNumberColumnTGL", "setlocal rnu!", {
+  desc = "Turn on/off relative number column.",
+})
 
-alias("SpellingTGL", "setlocal spell!", { desc = "Turn on/off spellcheck." })
+alias("SpellingTGL", "setlocal spell!", {
+  desc = "Turn on/off spellcheck.",
+})
 
 -- NOTE: The following commands are for packer. This is required as we are lazy-loading packer.
 
@@ -187,7 +211,10 @@ end, {
 
 alias("PackerClean", function()
   require("packer").clean()
-end, { force = true, desc = "Remove any disabled or unused plugins." })
+end, {
+  force = true,
+  desc = "Remove any disabled or unused plugins.",
+})
 
 alias("PackerCompile", function(args)
   local compile = require("packer").compile
@@ -204,10 +231,16 @@ end, {
 
 alias("PackerProfile", function()
   require("packer").profile_output()
-end, { force = true, desc = "View load time of plugins." })
+end, {
+  force = true,
+  desc = "View load time of plugins.",
+})
 
 alias("PackerStatus", function()
   require("packer").status()
-end, { force = true, desc = "View all installed plugins with load status." })
+end, {
+  force = true,
+  desc = "View all installed plugins with load status.",
+})
 
 -- vim:ft=lua

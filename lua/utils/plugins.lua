@@ -65,8 +65,14 @@ function M.pandoc_build()
     args = {
       { "--standalone" },
       { "--toc" },
-      { "--filter", "pandoc-crossref" },
-      { "--pdf-engine", "xelatex" },
+      {
+        "--filter",
+        "pandoc-crossref",
+      },
+      {
+        "--pdf-engine",
+        "xelatex",
+      },
     },
     output = "pandoc.pdf",
   })

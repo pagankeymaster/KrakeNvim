@@ -15,7 +15,10 @@ local nv = require("utils.neovim")
 -- @see help sign_define
 -- @see help vim.diagnostic.severity
 function M.lsp_signdef(group, icon, text_group)
-  fn.sign_define(group, { text = icon, texthl = text_group })
+  fn.sign_define(group, {
+    text = icon,
+    texthl = text_group,
+  })
 end
 
 function M.format(buffer)
@@ -61,10 +64,19 @@ end
 
 function M.handlers()
   return {
-    ["textDocument/hover"] = lsp.with(lsp.handlers.hover, { border = "solid", focusable = false }),
-    ["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, { border = "solid", focusable = false }),
+    ["textDocument/hover"] = lsp.with(lsp.handlers.hover, {
+      border = "solid",
+      focusable = false,
+    }),
+    ["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, {
+      border = "solid",
+      focusable = false,
+    }),
     ["textDocument/publishDiagnostics"] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
-      virtual_text = { prefix = "■", spacing = 1 },
+      virtual_text = {
+        prefix = "■",
+        spacing = 1,
+      },
       signs = true,
       underline = true,
       update_in_insert = false,
@@ -84,16 +96,27 @@ function M.capabilities()
   capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
   capabilities.textDocument.completion.completionItem.deprecatedSupport = true
   capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
-  capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
-  capabilities.textDocument.completion.completionItem.resolveSupport = {
-    properties = { "documentation", "detail", "additionalTextEdits" },
+  capabilities.textDocument.completion.completionItem.tagSupport = {
+    valueSet = { 1 },
   }
-  capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
+  capabilities.textDocument.completion.completionItem.resolveSupport = {
+    properties = {
+      "documentation",
+      "detail",
+      "additionalTextEdits",
+    },
+  }
+  capabilities.textDocument.completion.completionItem.documentationFormat = {
+    "markdown",
+    "plaintext",
+  }
   return capabilities
 end
 
 function M.flags()
-  return { debounce_text_changes = 150 }
+  return {
+    debounce_text_changes = 150,
+  }
 end
 
 -- @param buffer number
@@ -117,7 +140,10 @@ function M.find_and_run_codelens()
     return a.range.start.line > b.range.start.line
   end)
 
-  api.nvim_win_set_cursor(0, { lenses[1].range.start.line + 1, 0 })
+  api.nvim_win_set_cursor(0, {
+    lenses[1].range.start.line + 1,
+    0,
+  })
   lsp.codelens.run()
   api.nvim_win_set_cursor(0, { row, col }) -- restore cursor, TODO: also restore position
 end

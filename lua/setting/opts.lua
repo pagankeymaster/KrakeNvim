@@ -5,7 +5,11 @@ local env = vim.env
 
 opt.termguicolors = true -- Enables 24-bit RGB color in the TUI.  Uses "gui" :highlight
 opt.laststatus = 3 -- enables the global statusline
-opt.backspace = { "indent", "eol", "start" } -- show backspace characters
+opt.backspace = {
+  "indent",
+  "eol",
+  "start",
+} -- show backspace characters
 opt.completeopt = "menuone,noselect" -- completion options
 opt.title = true -- set window title same as the file name
 opt.hidden = false -- remove all undo info (with undo info)
@@ -19,7 +23,10 @@ opt.autoindent = true -- copy indent from current line when starting a new line
 opt.expandtab = true -- insert mode: use the appropriate number of spaces to insert <tab>
 opt.shiftwidth = 2 -- affects >>, << or == maps and autoindent
 opt.smartindent = true -- reacts to the syntax/style of the code
-opt.wildignore = { "*/cache/*", "*/tmp/*" } -- these	patterns is ignored when expanding wildcards
+opt.wildignore = {
+  "*/cache/*",
+  "*/tmp/*",
+} -- these	patterns is ignored when expanding wildcards
 opt.errorformat = "%f|%l col %c|%m" -- option specifies a list of formats that are recognized
 opt.fillchars = { -- Characters to fill the statuslines and vertical separators. See :h 'fillchars'
   eob = " ",

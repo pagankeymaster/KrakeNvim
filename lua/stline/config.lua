@@ -12,32 +12,121 @@ M.MAIN = {
 -- options: glyphs, full mode name, short mode name
 M.mode = {
   truncate = 20,
-  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
+  style = {
+    left = "█",
+    right = "█",
+    left_alt = "█",
+    right_alt = "█",
+  },
   label = 2,
   modes = setmetatable({
-    ["n"] = { "NORMAL", "", "NRM" },
-    ["no"] = { "NORMAL", "", "NRM" },
-    ["v"] = { "VISUAL", "", "VIS" },
-    ["V"] = { "V-LINE", "", "VIL" },
-    [""] = { "V-BLOCK", "", "VIB" },
-    ["s"] = { "SELECT", "", "SET" },
-    ["S"] = { "S-LINE", "ﳝ", "SEL" },
-    [""] = { "S-BLOCK", "ﳛ", "SEB" },
-    ["i"] = { "INSERT", "", "INS" },
-    ["ic"] = { "INSERT", "ﴣ", "INS" },
-    ["R"] = { "REPLACE", "", "REP" },
-    ["Rv"] = { "V-REPLACE", "", "VRP" },
-    ["c"] = { "COMMAND", "", "COM" },
-    ["cv"] = { "VI-EX", "", "VEX" },
-    ["ce"] = { "EX", "", "EXX" },
-    ["r"] = { "PROMPT", "", "PMT" },
-    ["rm"] = { "MOAR", "", "MORE" },
-    ["r?"] = { "CONFIRM", "", "CNF" },
-    ["!"] = { "SHELL", "", "SHL" },
-    ["t"] = { "TERMINAL", "", "TRM" },
+    ["n"] = {
+      "NORMAL",
+      "",
+      "NRM",
+    },
+    ["no"] = {
+      "NORMAL",
+      "",
+      "NRM",
+    },
+    ["v"] = {
+      "VISUAL",
+      "",
+      "VIS",
+    },
+    ["V"] = {
+      "V-LINE",
+      "",
+      "VIL",
+    },
+    [""] = {
+      "V-BLOCK",
+      "",
+      "VIB",
+    },
+    ["s"] = {
+      "SELECT",
+      "",
+      "SET",
+    },
+    ["S"] = {
+      "S-LINE",
+      "ﳝ",
+      "SEL",
+    },
+    [""] = {
+      "S-BLOCK",
+      "ﳛ",
+      "SEB",
+    },
+    ["i"] = {
+      "INSERT",
+      "",
+      "INS",
+    },
+    ["ic"] = {
+      "INSERT",
+      "ﴣ",
+      "INS",
+    },
+    ["R"] = {
+      "REPLACE",
+      "",
+      "REP",
+    },
+    ["Rv"] = {
+      "V-REPLACE",
+      "",
+      "VRP",
+    },
+    ["c"] = {
+      "COMMAND",
+      "",
+      "COM",
+    },
+    ["cv"] = {
+      "VI-EX",
+      "",
+      "VEX",
+    },
+    ["ce"] = {
+      "EX",
+      "",
+      "EXX",
+    },
+    ["r"] = {
+      "PROMPT",
+      "",
+      "PMT",
+    },
+    ["rm"] = {
+      "MOAR",
+      "",
+      "MORE",
+    },
+    ["r?"] = {
+      "CONFIRM",
+      "",
+      "CNF",
+    },
+    ["!"] = {
+      "SHELL",
+      "",
+      "SHL",
+    },
+    ["t"] = {
+      "TERMINAL",
+      "",
+      "TRM",
+    },
   }, {
     __index = function()
-      return { "UNKNOWN", "", "DEF" }
+      return {
+        "UNKNOWN",
+        "",
+        "DEF",
+      }
     end,
   }),
 }
@@ -45,7 +134,12 @@ M.mode = {
 -- filename module sub-config
 M.filename = {
   truncate = 45,
-  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
+  style = {
+    left = "█",
+    right = "█",
+    left_alt = "█",
+    right_alt = "█",
+  },
   absolute = false,
   format = false,
   icon = true,
@@ -60,14 +154,24 @@ M.filename = {
 M.dirname = {
   format = ":t",
   truncate = 20,
-  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
+  style = {
+    left = "█",
+    right = "█",
+    left_alt = "█",
+    right_alt = "█",
+  },
   icon = "  ",
 }
 
 -- treesitter module sub-config
 M.treesitter = {
   truncate = 130,
-  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
+  style = {
+    left = "█",
+    right = "█",
+    left_alt = "█",
+    right_alt = "█",
+  },
   disabled_icon = " 﫣 ",
   enabled_icon = " TS   ",
 }
@@ -75,7 +179,12 @@ M.treesitter = {
 -- line and character location info module sub-config
 M.position = {
   truncate = 32,
-  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
+  style = {
+    left = "█",
+    right = "█",
+    left_alt = "█",
+    right_alt = "█",
+  },
   buf_local_clients = true,
   icon = true,
   spinners = {
@@ -119,7 +228,12 @@ M.position = {
 M.lsp = {
   server_label = " ",
   truncate = 80,
-  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
+  style = {
+    left = "█",
+    right = "█",
+    left_alt = "█",
+    right_alt = "█",
+  },
   buf_local_clients = true,
   spinners = {
     success = {
@@ -142,7 +256,12 @@ M.lsp = {
 -- LSP server code-actions module sub-config
 M.lightbulb = {
   truncate = 85,
-  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
+  style = {
+    left = "█",
+    right = "█",
+    left_alt = "█",
+    right_alt = "█",
+  },
   buf_local_clients = true,
   unavailable = " ",
   active = " ",
@@ -153,7 +272,12 @@ M.lightbulb = {
 M.git = {
   truncate = 70,
   buf_local_clients = true,
-  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
+  style = {
+    left = "█",
+    right = "█",
+    left_alt = "█",
+    right_alt = "█",
+  },
   short = false,
   branch = " ",
   main = " ",
@@ -172,7 +296,12 @@ M.diagnostics = {
     INFO = "",
     HINT = "",
   },
-  style = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
+  style = {
+    left = "█",
+    right = "█",
+    left_alt = "█",
+    right_alt = "█",
+  },
 }
 
 return M

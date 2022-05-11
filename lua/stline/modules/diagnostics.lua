@@ -15,10 +15,18 @@ function M.diagnostics()
     -- @{diag.get} fetches the current dignostics
     -- @see :help diagnostic.get
     -- @see :help diagnostic.severity
-    ERROR = #diag.get(0, { severity = diag.severity.ERROR }),
-    WARN = #diag.get(0, { severity = diag.severity.WARN }),
-    INFO = #diag.get(0, { severity = diag.severity.INFO }),
-    HINT = #diag.get(0, { severity = diag.severity.HINT }),
+    ERROR = #diag.get(0, {
+      severity = diag.severity.ERROR,
+    }),
+    WARN = #diag.get(0, {
+      severity = diag.severity.WARN,
+    }),
+    INFO = #diag.get(0, {
+      severity = diag.severity.INFO,
+    }),
+    HINT = #diag.get(0, {
+      severity = diag.severity.HINT,
+    }),
   }
 
   local icons = config.severities

@@ -1,12 +1,15 @@
 --- NOTE: Adds and polishes neovim UI components. Such as tabline, indent lines, etc.
 local use = require("packer").use
 
+local disabled = require("control.disabled")
+
 use({
   "edluffy/specs.nvim",
   config = function()
     require("plugin.config.ui.specs")
   end,
   event = { "CursorMoved", "CursorMovedI" },
+  disable = disabled["specs.nvim"],
 })
 
 use({
@@ -15,6 +18,7 @@ use({
     require("plugin.config.ui.reach")
   end,
   module = "reach",
+  disable = disabled["reach.nvim"],
 })
 
 use({
@@ -24,6 +28,7 @@ use({
     require("plugin.config.ui.bufferline")
   end,
   wants = "nvim-web-devicons",
+  disable = disabled["bufferline.nvim"],
 })
 
 use({
@@ -32,6 +37,7 @@ use({
     require("plugin.config.ui.devicons")
   end,
   module = "nvim-web-devicons",
+  disable = disabled["nvim-web-devicons"],
 })
 
 use({
@@ -46,6 +52,7 @@ use({
   config = function()
     require("plugin.config.ui.blankline")
   end,
+  disable = disabled["indent-blankline.nvim"],
 })
 
 use({
@@ -54,6 +61,7 @@ use({
   config = function()
     require("plugin.config.ui.finecmdline")
   end,
+  disable = disabled["fine-cmdline.nvim"],
 })
 
 use({
@@ -68,6 +76,7 @@ use({
   config = function()
     require("plugin.config.ui.searchbox")
   end,
+  disable = disabled["searchbox.nvim"],
 })
 
 use({
@@ -80,6 +89,7 @@ use({
     "Alpha",
     "AlphaRedraw",
   },
+  disable = disabled["alpha-nvim"],
 })
 
 -- vim:ft=lua

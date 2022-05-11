@@ -74,7 +74,11 @@ return {
     -- statusline augroup which makes the statusline persisten throughout buffers
     neovim.augroup("StatusLine", {
       {
-        events = { "WinEnter", "BufEnter", "FileType" },
+        events = {
+          "WinEnter",
+          "BufEnter",
+          "FileType",
+        },
         command = "setlocal statusline=%!v:lua.stl()",
         options = {
           patterns = hidden,
@@ -82,14 +86,20 @@ return {
         },
       },
       {
-        events = { "WinEnter", "BufEnter" },
+        events = {
+          "WinEnter",
+          "BufEnter",
+        },
         command = "setlocal statusline=%!v:lua.stl('active')",
         options = {
           desc = "Show the active statusline on BufEnter and WinEnter",
         },
       },
       {
-        events = { "WinLeave", "BufLeave" },
+        events = {
+          "WinLeave",
+          "BufLeave",
+        },
         command = "setlocal statusline=%!v:lua.stl('inactive')",
         options = {
           desc = "Hide the statusline on leaving the current window, i.e. moving onto a floating window for instance",
@@ -98,19 +108,84 @@ return {
     })
   end,
   styles = {
-    angled = { left = "", right = "", left_alt = "", right_alt = "" },
-    flame = { left = "", right = "", left_alt = "", right_alt = "" },
-    rounded = { left = "", right = "", left_alt = "", right_alt = "" },
-    slant = { left = "", right = "", left_alt = "", right_alt = "" },
-    square = { left = "█", right = "█", left_alt = "", right_alt = "" },
-    xsquare = { left = "█", right = "█", left_alt = "█", right_alt = "█" },
-    pacman = { left = "", right = "", left_alt = "", right_alt = "" },
-    graphy = { left = "", right = "", left_alt = "", right_alt = "" },
-    slantv1 = { left = "", right = "", left_alt = "", right_alt = "" },
-    slantv2 = { left = "", right = "", left_alt = "", right_alt = "" },
-    slantv3 = { left = "", right = "", left_alt = "", right_alt = "" },
-    pixel = { left = "", right = "", left_alt = "", right_alt = "" },
-    fullslant = { left = "", right = "", left_alt = "", right_alt = "" },
+    angled = {
+      left = "",
+      right = "",
+      left_alt = "",
+      right_alt = "",
+    },
+    flame = {
+      left = "",
+      right = "",
+      left_alt = "",
+      right_alt = "",
+    },
+    rounded = {
+      left = "",
+      right = "",
+      left_alt = "",
+      right_alt = "",
+    },
+    slant = {
+      left = "",
+      right = "",
+      left_alt = "",
+      right_alt = "",
+    },
+    square = {
+      left = "█",
+      right = "█",
+      left_alt = "",
+      right_alt = "",
+    },
+    xsquare = {
+      left = "█",
+      right = "█",
+      left_alt = "█",
+      right_alt = "█",
+    },
+    pacman = {
+      left = "",
+      right = "",
+      left_alt = "",
+      right_alt = "",
+    },
+    graphy = {
+      left = "",
+      right = "",
+      left_alt = "",
+      right_alt = "",
+    },
+    slantv1 = {
+      left = "",
+      right = "",
+      left_alt = "",
+      right_alt = "",
+    },
+    slantv2 = {
+      left = "",
+      right = "",
+      left_alt = "",
+      right_alt = "",
+    },
+    slantv3 = {
+      left = "",
+      right = "",
+      left_alt = "",
+      right_alt = "",
+    },
+    pixel = {
+      left = "",
+      right = "",
+      left_alt = "",
+      right_alt = "",
+    },
+    fullslant = {
+      left = "",
+      right = "",
+      left_alt = "",
+      right_alt = "",
+    },
   },
 }
 

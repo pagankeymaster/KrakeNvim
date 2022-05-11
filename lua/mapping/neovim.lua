@@ -1,9 +1,18 @@
 local M = {}
 
 M.mappings = {
-  ["l<CR>"] = { "<CMD>LspStart<CR>", " LSP start" },
-  ["T"] = { "<CMD>TSStart<CR>", " Treesitter start" },
-  ["L"] = { "<CMD>TSStart<CR><CMD>LspStart<CR><CMD>lua require('telescope')<CR>", " Code ready" },
+  ["l<CR>"] = {
+    "<CMD>LspStart<CR>",
+    " LSP start",
+  },
+  ["T"] = {
+    "<CMD>TSStart<CR>",
+    " Treesitter start",
+  },
+  ["L"] = {
+    "<CMD>TSStart<CR><CMD>LspStart<CR><CMD>lua require('telescope')<CR>",
+    " Code ready",
+  },
 }
 
 M.options = {

@@ -10,7 +10,7 @@
 
 ```txt
 ---Startuptime---
-035.291 (avg) with [160 Plugs]
+037.291 (avg) with [160 Plugs]
 ```
 
 `vim-polyglot` will be removed once `filetype.lua` becomes less buggy.

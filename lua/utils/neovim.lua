@@ -28,7 +28,10 @@ end
 function M.notify(options)
   -- if only a string is passed then show a generic notification.
   if type(options) == "string" then
-    api.nvim_notify(options, vim.log.levels.INFO, { icon = "", title = "Notification" })
+    api.nvim_notify(options, vim.log.levels.INFO, {
+      icon = "",
+      title = "Notification",
+    })
     return
   end
 
@@ -39,7 +42,10 @@ function M.notify(options)
     title = "Notification",
     level = vim.log.levels.INFO,
   }, options or {}) -- don't let the table be nil
-  api.nvim_notify(forced.message, forced.level, { title = forced.title, icon = forced.icon })
+  api.nvim_notify(forced.message, forced.level, {
+    title = forced.title,
+    icon = forced.icon,
+  })
 end
 
 --- A cnoreabbrev wrapper.
@@ -135,7 +141,10 @@ function M.ensure_treesitter_language_installed()
   local lang = parsers.get_buf_lang()
   if parsers.get_parser_configs()[lang] and not parsers.has_parser(lang) then
     vim.schedule(function()
-      vim.ui.select({ "Sure, I don't mind.", "Nope, fuck yourself!" }, {
+      vim.ui.select({
+        "Sure, I don't mind.",
+        "Nope, fuck yourself!",
+      }, {
         prompt = "Install tree-sitter parsers for " .. lang .. "?",
       }, function(item)
         if item == "Sure, I don't mind." then
@@ -168,10 +177,15 @@ function M.make_input(options, actions)
   actions = actions or {}
 
   local popup_options = {
-    position = options.position or { row = 5, col = 5 },
+    position = options.position or {
+      row = 5,
+      col = 5,
+    },
     highlight = options.highlight or "TabLine:FloatBorder",
     size = options.size or 50,
-    border = options.border or { style = "solid" },
+    border = options.border or {
+      style = "solid",
+    },
   }
 
   local input = Input(popup_options, {
@@ -200,9 +214,14 @@ function M.shorten()
   local format = [[!curl --silent "https://is.gd/create.php?format=simple&url=%s"]]
 
   M.make_input({
-    position = { row = 5, col = 5 },
+    position = {
+      row = 5,
+      col = 5,
+    },
     size = 50,
-    border = { style = "solid" },
+    border = {
+      style = "solid",
+    },
   }, {
     prompt = "   ",
     default_value = "Your URL...",
@@ -233,7 +252,10 @@ function M.imgur()
   local format = [[!imgur-upload "%s" | xclip]]
 
   M.make_input({
-    position = { row = 5, col = 5 },
+    position = {
+      row = 5,
+      col = 5,
+    },
     size = 50,
     border = {
       style = "solid",

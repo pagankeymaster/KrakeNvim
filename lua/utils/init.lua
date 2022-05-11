@@ -37,7 +37,9 @@ end
 --- close the editor.
 -- @see Adapted from https://is.gd/zosxpN
 function M.delete_buffer()
-  local buflisted = fn.getbufinfo({ buflisted = 1 })
+  local buflisted = fn.getbufinfo({
+    buflisted = 1,
+  })
   local cur_winnr, cur_bufnr = fn.winnr(), fn.bufnr()
   if #buflisted < 2 then
     vim.cmd("confirm qall")
