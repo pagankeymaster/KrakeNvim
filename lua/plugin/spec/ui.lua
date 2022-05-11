@@ -23,7 +23,6 @@ use({
 
 use({
   "akinsho/bufferline.nvim",
-  commit = "0a83c615a8ab49718d9b4cdc60127003307829b2",
   config = function()
     require("plugin.config.ui.bufferline")
   end,
