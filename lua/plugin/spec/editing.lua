@@ -174,7 +174,7 @@ use({
   "oberblastmeister/neuron.nvim",
   wants = "popup.nvim",
   after = "telescope.nvim",
-  disable = disabled["neuron"],
+  disable = disabled["neuron.nvim"],
 })
 
 use({
