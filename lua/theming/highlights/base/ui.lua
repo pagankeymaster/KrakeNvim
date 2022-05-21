@@ -173,10 +173,7 @@ return {
     guifg = colors.common.base14,
     gui = "bold",
   },
-  ["Visual"] = {
-    guibg = colors.shades.shade05,
-    guifg = colors.common.base09,
-  },
+  ["Visual"] = { guibg = colors.shades.shade05 },
   ["VisualNC"] = {
     guibg = colors.common.base11,
     guifg = colors.common.base13,

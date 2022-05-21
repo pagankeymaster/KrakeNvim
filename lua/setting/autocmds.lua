@@ -131,6 +131,10 @@ augroup("NotifyOnPackerOperation", {
   },
 })
 
+autocmd("FileType", [[nnoremap <buffer><silent> q :quit<CR>]], {
+  patterns = "man",
+})
+
 -- augroup("PersistentMarkdownFolds", {
 --   {
 --     events = "BufWinLeave",
