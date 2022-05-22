@@ -103,6 +103,7 @@ use({
 
 use({
   "folke/which-key.nvim",
+  event = "UIEnter",
   disable = disabled["which-key.nvim"],
   config = function()
     require("plugin.config.workflow.whichkey")

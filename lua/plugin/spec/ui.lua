@@ -23,6 +23,7 @@ use({
 
 use({
   "akinsho/bufferline.nvim",
+  event = "UIEnter",
   config = function()
     require("plugin.config.ui.bufferline")
   end,

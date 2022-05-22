@@ -23,6 +23,7 @@ use({
 
 use({
   "rcarriga/nvim-notify",
+  event = "UIEnter",
   config = function()
     require("plugin.config.utils.notify")
   end,

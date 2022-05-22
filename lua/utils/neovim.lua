@@ -283,6 +283,8 @@ function M.imgur()
   })
 end
 
+--- Wrote this as plenary is not available during init.
+-- @param module_path string directory path
 function M.scan_dir(module_path)
   local command = io.popen(string.format("find %s -type f", fn.stdpath("config") .. module_path))
   local hl_path = vim.split(command:read("*a"), "\n")

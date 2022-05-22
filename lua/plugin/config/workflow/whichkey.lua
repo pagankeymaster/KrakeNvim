@@ -69,25 +69,14 @@ local config = {
   },
 }
 
-vim.schedule(function()
-  for _, plugin in ipairs({
-    "colors",
-    "terminal",
-    "git",
-    "buffers",
-    "plugins",
-    "others",
-    "prompts",
-    "neovim",
-    "comments",
-    "modes",
-    "inserts",
-    "pandoc",
-  }) do
-    local loaded = require("mapping." .. plugin)
+local scan = require("plenary.scandir")
+local _ = vim.tbl_map(function(mapping_path)
+  local module = vim.list_slice(vim.split(vim.fn.fnamemodify(mapping_path, ":r"), "/"), 7)
+  if module[2] ~= "lsp" then
+    local loaded = require(table.concat(module, "."))
     which_key.register(loaded.mappings, loaded.options)
   end
-end)
+end, scan.scan_dir(vim.fn.stdpath("config") .. "/lua/mapping"))
 
 which_key.setup(config)
 

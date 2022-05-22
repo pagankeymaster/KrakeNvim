@@ -11,19 +11,12 @@ luasnip.config.set_config({
   enable_autosnippets = true,
 })
 
-local add_snippet = luasnip.snippet
-local snippet_tables = require("plugin.config.cmp.luasnip.snippets")
-
-local function snippet_wrap(snippet)
-  return add_snippet(snippet[1], snippet[2])
+-- INFO: A hook i.e. any file inside cmp.snippets will be loaded
+local scan = require("plenary.scandir")
+for _, path in ipairs(scan.scan_dir(vim.fn.stdpath("config") .. "/lua/plugin/config/cmp/snippets")) do
+  local module_path = vim.list_slice(vim.split(vim.fn.fnamemodify(path, ":r"), "/"), 7)
+  luasnip.add_snippets(module_path[#module_path], require(table.concat(module_path, ".")))
 end
-
-local snippets_primed = {}
-for lang, snippets in pairs(snippet_tables) do
-  snippets_primed[lang] = vim.tbl_map(snippet_wrap, snippets)
-end
-
-luasnip.add_snippets(nil, snippets_primed)
 
 require("luasnip.loaders.from_vscode").lazy_load({
   paths = vim.fn.stdpath("config"),

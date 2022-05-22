@@ -55,7 +55,7 @@ use({
   config = function()
     require("plugin.config.cmp.autopairs")
   end,
-  event = "InsertEnter",
+  after = "nvim-cmp",
   disable = disabled["nvim-autopairs"],
 })
 

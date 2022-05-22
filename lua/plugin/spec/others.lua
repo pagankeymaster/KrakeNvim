@@ -33,7 +33,11 @@ use({
   disable = disabled["presence.nvim"],
 })
 
-use({"wakatime/vim-wakatime", disable = disabled["vim-wakatime"] })
+use({
+  "wakatime/vim-wakatime",
+  event = "UIEnter",
+  disable = disabled["vim-wakatime"],
+})
 
 use({
   "KadoBOT/nvim-spotify",

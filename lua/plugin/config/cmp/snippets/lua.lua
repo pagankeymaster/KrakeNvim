@@ -18,7 +18,7 @@ M[1] = {
     },
   },
   {
-    text("use { '"),
+    text("use {'"),
     -- Get the author and URL in the clipboard and auto populate the author and project
     fnode(function(_)
       local default = ""
@@ -87,6 +87,8 @@ M[4] = {
   },
 }
 
-return M
+return vim.tbl_map(function(snippet)
+  return luasnip.snippet(snippet[1], snippet[2])
+end, M)
 
 -- vim:ft=lua

@@ -15,7 +15,7 @@ use({
 
 use({
   "sheerun/vim-polyglot",
-  event = "VimEnter",
+  event = "UIEnter",
   disable = disabled["vim-polyglot"],
 })
 
@@ -30,7 +30,7 @@ use({
 
 use({
   "bhurlow/vim-parinfer",
-  ft = { "yuck" },
+  ft = "yuck",
   disable = disabled["vim-parinfer"],
 })
 
