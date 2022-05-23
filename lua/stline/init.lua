@@ -5,7 +5,7 @@ local util = require("utils.stline") -- load statusline specific utility functio
 local config = require("stline.config") -- load the config file for the statusline
 
 local api = vim.api
-local neovim = require("utils.neovim")
+local nv = require("utils.neovim")
 
 local modules = {} -- enabled modules
 modules["mode"] = require("stline.modules.mode")["mode"] -- displays vim-mode
@@ -46,7 +46,7 @@ function _G.stl(state)
     return combined .. modules.mode(true) .. "%="
   end
 
-  -- NOTE: all of these modules is passed through the trancator in order to make the size dynamic
+  -- NOTE: all of these modules is passed through the truncator in order to make the size dynamic
   if state == "active" then
     local left = table.concat({
       truncated("mode"),
@@ -72,7 +72,7 @@ end
 return {
   setup = function()
     -- statusline augroup which makes the statusline persisten throughout buffers
-    neovim.augroup("StatusLine", {
+    nv.augroup("StatusLine", {
       {
         events = {
           "WinEnter",

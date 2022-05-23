@@ -1,10 +1,10 @@
 --- Autocommand configuration list.
 -- @module settings.autocmds
 
-local neovim = require("utils.neovim")
-local autocmd = neovim.autocmd
-local augroup = neovim.augroup
-local notify = neovim.notify
+local nv = require("utils.neovim")
+local autocmd = nv.autocmd
+local augroup = nv.augroup
+local notify = nv.notify
 local opt_local = vim.opt_local
 
 autocmd("BufEnter", "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif", {

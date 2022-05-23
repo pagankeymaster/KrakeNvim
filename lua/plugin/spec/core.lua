@@ -12,6 +12,8 @@ use({
   disable = disabled["packer.nvim"],
 })
 
+use({ "nvim-lua/plenary.nvim", disable = disabled["plenary.nvim"] })
+
 use({ "lewis6991/impatient.nvim", disable = disabled["impatient.nvim"] })
 
 -- vim:ft=lua

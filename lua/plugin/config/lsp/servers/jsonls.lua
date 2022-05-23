@@ -1,3 +1,12 @@
+local present, schemastore = pcall(require, "schemastore")
+local json_schemas = {}
+
+if present then
+  json_schemas = schemastore.json.schemas({
+    select = { ".eslintrc", "package.json" }
+  })
+end
+
 local schema = {
   settings = {
     json = {
@@ -76,9 +85,7 @@ local schema = {
             url = "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
           },
         },
-        require("schemastore").json.schemas({
-          select = { ".eslintrc", "package.json" },
-        })
+        json_schemas
       ),
     },
   },

@@ -1,6 +1,6 @@
 --- Do not load some builtin plugins for increasing performance.
-
-local g = vim.g
+--- And besides I don't ever use them.
+--- Who the fuck uses zip / zipPlugin? How stupid.
 
 -- disabled native vim plugins in order to make startup time faster.
 for builtin, status in pairs({
@@ -25,7 +25,7 @@ for builtin, status in pairs({
   ["spellfile_plugin"] = 1,
   ["sleuth"] = 1,
 }) do
-  g["loaded_" .. builtin] = status
+  vim.g["loaded_" .. builtin] = status
 end
 
 -- vim:ft=lua

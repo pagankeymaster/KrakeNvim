@@ -4,8 +4,6 @@ local use = require("packer").use
 
 local disabled = require("control.disabled")
 
-use({ "nvim-lua/plenary.nvim", disable = disabled["plenary.nvim"] })
-
 use({
   "nvim-lua/popup.nvim",
   opt = true,

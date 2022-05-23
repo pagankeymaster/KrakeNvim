@@ -43,7 +43,7 @@ use({
 
 use({
   "L3MON4D3/LuaSnip",
-  after = "nvim-cmp",
+  event = "InsertEnter",
   config = function()
     require("plugin.config.cmp.luasnip")
   end,
@@ -55,7 +55,7 @@ use({
   config = function()
     require("plugin.config.cmp.autopairs")
   end,
-  after = "nvim-cmp",
+  event = "InsertEnter",
   disable = disabled["nvim-autopairs"],
 })
 
