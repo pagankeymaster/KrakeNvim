@@ -6,14 +6,14 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/pagankeymaster/KrakenVim?color=red&label=SIZE&logo=serverless&logoColor=red&style=for-the-badge)
 ![Repo License](https://img.shields.io/badge/LICENSE-GPL--3.0-%2388c0d0?style=for-the-badge&logo=GNU)
 
-![front-banner](./.assets/front-banner.png)
+<!-- ![front-banner](./.assets/front-banner.png) -->
 
 ```txt
 ---Startuptime---
 037.291 (avg) with [160 Plugs]
+020.133 (avg) with [40 Plugs]
 ```
 
-`vim-polyglot` will be removed once `filetype.lua` becomes less buggy.
 </div>
 
 ## Installation
@@ -35,9 +35,15 @@ ln -s ~/Dotfiles/KrakeNvim ~/.config/nvim
 nvim
 ```
 
+### Few caveats
+- Restarting Neovim once or, twice might be necessary after initial install.
+- Restarting Neovim after `:TSStart` might be necessary.
+- Restarting Neovim after `:LspStart` might be necessary.
+
 ## Requirements
 
 - Neovim version v0.8.0
+- A functioning brain
 
 ## Keybindings
 
@@ -236,85 +242,85 @@ Coming soon... (there's a lot)
 | `<C-i><C-i>` | Image hosting by `imgur.com` |
 | `<C-i><C-p>` | Text hosting by `dpaste.com` |
 
-## Statusline
+<!-- ## Statusline -->
 
-Coming soon... (there's a lot)
+<!-- Coming soon... (there's a lot) -->
 
-## Debuggers
+<!-- ## Debuggers -->
 
-Coming soon...
+<!-- Coming soon... -->
 
-## Showcase
+<!-- ## Showcase -->
 
-Following are various screenshots of this configuration is action. Enjoy!
+<!-- Following are various screenshots of this configuration is action. Enjoy! -->
 
-### nvim-tree.lua
+<!-- ### nvim-tree.lua -->
 
-![nvim-tree.lua](./.assets/nvim-tree.png)
+<!-- ![nvim-tree.lua](./.assets/nvim-tree.png) -->
 
-### which-key.nvim
+<!-- ### which-key.nvim -->
 
-![which-key.nvim](./.assets/which-key.png)
+<!-- ![which-key.nvim](./.assets/which-key.png) -->
 
-### SymbolsOutline.nvim
+<!-- ### SymbolsOutline.nvim -->
 
-![SymbolsOutline.nvim](./.assets/outline.png)
+<!-- ![SymbolsOutline.nvim](./.assets/outline.png) -->
 
-### Completion by nvim-cmp
+<!-- ### Completion by nvim-cmp -->
 
-![nvim-cmp](./.assets/cmp.gif)
+<!-- ![nvim-cmp](./.assets/cmp.gif) -->
 
-### `vim.notify` backend by nvim-notify
+<!-- ### `vim.notify` backend by nvim-notify -->
 
-![notify-nvim](./.assets/notify.png)
+<!-- ![notify-nvim](./.assets/notify.png) -->
 
-### Focus with twilight.nvim
+<!-- ### Focus with twilight.nvim -->
 
-![twilight.nvim](./.assets/twilight.gif)
+<!-- ![twilight.nvim](./.assets/twilight.gif) -->
 
-### FZF though git, files, clipboards, etc using telescope.nvim
+<!-- ### FZF though git, files, clipboards, etc using telescope.nvim -->
 
-![telescope.nvim](./.assets/telescope.gif)
+<!-- ![telescope.nvim](./.assets/telescope.gif) -->
 
-### Edit without any distractions using TruZen.nvim
+<!-- ### Edit without any distractions using TruZen.nvim -->
 
-![TrueZen.nvim](./.assets/truezen.png)
+<!-- ![TrueZen.nvim](./.assets/truezen.png) -->
 
-### Brightness control in Neovim
+<!-- ### Brightness control in Neovim -->
 
-![Glow.nvim](./.assets/glow.gif)
+<!-- ![Glow.nvim](./.assets/glow.gif) -->
 
-### Treesitter playground extension
+<!-- ### Treesitter playground extension -->
 
-![ts-playground.nvim](./.assets/playground.gif)
+<!-- ![ts-playground.nvim](./.assets/playground.gif) -->
 
-### Toggle terminals
+<!-- ### Toggle terminals -->
 
-![ToggleTerm.nvim](./.assets/toggleterm.gif)
+<!-- ![ToggleTerm.nvim](./.assets/toggleterm.gif) -->
 
-### URL Shortner
+<!-- ### URL Shortner -->
 
-![url-shortner](./.assets/url-shortener.gif)
+<!-- ![url-shortner](./.assets/url-shortener.gif) -->
 
-### Code file host
+<!-- ### Code file host -->
 
-![code-host](./.assets/paperplanes.gif)
+<!-- ![code-host](./.assets/paperplanes.gif) -->
 
-### Read, Write and Change reference highlights
+<!-- ### Read, Write and Change reference highlights -->
 
-![lsp-reference-hl](./.assets/lsp-reference.gif)
+<!-- ![lsp-reference-hl](./.assets/lsp-reference.gif) -->
 
-### `:` cmdline and `/` search mode override
+<!-- ### `:` cmdline and `/` search mode override -->
 
-![cmdline-search-override](./.assets/search-cmdline.gif)
+<!-- ![cmdline-search-override](./.assets/search-cmdline.gif) -->
 
-### Autopairs
+<!-- ### Autopairs -->
 
-![autopairs.nvim](./.assets/autopairs.gif)
+<!-- ![autopairs.nvim](./.assets/autopairs.gif) -->
 
-### LSP show diagnostics in normal mode
+<!-- ### LSP show diagnostics in normal mode -->
 
-![auto-diag](./.assets/diag-on-attach.gif)
+<!-- ![auto-diag](./.assets/diag-on-attach.gif) -->
 
 ## To-dos
 
@@ -324,7 +330,7 @@ Following are the current goals of this repository.
 - [x] Add comments and documentations.
 - [x] Remove code-duplication and other refactoring.
 - [x] Fix LSP module for statusline.
-- [ ] Add more colorschemes
+- [x] Add more colorschemes
 - [ ] Revise keybindings
 - [ ] Add `legend.nvim`
 - [ ] Configure `hop.nvim`, `leap.nvim` and `lightspeed.nvim`
@@ -337,7 +343,7 @@ Following are the current goals of this repository.
 - [x] Do not use global aliases. Eliminate the need of `aliases.lua`.
 - [ ] Revise documentations, code, readme, colorschemes and keybindings.
 - [x] STL background doesn't change when colorscheme is changed.
-- [ ] Write benchmarks.
+- [x] Write benchmarks.
 - [ ] Write tests.
 - [ ] Rewrite and re-plan if shit goes out of hand.
 
