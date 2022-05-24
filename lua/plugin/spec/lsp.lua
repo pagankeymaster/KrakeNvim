@@ -24,6 +24,12 @@ use({
   disable = disabled["nvim-jdtls"],
 })
 
+use({
+  "simrat39/rust-tools.nvim",
+  module = "rust-tools",
+  disable = disabled["rust-tools.nvim"],
+})
+
 use({ "b0o/schemastore.nvim", module = "schemastore", disable = disabled["schemastore.nvim"] })
 
 use({

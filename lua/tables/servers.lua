@@ -1,3 +1,4 @@
+-- TODO: Use plenary.scandir.scan_dir for this.
 return {
   ["bashls"] = {},
   ["jdtls"] = require("plugin.config.lsp.servers.jdtls"),
@@ -14,7 +15,7 @@ return {
   ["grammarly"] = {},
   ["html"] = {},
   ["zk"] = {},
-  ["groovyls"] = {},
   ["reason_ls"] = {},
   ["vimls"] = {},
+  ["rust_analyzer"] = {},
 }

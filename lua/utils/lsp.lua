@@ -120,6 +120,7 @@ function M.flags()
 end
 
 -- @param buffer number
+-- @todo
 function M.buf_autocmd_codelens(buffer) end
 
 -- Finds and runs the closest codelens (searches upwards only)
