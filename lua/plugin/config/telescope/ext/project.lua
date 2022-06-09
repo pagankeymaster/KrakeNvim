@@ -1,21 +1,7 @@
 return {
   base_dirs = {
-    { path = "~/Dotfiles/vile" },
-    {
-      path = "~/.local/share/nvim/site/pack/packer/opt/telescope-media-files.nvim",
-    },
-    {
-      path = "~/Dotfiles/phocused",
-    },
-    {
-      path = "~/Dotfiles/nightfall",
-    },
-    {
-      path = "~/Dotfiles/nightly/config/nvim",
-    },
-    {
-      path = "~/Dotfiles/nightly",
-    },
+    { path = "~/Dotfiles/dots.sh/config/_standalone/nvim" },
+    { path = "~/Dotfiles/dots.sh" },
   },
   hidden_files = true,
 }

@@ -17,5 +17,7 @@ return {
   ["zk"] = {},
   ["reason_ls"] = {},
   ["vimls"] = {},
+  ["clangd"] = {},
   ["rust_analyzer"] = {},
+  ["sourcery"] = require("plugin.config.lsp.servers.sourcery"),
 }

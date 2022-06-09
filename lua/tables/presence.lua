@@ -1,4 +1,5 @@
 --- NOTE: all list of language icons for presence.nvim, the discord-rpc client for neovim.
+--- TODO: use classes for representating icons, in order to map though them
 
 local function lambda(filename)
   return {

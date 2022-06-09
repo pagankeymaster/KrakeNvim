@@ -10,7 +10,7 @@
     "src/experimental",
     "src/typestubs"
   ],
-
+  "python.analysis.typeCheckingMode": "off",
   "ignore": [
     "src/oldstuff"
   ],

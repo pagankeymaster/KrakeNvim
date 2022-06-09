@@ -1,6 +1,6 @@
 --- Do not load some builtin plugins for increasing performance.
---- And besides I don't ever use them.
---- Who the fuck uses zip / zipPlugin? How stupid.
+--- you can load those plugins by using :runtime <plug-name>
+--- also don't forget to reset the vim.g.loaded_<plug-name> to 0 first
 
 -- disabled native vim plugins in order to make startup time faster.
 for builtin, status in pairs({
@@ -9,10 +9,7 @@ for builtin, status in pairs({
   ["getscriptPlugin"] = 1,
   ["gzip"] = 1,
   ["logipat"] = 1,
-  ["netrw"] = 1,
   ["netrwPlugin"] = 1,
-  ["netrwSettings"] = 1,
-  ["netrwFileHandlers"] = 1,
   ["tar"] = 1,
   ["tarPlugin"] = 1,
   ["rrhelper"] = 1,
