@@ -41,11 +41,11 @@ M.mappings = {
     " Horizontal split",
   },
   ["<leader>V"] = {
-    "<CMD>vs | enew<CR>",
+    "<CMD>vs | new<CR>",
     " Vertical split",
   },
   ["<leader>H"] = {
-    "<CMD>sp | enew<CR>",
+    "<CMD>sp | new<CR>",
     " Horizontal split",
   },
   ["<Esc>"] = {
@@ -106,17 +106,19 @@ M.mappings = {
     "<CMD>BookmarkToggle<CR>",
     "Add/Remove bookmark",
   },
-  ["<C-i><C-g>"] = {
-    "<CMD>PP<CR>",
-    "Save URI image to imgur.com",
-  },
-  ["<C-i><C-l>"] = {
-    "<CMD>lua neovim.shorten()<CR>",
-    "Shorten URL",
-  },
-  ["<C-i><C-p>"] = {
-    "<CMD>PP<CR>",
-    "Save buffer to dpaste.com",
+  ["<leader>o"] = {
+    ["g"] = {
+      "<CMD>PP<CR>",
+      "Save URI image to imgur.com",
+    },
+    ["l"] = {
+      "<CMD>lua neovim.shorten()<CR>",
+      "Shorten URL",
+    },
+    ["c"] = {
+      "<CMD>PP<CR>",
+      "Save buffer to dpaste.com",
+    },
   },
 }
 

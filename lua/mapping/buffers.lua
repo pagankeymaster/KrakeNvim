@@ -91,11 +91,11 @@ M.mappings = {
       },
     },
   },
-  ["<Tab>"] = {
+  ["<M-]>"] = {
     "<CMD>BufferLineCycleNext<CR>",
     " Next",
   },
-  ["<S-Tab>"] = {
+  ["<M-[>"] = {
     "<CMD>BufferLineCyclePrev<CR>",
     " Previous",
   },
