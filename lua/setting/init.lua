@@ -1,4 +1,4 @@
-vim.cmd("colo radium")
+vim.cmd("colo auto")
 
 require("setting.neovide") -- load neovide gui settings
 require("setting.builtins") -- disable redundant vim-plugs
