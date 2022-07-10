@@ -65,7 +65,7 @@ use({
 
 use({ "Fymyte/rasi.vim", ft = "rasi", disable = disabled["rasi.vim"] })
 use({ "elkowar/yuck.vim", ft = "yuck", disable = disabled["yuck.vim"] })
-use({ "kovetskiy/sxhkd-vim", ft = "sxhkdrc", disable = disabled["sxhkd-vim"] })
+use({ "kovetskiy/sxhkd-vim", ft = "sxhkd", disable = disabled["sxhkd-vim"] })
 use({ "MTDL9/vim-log-highlighting", ft = "log", disable = disabled["vim-log-highlighting"] })
 use({ "vuki656/package-info.nvim", ft = "package.json", disable = disabled["package-info.nvim"] })
 

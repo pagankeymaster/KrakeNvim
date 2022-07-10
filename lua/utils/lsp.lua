@@ -88,7 +88,7 @@ function M.handlers()
   }
 end
 
-function M.capabilities()
+function M.capabilities(client_name)
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.textDocument.completion.completionItem.snippetSupport = true
   capabilities.textDocument.completion.completionItem.preselectSupport = true
@@ -96,6 +96,7 @@ function M.capabilities()
   capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
   capabilities.textDocument.completion.completionItem.deprecatedSupport = true
   capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+  capabilities.textDocument.semanticHighlighting = true
   capabilities.textDocument.completion.completionItem.tagSupport = {
     valueSet = { 1 },
   }
@@ -110,6 +111,11 @@ function M.capabilities()
     "markdown",
     "plaintext",
   }
+
+  if client_name == "clangd" then
+    capabilities.offsetEncoding = "utf-8"
+  end
+
   return capabilities
 end
 

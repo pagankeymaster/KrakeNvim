@@ -22,7 +22,7 @@ for server_name, server_config in pairs(require("tables.servers")) do
   local user_config = vim.tbl_extend("keep", {
     autostart = true,
     flags = lsp_util.flags(),
-    capabilities = lsp_util.capabilities(),
+    capabilities = lsp_util.capabilities(server_name),
     on_attach = lsp_util.on_attach(),
     handlers = lsp_util.handlers(),
   }, server_config or {})

@@ -16,7 +16,7 @@ local schema = {
   settings = { Lua = { workspace = {} } },
 }
 
--- schema.settings.Lua.workspace.library = vim.api.nvim_get_runtime_file("", true)
+schema.settings.Lua.workspace.library = vim.api.nvim_get_runtime_file("", true)
 
 return schema
 
